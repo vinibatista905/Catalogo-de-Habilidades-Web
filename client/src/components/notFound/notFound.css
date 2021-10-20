@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{
+    width: 50%;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+@media only screen and (max-width: 720px){
+    img{
+        width: 70%;
+    }
+    
+    h1{
+        font-size: 2rem;
+    }
+}

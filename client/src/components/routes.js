@@ -1,10 +1,10 @@
 import React from 'react';
 import { Router, Switch, Route } from 'react-router'
 
-import Login from '../pages/Login'
-import Register from '../pages/Register'
-import Home from '../pages/Home'
-import Homepage from '../pages/Homepage';
+import Login from '../pages/login/Login'
+import Register from '../pages/register/Register'
+import Home from '../pages/home/Home'
+import Homepage from '../pages/homepage/Homepage';
 import NotFound from './notFound/NotFound';
 
 import {history} from '../history'

@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 
 const db = require('./models')
 
@@ -7,6 +8,7 @@ const bodyParser = require("body-parser");
 require("dotenv/config");
 
 app.use(bodyParser.json());
+app.use(cors());
 
 const userRouter = require("./routes/userRouter");
 

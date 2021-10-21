@@ -1,22 +1,22 @@
 import React from "react";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from "yup";
-import axios from 'axios';
-import { history } from '../../history';
+import axios from "axios";
+import { history } from "../../history";
 
-import './Login.css';
+import "./Login.css";
 
 const Login = () => {
-  const handleSubmit = (values) => { console.log(values)
-    axios.post('http://localhost:5000/user/login', values)
-    .then(resp => {
-      const { data } = resp
+  const handleSubmit = (values) => {
+    console.log(values);
+    axios.post("http://localhost:5000/user/login", values).then((resp) => {
+      const { data } = resp;
       if (data) {
-        localStorage.setItem('auth-token', data)
-        history.push('/home')
+        localStorage.setItem("auth-token", data);
+        history.push("/home");
       }
-    })
-  }
+    });
+  };
   const validations = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().min(6).required(),

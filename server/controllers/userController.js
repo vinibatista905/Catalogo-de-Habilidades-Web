@@ -50,7 +50,7 @@ const userController = {
       process.env.TOKEN_SECRET
     );
     res.header("authorization-token", token);
-    res.send("Usuário Logado");
+    res.send(token);
   },
 };
 

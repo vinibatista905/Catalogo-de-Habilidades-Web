@@ -1,42 +1,78 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
+.Container-Login {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
 }
 
-.Form-container{
-    width: 40%;
+.Login-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #002c99;
+  width: 100%;
+  
+}
+
+.banner-img {
+  width: 25rem;
+}
+
+.banner-title {
+  color: #ffffff;
+  
+}
+
+.banner-desc {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.Login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20rem;
+}
+
+.Form-container {
+  width: 40%;
 }
 
 .Login-Field {
-    border: none;
-    background: rgba(0, 0, 0, 0.15);
-    color: #000;
-    margin: 1rem 0;
-    font-size: 1.2rem;
-    border-radius: 7px;
-    width: 100%;
-    padding: 1rem;
-    transition: all .2s linear;
+  border: none;
+  background: rgba(0, 0, 0, 0.15);
+  color: #000;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border-radius: 7px;
+  width: 100%;
+  padding: 1rem;
+  transition: all 0.2s linear;
 }
 
 .Login-Field:focus {
-    outline: none;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  outline: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.Login-Error{
-    color: #ff8080
+.Login-Error {
+  color: #ff8080;
 }
 
-.Login-btn{
-    background: #00cc99;
-    color: #fdfdfd;
-    padding: .5rem 2rem;
-    border: none;
-    border-radius: 5px;
-    margin-top: 2rem;
-    cursor: pointer;
+.Login-btn {
+  background: #0046f5;
+  color: #fdfdfd;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2rem;
+  cursor: pointer;
 }
 
-
+.Login-btn:hover {
+  background: #002c99;
+  transition: all 0.2s linear;
+}

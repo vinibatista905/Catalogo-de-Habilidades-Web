@@ -5,6 +5,7 @@ import axios from "axios";
 import { history } from "../../history";
 
 import "./Login.css";
+import Logo from "../../components/logo/Logo";
 
 const Login = () => {
   const handleSubmit = (values) => {
@@ -23,7 +24,15 @@ const Login = () => {
   });
   return (
     <>
-      <div className="container">
+      <div className="Container-Login">
+
+        <div className='Login-banner'>
+          <Logo />
+          <p className='banner-desc'>Faça login para acessar seu catálogo de habilidades.</p>
+          <img className='banner-img' src={require('../../assets/login-2.png').default}></img>
+        </div>
+
+        <div className='Login-container'>
         <h1>Login</h1>
         <p>Preencha os campos para continuar</p>
         <div className="Form-container">
@@ -64,6 +73,7 @@ const Login = () => {
           </Form>
         </Formik>
         </div>
+      </div>
       </div>
     </>
   );

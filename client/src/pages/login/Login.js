@@ -26,6 +26,7 @@ const Login = () => {
       <div className="container">
         <h1>Login</h1>
         <p>Preencha os campos para continuar</p>
+        <div className="Form-container">
         <Formik
           initialValues={{}}
           onSubmit={handleSubmit}
@@ -33,7 +34,11 @@ const Login = () => {
         >
           <Form className="Login">
             <div className="Login-group">
-              <Field name="email" className="Login-Field" />
+              <Field
+                name="email"
+                placeholder="E-mail"
+                className="Login-Field"
+              />
               <ErrorMessage
                 component="span"
                 name="email"
@@ -41,7 +46,12 @@ const Login = () => {
               />
             </div>
             <div className="Login-group">
-              <Field name="password" className="Login-Field" />
+              <Field
+                name="password"
+                placeholder="Senha"
+                type="password"
+                className="Login-Field"
+              />
               <ErrorMessage
                 component="span"
                 name="password"
@@ -53,6 +63,7 @@ const Login = () => {
             </button>
           </Form>
         </Formik>
+        </div>
       </div>
     </>
   );

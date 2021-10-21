@@ -8,7 +8,7 @@
     width: 40%;
 }
 
-.Login-Field {
+.Register-Field {
     border: none;
     background: rgba(0, 0, 0, 0.15);
     color: #000;
@@ -20,16 +20,17 @@
     transition: all .2s linear;
 }
 
-.Login-Field:focus {
+.Register-Field:focus {
     outline: none;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.Login-Error{
-    color: #ff8080
+.Register-Error{
+    color: #ff8080;
+    font-size: 1rem;
 }
 
-.Login-btn{
+.Register-btn{
     background: #00cc99;
     color: #fdfdfd;
     padding: .5rem 2rem;
@@ -37,6 +38,7 @@
     border-radius: 5px;
     margin-top: 2rem;
     cursor: pointer;
+    font-size: 1.2rem;
 }
 
 

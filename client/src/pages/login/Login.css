@@ -1,6 +1,6 @@
 .Container-Login {
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -115,10 +115,9 @@
 /* RESPONSIVO */
 
 @media only screen and (max-width: 720px) {
-  
   .Container-Login {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
   }
 
@@ -127,7 +126,7 @@
     font-size: 0.8rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .banner-img {
     width: 14rem;
     margin-bottom: 2rem;
@@ -138,14 +137,11 @@
   }
 
   .Login-Field {
-    
     width: 100%;
-   
   }
 
   .Form-container-login {
     width: 100%;
     margin-top: 1rem;
   }
-
 }

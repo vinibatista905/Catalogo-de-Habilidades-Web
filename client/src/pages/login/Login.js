@@ -3,9 +3,9 @@ import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import axios from "axios";
 import { history } from "../../history";
-
-import "./Login.css";
 import Logo from "../../components/logo/Logo";
+import Footer from "../../components/footer/Footer";
+import "./Login.css";
 
 const Login = () => {
   const handleSubmit = (values) => {
@@ -84,7 +84,7 @@ const Login = () => {
                     Ainda não possui uma conta?
                     <br />{" "}
                     <a href="/register" className="Login-span">
-                      Cadastre-se aqui.
+                      Registre-se aqui.
                     </a>
                   </p>
                 </Form>
@@ -93,6 +93,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

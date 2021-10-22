@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import axios from "axios";
@@ -9,6 +9,8 @@ import Logo from "../../components/logo/Logo";
 import Footer from "../../components/footer/Footer";
 
 const Register = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const handleSubmit = (values) => {
     console.log(values);
     axios.post("http://localhost:5000/user/register", values).then((resp) => {
@@ -26,9 +28,6 @@ const Register = () => {
   return (
     <>
       <div className="Container-Register">
-        
-        
-
         <div className="Register-container">
           <div className="Register-wrap">
             <h1 className="Register-section-title">Registre-se</h1>
@@ -40,7 +39,7 @@ const Register = () => {
                 validationSchema={validations}
               >
                 <Form className="Register">
-                <div className="Register-group">
+                  <div className="Register-group">
                     <p className="form-desc">Nome*</p>
                     <Field
                       name="name"
@@ -80,9 +79,17 @@ const Register = () => {
                       className="Register-Error"
                     />
                   </div>
-                  <button className="Register-btn" type="submit">
+                  <button
+                    onClick={() => setIsVisible(true)}
+                    className="Register-btn"
+                    type="submit"
+                  >
                     Registrar
                   </button>
+                  <br />
+                  <span className={isVisible ? "error-show" : "error-hidden"}>
+                    Dados inválidos ou já cadastrados
+                  </span>
                   <p className="register-desc">
                     Já possui uma conta?
                     <br />{" "}
@@ -97,8 +104,8 @@ const Register = () => {
         </div>
 
         <div className="Register-banner">
-          <div  className='banner-logo-register'>
-          <Logo className='logo' />
+          <div className="banner-logo-register">
+            <Logo className="logo" />
           </div>
           <p className="banner-desc-register">
             Cadastre-se e comece agora a criar o seu catálogo de habilidades.
@@ -108,7 +115,6 @@ const Register = () => {
             src={require("../../assets/register-1.png").default}
           ></img>
         </div>
-        
       </div>
       <Footer />
     </>

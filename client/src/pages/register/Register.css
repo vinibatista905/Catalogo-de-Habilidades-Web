@@ -1,148 +1,149 @@
 .Container-Register {
-    display: grid;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Register-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #002c99;
+  width: 100%;
+}
+
+.banner-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.banner-img {
+  width: 25rem;
+}
+
+.banner-desc-register {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.Register-section-title {
+  font-size: 3.2rem;
+}
+
+.Register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Register-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 20rem;
+}
+
+.Form-container-register {
+  width: 60%;
+  margin-top: 1rem;
+}
+
+.Register-Field {
+  border: none;
+  background: rgba(0, 0, 0, 0.15);
+  color: #000;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  border-radius: 7px;
+  width: 120%;
+  padding: 1rem;
+  transition: all 0.2s linear;
+}
+
+.Register-group {
+  margin-bottom: 1.2rem;
+}
+
+.Register-Field:focus {
+  outline: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Register-Error {
+  color: #ff8080;
+  margin: 1rem 0;
+}
+
+.Register-btn {
+  background: #0046f5;
+  color: #fdfdfd;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.Register-btn:hover {
+  background: #002c99;
+  transition: all 0.2s linear;
+}
+
+.form-desc {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.register-desc {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.Register-span {
+  font-weight: 800;
+  color: #ffb41d;
+  text-decoration: none;
+}
+
+/* RESPONSIVO */
+
+@media only screen and (max-width: 720px) {
+  .Container-Register {
+    display: flex;
     min-height: 100vh;
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column-reverse;
   }
-  
-  .Register-banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #002c99;
-    width: 100%;
-  }
-  
-  .banner-logo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  
-  .banner-img {
-    width: 25rem;
-  }
-  
+
   .banner-desc-register {
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
   }
-  
+
+  .banner-img {
+    width: 14rem;
+    margin-bottom: 2rem;
+  }
+
   .Register-section-title {
-    font-size: 3.2rem;
+    font-size: 2.5rem;
   }
-  
-  .Register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+  .Register-Field {
     width: 100%;
   }
-  
-  .Register-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-    margin-bottom: 20rem;
-  }
-  
+
   .Form-container-register {
-    width: 60%;
+    width: 100%;
     margin-top: 1rem;
   }
-  
-  .Register-Field {
-    border: none;
-    background: rgba(0, 0, 0, 0.15);
-    color: #000;
-    margin-top: 1rem;
-    margin-bottom: 0;
-    font-size: 1.2rem;
-    border-radius: 7px;
-    width: 120%;
-    padding: 1rem;
-    transition: all 0.2s linear;
-  }
-  
-  .Register-group {
-    margin-bottom: 1.2rem;
-  }
-  
-  .Register-Field:focus {
-    outline: none;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .Register-Error {
-    color: #ff8080;
-    margin: 1rem 0;
-  }
-  
-  .Register-btn {
-    background: #0046f5;
-    color: #fdfdfd;
-    padding: 0.5rem 2rem;
-    border: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    cursor: pointer;
-  }
-  
-  .Register-btn:hover {
-    background: #002c99;
-    transition: all 0.2s linear;
-  }
-  
-  .form-desc {
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-  
-  .register-desc {
-    font-size: 1.1rem;
-    margin-top: 2rem;
-  }
-  
-  .Register-span {
-    font-weight: 800;
-    color: #ffb41d;
-    text-decoration: none;
-  }
-  
-  /* RESPONSIVO */
-  
-  @media only screen and (max-width: 720px) {
-    .Container-Register {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column-reverse;
-    }
-  
-    .banner-desc {
-      color: #ffffff;
-      font-size: 0.8rem;
-      margin-bottom: 0.8rem;
-    }
-  
-    .banner-img {
-      width: 14rem;
-      margin-bottom: 2rem;
-    }
-  
-    .Register-section-title {
-      font-size: 2.5rem;
-    }
-  
-    .Register-Field {
-      width: 100%;
-    }
-  
-    .Form-container-register {
-      width: 100%;
-      margin-top: 1rem;
-    }
-  }
-  
+}

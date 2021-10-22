@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import axios from "axios";
@@ -8,6 +8,8 @@ import Footer from "../../components/footer/Footer";
 import "./Login.css";
 
 const Login = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const handleSubmit = (values) => {
     console.log(values);
     axios.post("http://localhost:5000/user/login", values).then((resp) => {
@@ -25,10 +27,9 @@ const Login = () => {
   return (
     <>
       <div className="Container-Login">
-        
         <div className="Login-banner">
-          <div  className='banner-logo'>
-          <Logo className='logo' />
+          <div className="banner-logo">
+            <Logo className="logo" />
           </div>
           <p className="banner-desc">
             Faça login para acessar seu catálogo de habilidades.
@@ -77,12 +78,20 @@ const Login = () => {
                       className="Login-Error"
                     />
                   </div>
-                  <button className="Login-btn" type="submit">
+                  <button
+                    onClick={() => setIsVisible(true)}
+                    className="Login-btn"
+                    type="submit"
+                  >
                     Login
                   </button>
+                  <br />
+                  <span className={isVisible ? "error-show" : "error-hidden"}>
+                    E-mail ou senha inválido
+                  </span>
                   <p className="register-desc">
                     Ainda não possui uma conta?
-                    <br />{" "}
+                    <br />
                     <a href="/register" className="Login-span">
                       Registre-se aqui.
                     </a>

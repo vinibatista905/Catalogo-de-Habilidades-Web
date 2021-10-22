@@ -88,6 +88,7 @@
   border: none;
   border-radius: 5px;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
@@ -103,13 +104,23 @@
 
 .register-desc {
   font-size: 1.1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .Login-span {
   font-weight: 800;
   color: #ffb41d;
   text-decoration: none;
+}
+
+.error-show {
+  opacity: 1;
+  color: #ff8080;
+  font-weight: 700;
+}
+
+.error-hidden {
+  opacity: 0;
 }
 
 /* RESPONSIVO */

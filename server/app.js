@@ -4,10 +4,10 @@ const cors = require('cors');
 
 const db = require('./models')
 
-const bodyParser = require("body-parser");
 require("dotenv/config");
 
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 const userRouter = require("./routes/userRouter");

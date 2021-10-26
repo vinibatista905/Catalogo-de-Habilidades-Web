@@ -12,6 +12,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    passwordResetToken: {
+      type: DataTypes.STRING,
+      select: false,
+    },
+    passwordResetExpires: {
+      type: DataTypes.DATE,
+      select: false,
+    },
     
   });
 

@@ -79,7 +79,11 @@ const Login = () => {
                     />
                   </div>
                   <button
-                    onClick={() => setIsVisible(true)}
+                    onClick={() =>
+                      setTimeout(() => {
+                        setIsVisible(true);
+                      }, 1000)
+                    }
                     className="Login-btn"
                     type="submit"
                   >

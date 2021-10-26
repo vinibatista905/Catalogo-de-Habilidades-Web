@@ -80,7 +80,11 @@ const Register = () => {
                     />
                   </div>
                   <button
-                    onClick={() => setIsVisible(true)}
+                    onClick={() =>
+                      setTimeout(() => {
+                        setIsVisible(true);
+                      }, 1000)
+                    }
                     className="Register-btn"
                     type="submit"
                   >

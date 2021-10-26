@@ -1,10 +1,11 @@
 import React from 'react'
+import HomePage from '../../components/homepage';
 
 const Homepage = () => {
     return (
-        <div>
-            <h1>Pagina inicial</h1>
-        </div>
+        <>
+            <HomePage />
+        </>
     )
 }
 

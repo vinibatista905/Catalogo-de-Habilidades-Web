@@ -5,20 +5,20 @@
     flex-direction: column;
 }
 
-img{
-    width: 50%;
+.NF-img{
+    width: 40rem;
 }
 
-h1{
+.NF-title{
     font-size: 4rem;
 }
 
 @media only screen and (max-width: 720px){
-    img{
+    .NF-img{
         width: 70%;
     }
     
-    h1{
+    .NF-title{
         font-size: 2rem;
     }
 }

@@ -1,25 +1,27 @@
-:root{
+:root {
   /* BACKGROUNDS */
-  --blue-bg-color:#002c99;
-  --yellow-bg-color:#ffb41d;
-  --gray-bg-color:#d7dadf;  
-  
+  --blue-bg-color: #002c99;
+  --yellow-bg-color: #ffb41d;
+  --gray-bg-color: #d7dadf;
+
   /* BUTTONS */
-  --blue-btn-color:#0046f5;
-  --dk-blue-btn-color:#002D94;
+  --blue-btn-color: #0046f5;
+  --dk-blue-btn-color: #002d94;
+  --yellow-btn-color: #ffb41d;
 
   /* TEXTS */
-  --white-tx-color:#ffffff;
-  --red-tx-color:#ff0022;
-  --black-tx-color:#000;
-  --dk-blue-text-color:#001432;
-  
+  --white-tx-color: #ffffff;
+  --gray-tx-color: #d7dadf;
+  --red-tx-color: #ff0022;
+  --black-tx-color: #000;
+  --dk-blue-text-color: #001432;
+
   /* ICONS */
-  --blue-i-color:#0046f5;
-  --dk-blue-i-color:#001432;
+  --blue-i-color: #0046f5;
+  --dk-blue-i-color: #001432;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,10 +29,9 @@
 
 body {
   margin: 0;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
-

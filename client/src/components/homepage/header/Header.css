@@ -2,7 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
+  height: 12vh;
+  width: 80%;
+  margin: auto;
 }
 
 .header-logo {
@@ -10,7 +12,6 @@
   justify-content: center;
   align-items: center;
   color: var(--white-tx-color);
-  margin-left: 2rem;
 }
 
 .header-logo-icon {
@@ -43,7 +44,7 @@
 
 .header-btn {
   width: 8rem;
-  height: 2.2rem;
+  height: 2.4rem;
   border-radius: 10px;
   background: transparent;
   border: 2px var(--white-tx-color) solid;
@@ -52,6 +53,7 @@
   transition: ease-out 0.3s;
   font-size: 1.2rem;
   outline: none;
+  color: var(--white-tx-color);
 }
 
 .header-login {

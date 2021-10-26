@@ -8,18 +8,17 @@ const Hero = () => {
       <div className="hero-section-1">
         <h2 className="hero-title">O Seu Catálogo de Habilidades</h2>
         <p className="hero-desc">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-          saepe quod placeat exercitationem nesciunt rem quas possimus eum
-          dignissimos numquam ducimus ullam? Eius fugiat incidunt sint tenetur
-          asperiores quis dolor?
+          Registre-se em poucos passos e comece agora mesmo a criar o seu
+          catálogo de habilidades! Você pode compartilhar o seu e ver o catálogo
+          de outras pessoas. Comece agora mesmo!
         </p>
         <div className="btn-wrap">
-          <button className="hero-btn-1">Registrar-se
-            <a href="/register"/>
-          </button>
-          <button className="hero-btn-2">Login
-            <a href="/login"/>
-          </button>
+          <a href="/register">
+            <button className="hero-btn-1">Registrar-se</button>
+          </a>
+          <a href="/login">
+            <button className="hero-btn-2">Login</button>
+          </a>
         </div>
       </div>
       <div className="hero-section-2">

@@ -16,7 +16,7 @@ const Header = () => {
         <a className='header-link' href='/'>Home</a>
         <a className='header-link' href='/'>Sobre</a>
         
-            <button className='header-btn'>Login<a href="/login"/></button>
+        <a href="/login"><button className='header-btn'>Login</button></a>
             </div>
         </div>
     )

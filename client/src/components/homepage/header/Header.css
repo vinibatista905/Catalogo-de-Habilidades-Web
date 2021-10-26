@@ -15,12 +15,12 @@
 }
 
 .header-logo-icon {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin-left: 0.5rem;
 }
 
 .header-logo-name {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .header-nav {
@@ -44,7 +44,7 @@
 
 .header-btn {
   width: 8rem;
-  height: 2.4rem;
+  height: 2.5rem;
   border-radius: 10px;
   background: transparent;
   border: 2px var(--white-tx-color) solid;
@@ -54,6 +54,7 @@
   font-size: 1.2rem;
   outline: none;
   color: var(--white-tx-color);
+  cursor: pointer;
 }
 
 .header-login {

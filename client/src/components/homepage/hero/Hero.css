@@ -24,13 +24,14 @@
 .hero-desc {
   color: var(--gray-tx-color);
   font-size: 1.2rem;
+  text-align: start;
 }
 
 .btn-wrap {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .hero-btn-1 {
@@ -45,6 +46,7 @@
   outline: none;
   margin-right: 2rem;
   cursor: pointer;
+  
 }
 
 .hero-btn-1:hover {

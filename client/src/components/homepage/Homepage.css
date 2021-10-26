@@ -1,6 +1,3 @@
-.page-container{
-  
-}
 
 .section-1{
 background-color: var(--blue-bg-color);
@@ -9,6 +6,5 @@ height: 70vh;
 }
 
 .section-2{
-    background-color: bisque;
-    height: 50vh;
+    height: 70vh;
 }

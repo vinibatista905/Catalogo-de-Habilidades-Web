@@ -4,6 +4,8 @@ import { Router, Switch, Route } from "react-router-dom";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import Forgot_Password from "../pages/forgot_password/Forgot_Password";
+import Password_Token from "../pages/password_token/Password_Token";
+import Reset_Password from "../pages/reset_password/Reset_Password";
 import Home from "../pages/home/Home";
 import Homepage from "../pages/homepage/Homepage";
 import NotFound from "./notFound/NotFound";
@@ -19,6 +21,8 @@ const Routes = () => (
       <Route component={Login} exact path="/login" />
       <Route component={Register} exact path="/register" />
       <Route component={Forgot_Password} exact path="/forgot_password" />
+      <Route component={Password_Token} exact path="/password_token" />
+      <Route component={Reset_Password} exact path="/reset_password" />
       <Route component={Homepage} exact path="/" />
       <PrivateRoute component={Home} exact path="/home" />
       <PrivateRoute component={NotFound} />

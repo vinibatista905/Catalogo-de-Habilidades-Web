@@ -4,7 +4,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { history } from "../../history";
 
-import "./Forgot_Password.css";
+import "./Password-Token.css";
 import Logo from "../../components/logo/Logo";
 import Footer from "../../components/footer/Footer";
 import {
@@ -13,7 +13,6 @@ import {
   BannerImg,
   ForgotPasswordBtn,
   ForgotPasswordContainer,
-  ForgotPasswordDesc,
   FormContainer,
   FormDesc,
   FormFields,
@@ -21,10 +20,9 @@ import {
   FormSubContainer,
   FormTitle,
   FormWrap,
-  LoginLink,
-} from "./Forgot_PasswordElements";
+} from "./Password_TokenElements";
 
-const Forgot_Password = () => {
+const Password_Token = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleSubmit = (values) => {
@@ -34,22 +32,20 @@ const Forgot_Password = () => {
       .then((resp) => {
         const { data } = resp;
         if (data) {
-          history.push("/password_token");
+          history.push("/reset_password");
         }
       });
   };
   const validations = yup.object().shape({
-    email: yup.string().email().required(),
+    token: yup.string().required(),
   });
   return (
     <>
       <ForgotPasswordContainer>
         <FormContainer>
           <FormWrap>
-            <FormTitle>Alterar Senha</FormTitle>
-            <FormInfo>
-              Insira o seu e-mail e enviaremos um token para alterar a senha.
-            </FormInfo>
+            <FormTitle>Token</FormTitle>
+            <FormInfo>Insira o token que enviamos para o seu e-mail.</FormInfo>
             <FormSubContainer>
               <Formik
                 initialValues={{}}
@@ -58,15 +54,15 @@ const Forgot_Password = () => {
               >
                 <Form>
                   <FormFields>
-                    <FormDesc>E-mail*</FormDesc>
+                    <FormDesc>Token*</FormDesc>
                     <Field
-                      name="email"
-                      placeholder="E-mail"
+                      name="token"
+                      placeholder="Token"
                       className="Register-Field"
                     />
                     <ErrorMessage
                       component="span"
-                      name="email"
+                      name="token"
                       className="Register-Error"
                     />
                   </FormFields>
@@ -83,12 +79,8 @@ const Forgot_Password = () => {
                   </ForgotPasswordBtn>
                   <br />
                   <span className={isVisible ? "error-show" : "error-hidden"}>
-                    E-mail não cadastrado
+                    Token inválido
                   </span>
-                  <ForgotPasswordDesc>
-                    Lembrou da sua senha?
-                    <br /> <LoginLink href="/login">Voltar para o login.</LoginLink>
-                  </ForgotPasswordDesc>
                 </Form>
               </Formik>
             </FormSubContainer>
@@ -100,7 +92,7 @@ const Forgot_Password = () => {
             <Logo className="logo" />
           </div>
           <BannerDesc>
-            Verifique seu e-mail para utilizar o token de alteração de senha.
+            Insira o token de alteração de senha que você recebeu no seu e-mail.
           </BannerDesc>
           <BannerImg
             src={require("../../assets/password.png").default}
@@ -112,4 +104,4 @@ const Forgot_Password = () => {
   );
 };
 
-export default Forgot_Password;
+export default Password_Token;

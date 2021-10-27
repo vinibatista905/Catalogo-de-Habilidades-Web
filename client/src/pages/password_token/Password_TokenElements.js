@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {
-  bgAmarelo,
   btnAzul,
   btnAzulEscuro,
   txBranco,
@@ -31,7 +30,7 @@ export const FormWrap = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-bottom: 28rem;
+  margin-bottom: 32rem;
 `;
 
 export const FormTitle = styled.h1`
@@ -86,22 +85,6 @@ export const ForgotPasswordBtn = styled.button`
   :hover {
     background: ${btnAzulEscuro};
     transition: all 0.2s linear;
-  }
-`;
-
-export const ForgotPasswordDesc = styled.p`
-  font-size: 1.1rem;
-  margin-top: 1.5rem;
-`;
-
-export const LoginLink = styled.a`
-  font-weight: 800;
-  color: ${bgAmarelo};
-  text-decoration: none;
-
-  :hover {
-    color: #f88030;
-    transition: 0.2s ease-in-out;
   }
 `;
 

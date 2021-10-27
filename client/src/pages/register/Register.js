@@ -7,6 +7,21 @@ import { history } from "../../history";
 import "./Register.css";
 import Logo from "../../components/logo/Logo";
 import Footer from "../../components/footer/Footer";
+import {
+  BannerContainer,
+  BannerDesc,
+  BannerImg,
+  FormContainer,
+  FormDesc,
+  FormFields,
+  FormSubContainer,
+  FormTitle,
+  FormWrap,
+  LoginLink,
+  RegisterBtn,
+  RegisterContainer,
+  RegisterDesc,
+} from "./RegisterElements";
 
 const Register = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,20 +42,20 @@ const Register = () => {
   });
   return (
     <>
-      <div className="Container-Register">
-        <div className="Register-container">
-          <div className="Register-wrap">
-            <h1 className="Register-section-title">Registre-se</h1>
+      <RegisterContainer>
+        <FormContainer>
+          <FormWrap>
+            <FormTitle>Registre-se</FormTitle>
             <p>Preencha os campos para continuar</p>
-            <div className="Form-container-register">
+            <FormSubContainer>
               <Formik
                 initialValues={{}}
                 onSubmit={handleSubmit}
                 validationSchema={validations}
               >
-                <Form className="Register">
-                  <div className="Register-group">
-                    <p className="form-desc">Nome*</p>
+                <Form>
+                  <FormFields>
+                    <FormDesc>Nome*</FormDesc>
                     <Field
                       name="name"
                       placeholder="Nome"
@@ -51,9 +66,9 @@ const Register = () => {
                       name="name"
                       className="Register-Error"
                     />
-                  </div>
-                  <div className="Register-group">
-                    <p className="form-desc">E-mail*</p>
+                  </FormFields>
+                  <FormFields>
+                    <FormDesc>E-mail*</FormDesc>
                     <Field
                       name="email"
                       placeholder="E-mail"
@@ -64,9 +79,9 @@ const Register = () => {
                       name="email"
                       className="Register-Error"
                     />
-                  </div>
-                  <div className="Register-group">
-                    <p className="form-desc">Senha*</p>
+                  </FormFields>
+                  <FormFields>
+                    <FormDesc>Senha*</FormDesc>
                     <Field
                       name="password"
                       placeholder="Senha"
@@ -78,48 +93,43 @@ const Register = () => {
                       name="password"
                       className="Register-Error"
                     />
-                  </div>
-                  <button
+                  </FormFields>
+                  <RegisterBtn
                     onClick={() =>
                       setTimeout(() => {
                         setIsVisible(true);
                       }, 1000)
                     }
-                    className="Register-btn"
                     type="submit"
                   >
                     Registrar
-                  </button>
+                  </RegisterBtn>
                   <br />
                   <span className={isVisible ? "error-show" : "error-hidden"}>
                     Dados inválidos ou já cadastrados
                   </span>
-                  <p className="register-desc">
+                  <RegisterDesc>
                     Já possui uma conta?
-                    <br />{" "}
-                    <a href="/login" className="Register-span">
-                      Faça login aqui.
-                    </a>
-                  </p>
+                    <br /> <LoginLink href="/login">Faça login aqui.</LoginLink>
+                  </RegisterDesc>
                 </Form>
               </Formik>
-            </div>
-          </div>
-        </div>
+            </FormSubContainer>
+          </FormWrap>
+        </FormContainer>
 
-        <div className="Register-banner">
-          <div className="banner-logo-register">
+        <BannerContainer>
+          <div>
             <Logo className="logo" />
           </div>
-          <p className="banner-desc-register">
+          <BannerDesc>
             Cadastre-se e comece agora a criar o seu catálogo de habilidades.
-          </p>
-          <img
-            className="banner-img"
+          </BannerDesc>
+          <BannerImg
             src={require("../../assets/register-1.png").default}
-          ></img>
-        </div>
-      </div>
+          ></BannerImg>
+        </BannerContainer>
+      </RegisterContainer>
       <Footer />
     </>
   );

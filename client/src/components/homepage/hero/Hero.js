@@ -1,33 +1,39 @@
 import React from "react";
-
-import "./Hero.css";
+import {
+  BtnWrap,
+  HeroBtn1,
+  HeroBtn2,
+  HeroContainer,
+  HeroDesc,
+  HeroImg,
+  HeroSection1,
+  HeroSection2,
+  HeroTitle,
+} from "./HeroElements";
 
 const Hero = () => {
   return (
-    <div className="hero-container">
-      <div className="hero-section-1">
-        <h2 className="hero-title">O Seu Catálogo de Habilidades</h2>
-        <p className="hero-desc">
+    <HeroContainer>
+      <HeroSection1>
+        <HeroTitle>O Seu Catálogo de Habilidades</HeroTitle>
+        <HeroDesc>
           Registre-se em poucos passos e comece agora mesmo a criar o seu
-          catálogo de habilidades! Você pode compartilhar o seu e ver o catálogo
-          de outras pessoas. Comece agora mesmo!
-        </p>
-        <div className="btn-wrap">
+          catálogo de habilidades! Você pode compartilhar o seu e explorar o
+          catálogo de outras pessoas. Comece agora mesmo!
+        </HeroDesc>
+        <BtnWrap>
           <a href="/register">
-            <button className="hero-btn-1">Registrar-se</button>
+            <HeroBtn1>Registrar-se</HeroBtn1>
           </a>
           <a href="/login">
-            <button className="hero-btn-2">Login</button>
+            <HeroBtn2>Login</HeroBtn2>
           </a>
-        </div>
-      </div>
-      <div className="hero-section-2">
-        <img
-          className="hero-img"
-          src={require("../../../assets/hero-2.png").default}
-        />
-      </div>
-    </div>
+        </BtnWrap>
+      </HeroSection1>
+      <HeroSection2>
+        <HeroImg src={require("../../../assets/hero-2.png").default} />
+      </HeroSection2>
+    </HeroContainer>
   );
 };
 

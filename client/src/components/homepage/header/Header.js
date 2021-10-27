@@ -1,25 +1,33 @@
-import React from 'react'
-import { IoLogoOctocat } from 'react-icons/io'
+import React from "react";
+import {
+  HeaderBtn,
+  HeaderContainer,
+  HeaderLink,
+  HeaderLogo,
+  HeaderNav,
+  LogoIcon,
+  LogoName,
+} from "./HeaderElements";
 
-
-import './Header.css'
 
 const Header = () => {
-    return (
-        <div className='header-container'>
-            <div className='header-logo'>
-            <h1 className='header-logo-name'>Skills Cat</h1>
-            <IoLogoOctocat className='header-logo-icon' />
-        </div>
+  return (
+    <HeaderContainer>
+      <HeaderLogo>
+        <LogoName>Skills Cat</LogoName>
+        <LogoIcon />
+      </HeaderLogo>
 
-        <div className='header-nav'>
-        <a className='header-link' href='/'>Home</a>
-        <a className='header-link' href='/'>Sobre</a>
-        
-        <a href="/login"><button className='header-btn'>Login</button></a>
-            </div>
-        </div>
-    )
-}
+      <HeaderNav>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/#about">Sobre</HeaderLink>
 
-export default Header
+        <a href="/login">
+          <HeaderBtn>Login</HeaderBtn>
+        </a>
+      </HeaderNav>
+    </HeaderContainer>
+  );
+};
+
+export default Header;

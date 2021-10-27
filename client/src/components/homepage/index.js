@@ -4,20 +4,20 @@ import Footer from "../footer/Footer";
 import Hero from "./hero/Hero";
 import About from "./about/About";
 
-import "./Homepage.css";
+import { Container, Section1, Section2 } from "./HomepageElements";
 
 const HomePage = () => {
   return (
-    <div className="page-container">
-      <div className="section-1">
+    <Container>
+      <Section1>
         <Header />
         <Hero />
-      </div>
-      <div className="section-2">
+      </Section1>
+      <Section2>
         <About />
-      </div>
+      </Section2>
       <Footer />
-    </div>
+    </Container>
   );
 };
 

@@ -1,13 +1,16 @@
-import React from 'react'
-import './notFound.css'
+import React from "react";
+import { Container, NotFoundDesc, NotFoundImg } from "./NotFoundElements";
 
 const NotFound = () => {
-    return (
-        <div className='container'>
-            <h1 className='NF-title'>Page Not Found</h1>
-            <img className='NF-img' src={require('../../assets/404.png').default} alt="Página Não Encontrada" />
-        </div>
-    )
-}
+  return (
+    <Container>
+      <NotFoundDesc>Page Not Found</NotFoundDesc>
+      <NotFoundImg
+        src={require("../../assets/404.png").default}
+        alt="Página Não Encontrada"
+      />
+    </Container>
+  );
+};
 
-export default NotFound
+export default NotFound;

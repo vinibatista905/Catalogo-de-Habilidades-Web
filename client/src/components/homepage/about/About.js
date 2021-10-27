@@ -1,30 +1,54 @@
-import React from 'react'
+import React from "react";
 
-import './About.css'
+import {
+  AboutCard,
+  AboutContainer,
+  CardBtn,
+  CardDesc,
+  CardIcon,
+  CardTitle,
+} from "./AboutElements";
 
 const About = () => {
-    return (
-        <div className='about-container'> 
-            <div className="about-card">
-                <img src={require('../../../assets/dev.png').default} className='card-icon' />
-                <h4 className='card-title'>Desenvolvedores</h4>
-                <p className='card-desc'>Insira as suas principais habilidades e experiências, e demonstre para o seu gestor que você é capacitado para novos desafios!</p>
-                
-            </div>
+  return (
+    <AboutContainer id="about">
+      <AboutCard>
+        <CardIcon src={require("../../../assets/dev.png").default} />
+        <CardTitle>Desenvolvedores</CardTitle>
+        <CardDesc>
+          Insira as suas principais habilidades e experiências, e demonstre para
+          o seu gestor que você é capacitado para novos desafios!
+        </CardDesc>
+        <a href="/register">
+          <CardBtn>Começar</CardBtn>
+        </a>
+      </AboutCard>
 
-            <div className="about-card">
-                <img src={require('../../../assets/manager.png').default} className='card-icon' />
-                <h4 className='card-title'>Gestores</h4>
-                <p className='card-desc'>Monte e gerencie a sua equipe conforme as habilidades de cada integrante.</p>
-            </div>
+      <AboutCard>
+        <CardIcon src={require("../../../assets/manager.png").default} />
+        <CardTitle>Gestores</CardTitle>
+        <CardDesc>
+          Monte e gerencie a sua equipe conforme as habilidades de cada
+          integrante.
+        </CardDesc>
+        <a href="/register">
+          <CardBtn>Começar</CardBtn>
+        </a>
+      </AboutCard>
 
-            <div className="about-card">
-                <img src={require('../../../assets/rh.png').default} className='card-icon' />
-                <h4 className='card-title'>Recursos Humanos</h4>
-                <p className='card-desc'>Acompanhe as habilidades dos colaboradores para planejar treinamentos ou cursos.</p>
-            </div>
-        </div>
-    )
-}
+      <AboutCard>
+        <CardIcon src={require("../../../assets/rh.png").default} />
+        <CardTitle>Recursos Humanos</CardTitle>
+        <CardDesc>
+          Acompanhe as habilidades dos colaboradores para planejar treinamentos
+          ou cursos.
+        </CardDesc>
+        <a href="/register">
+          <CardBtn>Começar</CardBtn>
+        </a>
+      </AboutCard>
+    </AboutContainer>
+  );
+};
 
-export default About
+export default About;

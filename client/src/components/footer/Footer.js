@@ -5,50 +5,44 @@ import {
   AiFillGithub,
   AiOutlineTwitter,
 } from "react-icons/ai";
-import "./Footer.css";
+import {
+  FooterContainer,
+  FooterIcon,
+  FooterInfo,
+  IconsWrap,
+} from "./FooterElements";
 
 const Footer = () => {
   return (
-    <div className="Footer">
-      
-      <div className="Info">
+    <FooterContainer>
+      <FooterInfo>
         <small>©Skills Cat 2021</small>
-        </div>
-        <div className="Info">
+      </FooterInfo>
+      <FooterInfo>
         <small>Criado por Vinicius Batista</small>
-      </div>
+      </FooterInfo>
 
-      <div className="Icons-wrap">
-        <a
-          className="Footer-Icon"
+      <IconsWrap>
+        <FooterIcon
           href="https://www.instagram.com/vinaobatista/"
           target="_blank"
         >
           <AiOutlineInstagram />
-        </a>
-        <a
-          className="Footer-Icon"
+        </FooterIcon>
+        <FooterIcon
           href="https://www.linkedin.com/in/vinicius-batista-0120016a/"
           target="_blank"
         >
           <AiFillLinkedin />
-        </a>
-        <a
-          className="Footer-Icon"
-          href="https://github.com/vinibatista905"
-          target="_blank"
-        >
+        </FooterIcon>
+        <FooterIcon href="https://github.com/vinibatista905" target="_blank">
           <AiFillGithub />
-        </a>
-        <a
-          className="Footer-Icon"
-          href="https://twitter.com/v1n1san"
-          target="_blank"
-        >
+        </FooterIcon>
+        <FooterIcon href="https://twitter.com/v1n1san" target="_blank">
           <AiOutlineTwitter />
-        </a>
-      </div>
-    </div>
+        </FooterIcon>
+      </IconsWrap>
+    </FooterContainer>
   );
 };
 

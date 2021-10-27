@@ -6,6 +6,22 @@ import { history } from "../../history";
 import Logo from "../../components/logo/Logo";
 import Footer from "../../components/footer/Footer";
 import "./Login.css";
+import {
+  BannerContainer,
+  BannerDesc,
+  BannerImg,
+  BannerLogo,
+  FieldContainer,
+  FieldWrap,
+  FormBtn,
+  FormContainer,
+  FormDesc,
+  FormTitle,
+  FormWrap,
+  LoginContainer,
+  RegisterDesc,
+  RegisterLink,
+} from "./LoginElements";
 
 const Login = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,33 +42,32 @@ const Login = () => {
   });
   return (
     <>
-      <div className="Container-Login">
-        <div className="Login-banner">
-          <div className="banner-logo">
-            <Logo className="logo" />
-          </div>
-          <p className="banner-desc">
+      <LoginContainer>
+        <BannerContainer>
+          <BannerLogo>
+            <Logo />
+          </BannerLogo>
+          <BannerDesc>
             Faça login para acessar seu catálogo de habilidades.
-          </p>
-          <img
-            className="banner-img"
+          </BannerDesc>
+          <BannerImg
             src={require("../../assets/login-2.png").default}
-          ></img>
-        </div>
+          ></BannerImg>
+        </BannerContainer>
 
-        <div className="Login-container">
-          <div className="Login-wrap">
-            <h1 className="Login-section-title">Login</h1>
+        <FormContainer>
+          <FormWrap>
+            <FormTitle>Login</FormTitle>
             <p>Preencha os campos para continuar</p>
-            <div className="Form-container-login">
+            <FieldContainer>
               <Formik
                 initialValues={{}}
                 onSubmit={handleSubmit}
                 validationSchema={validations}
               >
                 <Form className="Login">
-                  <div className="Login-group">
-                    <p className="form-desc">E-mail*</p>
+                  <FieldWrap>
+                    <FormDesc>E-mail*</FormDesc>
                     <Field
                       name="email"
                       placeholder="E-mail"
@@ -63,9 +78,9 @@ const Login = () => {
                       name="email"
                       className="Login-Error"
                     />
-                  </div>
-                  <div className="Login-group">
-                    <p className="form-desc">Senha*</p>
+                  </FieldWrap>
+                  <FieldWrap>
+                    <FormDesc>Senha*</FormDesc>
                     <Field
                       name="password"
                       placeholder="Senha"
@@ -77,35 +92,34 @@ const Login = () => {
                       name="password"
                       className="Login-Error"
                     />
-                  </div>
-                  <button
+                  </FieldWrap>
+                  <FormBtn
                     onClick={() =>
                       setTimeout(() => {
                         setIsVisible(true);
                       }, 1000)
                     }
-                    className="Login-btn"
                     type="submit"
                   >
                     Login
-                  </button>
+                  </FormBtn>
                   <br />
                   <span className={isVisible ? "error-show" : "error-hidden"}>
                     E-mail ou senha inválido
                   </span>
-                  <p className="register-desc">
+                  <RegisterDesc>
                     Ainda não possui uma conta?
                     <br />
-                    <a href="/register" className="Login-span">
+                    <RegisterLink href="/register">
                       Registre-se aqui.
-                    </a>
-                  </p>
+                    </RegisterLink>
+                  </RegisterDesc>
                 </Form>
               </Formik>
-            </div>
-          </div>
-        </div>
-      </div>
+            </FieldContainer>
+          </FormWrap>
+        </FormContainer>
+      </LoginContainer>
       <Footer />
     </>
   );

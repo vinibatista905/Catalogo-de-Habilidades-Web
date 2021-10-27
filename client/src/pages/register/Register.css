@@ -1,58 +1,7 @@
-.Container-Register {
-  display: grid;
-  min-height: 100vh;
-  grid-template-columns: 1fr 1fr;
-}
-
-.Register-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: var(--blue-bg-color);
-  width: 100%;
-}
-
 .banner-logo {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-}
-
-.banner-img {
-  width: 25rem;
-}
-
-.banner-desc-register {
-  color: var(--white-tx-color);
-  font-size: 1.1rem;
-  text-align: center;
-}
-
-.Register-section-title {
-  font-size: 3.2rem;
-}
-
-.Register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-}
-
-.Register-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 80%;
-  margin-bottom: 14rem;
-}
-
-.Form-container-register {
-  width: 60%;
-  margin-top: 1rem;
 }
 
 .Register-Field {
@@ -68,10 +17,6 @@
   transition: all 0.2s linear;
 }
 
-.Register-group {
-  margin-bottom: 1.2rem;
-}
-
 .Register-Field:focus {
   outline: none;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
@@ -82,62 +27,9 @@
   margin: 1rem 0;
 }
 
-.Register-btn {
-  background: var(--blue-btn-color);
-  color: var(--white-tx-color);
-  padding: 0.5rem 2rem;
-  border: none;
-  border-radius: 5px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
-
-.Register-btn:hover {
-  background: var(--dk-blue-btn-color);
-  transition: all 0.2s linear;
-}
-
-.form-desc {
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.register-desc {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-
-.Register-span {
-  font-weight: 800;
-  color: var(--yellow-bg-color);
-  text-decoration: none;
-}
-
 /* RESPONSIVO */
 
 @media only screen and (max-width: 720px) {
-  .Container-Register {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column-reverse;
-  }
-
-  .banner-desc-register {
-    font-size: 0.8rem;
-    margin-bottom: 0.8rem;
-    text-align: center;
-  }
-
-  .banner-img {
-    width: 14rem;
-    margin-bottom: 2rem;
-  }
-
-  .Register-section-title {
-    font-size: 2.5rem;
-  }
-
   .Register-Field {
     width: 100%;
   }

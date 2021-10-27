@@ -3,55 +3,17 @@ import {
   bgAmarelo,
   btnAzul,
   btnAzulEscuro,
-  txAzul,
   txBranco,
-  txPreto,
 } from "../../components/UI/variaveis";
 
-export const LoginContainer = styled.div`
+export const ForgotPasswordContainer = styled.div`
   display: grid;
   min-height: 100vh;
   grid-template-columns: 1fr 1fr;
 
   @media only screen and (max-width: 720px) {
     display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-`;
-
-export const BannerContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: var(--blue-bg-color);
-  width: 100%;
-`;
-
-export const BannerLogo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-`;
-
-export const BannerDesc = styled.div`
-  color: ${txBranco};
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-
-  @media only screen and (max-width: 720px) {
-    font-size: 0.8rem;
-    margin-bottom: 0.8rem;
-  }
-`;
-
-export const BannerImg = styled.img`
-  width: 25rem;
-
-  @media only screen and (max-width: 720px) {
-    width: 14rem;
-    margin-bottom: 2rem;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -65,11 +27,11 @@ export const FormContainer = styled.div`
 
 export const FormWrap = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-bottom: 20rem;
+  margin-bottom: 29rem;
 `;
 
 export const FormTitle = styled.h1`
@@ -80,16 +42,28 @@ export const FormTitle = styled.h1`
   }
 `;
 
-export const FieldContainer = styled.div`
+export const FormInfo = styled.p`
+  text-align: center;
+  margin-left: 2.2rem;
+
+  @media only screen and (max-width: 720px) {
+    
+  margin-left: 0;
+  margin-bottom: 1rem;
+  }
+`;
+
+export const FormSubContainer = styled.div`
   width: 60%;
   margin-top: 1rem;
 
   @media only screen and (max-width: 720px) {
     width: 100%;
+    margin-top: 1rem;
   }
 `;
 
-export const FieldWrap = styled.div`
+export const FormFields = styled.div`
   margin-bottom: 1.2rem;
 `;
 
@@ -98,29 +72,15 @@ export const FormDesc = styled.p`
   font-weight: 700;
 `;
 
-export const PasswordLink = styled.a`
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: ${btnAzul};
-  margin-bottom: 1rem;
-  display: block;
-
-  :hover{
-    color: ${txPreto};
-    transition: all 0.2s linear;
-  }
-`;
-
-export const FormBtn = styled.button`
+export const ForgotPasswordBtn = styled.button`
   background: ${btnAzul};
   color: ${txBranco};
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 1.8rem;
   border: none;
   border-radius: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
-  font-size: 1.2rem;
 
   :hover {
     background: ${btnAzulEscuro};
@@ -128,13 +88,12 @@ export const FormBtn = styled.button`
   }
 `;
 
-export const RegisterDesc = styled.p`
+export const ForgotPasswordDesc = styled.p`
   font-size: 1.1rem;
   margin-top: 1rem;
 `;
 
-export const RegisterLink = styled.a`
-  font-size: 1.2rem;
+export const LoginLink = styled.a`
   font-weight: 800;
   color: ${bgAmarelo};
   text-decoration: none;
@@ -142,5 +101,36 @@ export const RegisterLink = styled.a`
   :hover {
     color: #f88030;
     transition: 0.2s ease-in-out;
+  }
+`;
+
+export const BannerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--blue-bg-color);
+  width: 100%;
+`;
+
+export const BannerDesc = styled.p`
+  color: ${txBranco};
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 0.8rem;
+    margin-bottom: 1.6rem;
+    text-align: center;
+  }
+`;
+
+export const BannerImg = styled.img`
+  width: 25rem;
+
+  @media only screen and (max-width: 720px) {
+    width: 14rem;
+    margin-bottom: 2rem;
   }
 `;

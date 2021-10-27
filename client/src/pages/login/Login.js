@@ -19,6 +19,7 @@ import {
   FormTitle,
   FormWrap,
   LoginContainer,
+  PasswordLink,
   RegisterDesc,
   RegisterLink,
 } from "./LoginElements";
@@ -93,6 +94,7 @@ const Login = () => {
                       className="Login-Error"
                     />
                   </FieldWrap>
+                  <PasswordLink href='/forgot_password'>Esqueceu a senha?</PasswordLink>
                   <FormBtn
                     onClick={() =>
                       setTimeout(() => {

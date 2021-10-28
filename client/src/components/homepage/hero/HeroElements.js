@@ -7,6 +7,11 @@ export const HeroContainer = styled.div`
   justify-content: center;
   width: 80%;
   margin: auto;
+
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const HeroSection1 = styled.div`
@@ -15,6 +20,10 @@ export const HeroSection1 = styled.div`
   justify-content: center;
   align-items: center;
   width: 50vw;
+
+  @media only screen and (max-width: 720px) {
+    width: 80vw;
+  }
 `;
 
 export const HeroSection2 = styled.div`
@@ -29,12 +38,23 @@ export const HeroTitle = styled.h2`
   font-size: 4rem;
   text-align: start;
   margin-bottom: 2rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 export const HeroDesc = styled.p`
   color: ${txCinza};
   font-size: 1.2rem;
   text-align: start;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 export const BtnWrap = styled.div`
@@ -42,6 +62,11 @@ export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-top: 2.5rem;
+
+  @media only screen and (max-width: 720px) {
+    justify-content: space-evenly;
+    margin-bottom: 0.8rem;
+  }
 `;
 
 export const HeroBtn1 = styled.button`
@@ -59,6 +84,12 @@ export const HeroBtn1 = styled.button`
 
   :hover {
     box-shadow: inset 8rem 0 0 0 #f24b43;
+  }
+
+  @media only screen and (max-width: 720px) {
+    margin-right: 0;
+    
+
   }
 `;
 
@@ -81,8 +112,17 @@ export const HeroBtn2 = styled.button`
     border: 2px #f24b43 solid;
     color: ${txPreto};
   }
+
+  @media only screen and (max-width: 720px) {
+    margin-right: 0;
+  }
 `;
 
 export const HeroImg = styled.img`
   width: 35rem;
+
+  @media only screen and (max-width: 720px) {
+    width: 150%;
+    margin-bottom: 1rem;
+  }
 `;

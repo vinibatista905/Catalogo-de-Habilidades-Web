@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { iconAzul, iconAzulEscuro, txAzul } from "../UI/variaveis";
+import { bgCinza, iconAzul, iconAzulEscuro, txAzul } from "../UI/variaveis";
 
 export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  background: var(--gray-bg-color);
+  background: ${bgCinza};
   width: 100%;
   height: 6vh;
   margin-top: auto;

@@ -9,6 +9,12 @@ export const HeaderContainer = styled.div`
   height: 12vh;
   width: 80%;
   margin: auto;
+
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const HeaderLogo = styled.div`
@@ -20,11 +26,19 @@ export const HeaderLogo = styled.div`
 
 export const LogoName = styled.h1`
   font-size: 2.5rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const LogoIcon = styled(IoLogoOctocat)`
   font-size: 2.6rem;
   margin-left: 0.5rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const HeaderNav = styled.div`
@@ -43,6 +57,11 @@ export const HeaderLink = styled.a`
     color: ${btnAmarelo};
     margin-bottom: 0.5rem;
     border-bottom: 2px ${btnAmarelo} solid;
+  }
+
+  @media only screen and (max-width: 720px) {
+    font-size: 0.8rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -64,5 +83,12 @@ export const HeaderBtn = styled.button`
     box-shadow: inset 8rem 0 0 0 ${btnAmarelo};
     border: 2px ${btnAmarelo} solid;
     color: ${txPreto};
+  }
+
+  @media only screen and (max-width: 720px) {
+    width: 3rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    margin-right: 0;
   }
 `;

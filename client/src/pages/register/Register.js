@@ -31,7 +31,10 @@ const Register = () => {
     axios.post("http://localhost:5000/user/register", values).then((resp) => {
       const { data } = resp;
       if (data) {
-        history.push("/login");
+        window.alert("Registrado com sucesso!");
+        setTimeout(() => {
+          history.push("/login");
+        }, 1000);
       }
     });
   };
@@ -98,7 +101,7 @@ const Register = () => {
                     onClick={() =>
                       setTimeout(() => {
                         setIsVisible(true);
-                      }, 1000)
+                      }, 2000)
                     }
                     type="submit"
                   >

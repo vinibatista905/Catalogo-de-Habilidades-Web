@@ -8,6 +8,14 @@ export const AboutContainer = styled.div`
   width: 80%;
   height: 100%;
   margin: auto;
+
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
+    width: 100%;
+  margin: 4rem 0;
+  
+
+  }
 `;
 
 export const AboutCard = styled.div`
@@ -28,21 +36,39 @@ export const AboutCard = styled.div`
     transform: scale(1.1);
     transition: all 0.4s ease-in-out;
   }
+
+  @media only screen and (max-width: 720px) {
+    width: 16rem;
+    height: 60vh;
+    margin-bottom: 2rem;
+  }
 `;
 
 export const CardIcon = styled.img`
   width: 4rem;
   margin: 2rem 0;
+
+  @media only screen and (max-width: 720px) {
+    width: 3.5rem;
+  }
 `;
 
 export const CardTitle = styled.h4`
   font-size: 1.8rem;
   margin-bottom: 2rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const CardDesc = styled.p`
   text-align: center;
   font-size: 1.2rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const CardBtn = styled.button`
@@ -60,5 +86,11 @@ export const CardBtn = styled.button`
 
   :hover {
     box-shadow: inset 8rem 0 0 0 #f88030;
+  }
+
+  @media only screen and (max-width: 720px) {
+    width: 7rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 `;

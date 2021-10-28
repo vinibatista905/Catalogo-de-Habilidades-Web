@@ -8,6 +8,7 @@ import { Container, Section1, Section2 } from "./HomepageElements";
 
 const HomePage = () => {
   return (
+    <>
     <Container>
       <Section1>
         <Header />
@@ -16,8 +17,9 @@ const HomePage = () => {
       <Section2>
         <About />
       </Section2>
-      <Footer />
     </Container>
+      <Footer />
+      </>
   );
 };
 

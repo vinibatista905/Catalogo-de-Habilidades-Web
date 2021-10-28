@@ -40,7 +40,7 @@ const userController = {
       where: { email: req.body.email },
     });
     if (!selectedUser) {
-      return res.status(400).send("Email ou senha incorreto");
+      return res.status(400).send("Email incorreto");
     }
 
     const passwordAndUserMatch = bcrypt.compareSync(
@@ -77,23 +77,23 @@ const userController = {
         await user.save();
 
         console.log(token, now);
-        res.status(200).send("Token gerado com sucesso");
 
-        mailer.sendMail(
+        const message = await mailer.sendMail(
           {
-            to: email,
             from: "vudmbbatista@gmail.com",
-            template: "auth/forgot_password",
+            to: email,
+            subject: "Token para alteração de senha",
             context: { token },
+            text: `Utilize este token para alterar a sua senha: ${token}`,
+            html: "<p>Segue seu token</p>",
           },
           (err) => {
             if (err) {
               return res
                 .status(400)
                 .send({ error: "Não foi possível enviar o email" });
-            } else {
-              return res.status(200).send("Token enviado para o seu e-mail.");
             }
+            return res.status(200).send("E-mail enviado com sucesso");
           }
         );
       }
@@ -101,6 +101,43 @@ const userController = {
       res
         .status(400)
         .send({ error: "Erro no esqueci a senha, tente novamente" });
+    }
+  },
+
+  reset_password: async function (req, res) {
+    const { email, token } = req.body;
+    const password = bcrypt.hashSync(req.body.password);
+
+    try {
+      const user = await User.findOne({
+        where: { email: req.body.email, passwordResetToken: req.body.token },
+      });
+
+      if (!user) {
+        return res.status(400).send({ error: "Usuário não encontrado" });
+      }
+
+      if (token !== user.passwordResetToken) {
+        return res.status(400).send({ error: "Token inválido" });
+      }
+
+      const now = new Date();
+
+      if (now > user.passwordResetExpires) {
+        return res
+          .status(400)
+          .send({ error: "Token expirado. Tente novamente" });
+      }
+
+      user.password = password;
+
+      await user.save();
+
+      res.status(200).send("Senha alterada com sucesso.");
+    } catch (error) {
+      res
+        .status(400)
+        .send({ error: "Não foi possível alterar a senha, tente novamente." });
     }
   },
 };

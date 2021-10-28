@@ -29,11 +29,17 @@ const Reset_Password = () => {
       .then((resp) => {
         const { data } = resp;
         if (data) {
-          history.push("/login");
+          window.alert("Senha alterada com sucesso!");
+          setTimeout(() => {
+            history.push("/login");
+          }, 1000)
+          
         }
       });
   };
   const validations = yup.object().shape({
+    email: yup.string().email().required(),
+    token: yup.string().required(),
     password: yup.string().min(6).required(),
   });
   return (
@@ -60,6 +66,34 @@ const Reset_Password = () => {
                 validationSchema={validations}
               >
                 <Form className="Login">
+                <FieldWrap>
+                    <FormDesc>E-mail*</FormDesc>
+                    <Field
+                      name="email"
+                      placeholder="E-mail"
+                      className="Login-Field"
+                    />
+                    <ErrorMessage
+                      component="span"
+                      name="email"
+                      className="Login-Error"
+                    />
+                  </FieldWrap>
+
+                  <FieldWrap>
+                    <FormDesc>Token*</FormDesc>
+                    <Field
+                      name="token"
+                      placeholder="Token"
+                      className="Login-Field"
+                    />
+                    <ErrorMessage
+                      component="span"
+                      name="token"
+                      className="Login-Error"
+                    />
+                  </FieldWrap>
+
                   <FieldWrap>
                     <FormDesc>Nova Senha*</FormDesc>
                     <Field
@@ -74,6 +108,7 @@ const Reset_Password = () => {
                       className="Login-Error"
                     />
                   </FieldWrap>
+                  
 
                   <FormBtn type="submit">Enviar</FormBtn>
                 </Form>

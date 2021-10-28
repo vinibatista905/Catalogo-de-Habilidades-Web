@@ -34,7 +34,7 @@ const Forgot_Password = () => {
       .then((resp) => {
         const { data } = resp;
         if (data) {
-          history.push("/password_token");
+          history.push("/reset_password");
         }
       });
   };
@@ -75,7 +75,7 @@ const Forgot_Password = () => {
                     onClick={() =>
                       setTimeout(() => {
                         setIsVisible(true);
-                      }, 1000)
+                      }, 2000)
                     }
                     type="submit"
                   >

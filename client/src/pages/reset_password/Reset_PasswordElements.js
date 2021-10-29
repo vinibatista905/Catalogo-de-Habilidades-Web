@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {
+  bgAzul,
   btnAzul,
   btnAzulEscuro,
   txBranco,
@@ -22,7 +23,7 @@ export const BannerContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--blue-bg-color);
+  background-color: ${bgAzul};
   width: 100%;
 `;
 

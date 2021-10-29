@@ -23,7 +23,7 @@
 }
 
 .Register-Error {
-  color: var(--red-tx-color);
+  color: #ff0022;
   margin: 1rem 0;
 }
 

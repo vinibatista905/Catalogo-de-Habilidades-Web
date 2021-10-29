@@ -20,7 +20,7 @@ export const AboutContainer = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin: 4rem 0
+    margin: 4rem 0;
   }
 `;
 
@@ -53,6 +53,19 @@ export const AboutCard = styled.div`
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     justify-content: center;
     align-items: center;
+  }
+`;
+
+export const CardWrap = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  height: 50vh;
+
+  @media only screen and (max-width: 720px) {
+    height: 100%
   }
 `;
 
@@ -94,6 +107,33 @@ export const CardBtn = styled.button`
   font-size: 1.2rem;
   outline: none;
   cursor: pointer;
+  margin-top: 6.6rem;
+
+  :hover {
+    box-shadow: inset 8rem 0 0 0 #f88030;
+  }
+
+  @media only screen and (max-width: 720px) {
+    width: 7rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 4rem;
+  }
+`;
+
+export const Card1Btn = styled.button`
+  width: 8rem;
+  height: 3rem;
+  border-radius: 10px;
+  background: ${bgAmarelo};
+  border: none;
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 ${bgAmarelo};
+  font-size: 1.2rem;
+  outline: none;
+  cursor: pointer;
   margin-top: 4rem;
 
   :hover {
@@ -103,10 +143,10 @@ export const CardBtn = styled.button`
   @media only screen and (max-width: 720px) {
     width: 7rem;
     margin-top: 2rem;
-   margin-bottom: 1rem;
+    margin-bottom: 1rem;
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     margin-top: 4rem;
-    
+    margin-bottom: 1rem;
   }
 `;

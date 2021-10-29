@@ -15,6 +15,11 @@ export const HeaderContainer = styled.div`
     justify-content: space-evenly;
     margin-bottom: 1rem;
   }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 90%;
+    margin-bottom: 0;
+  }
 `;
 
 export const HeaderLogo = styled.div`

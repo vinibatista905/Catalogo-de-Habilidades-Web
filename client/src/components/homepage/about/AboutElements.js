@@ -4,17 +4,23 @@ import { bgAmarelo, bgAzul, bgCinza } from "../../UI/variaveis";
 export const AboutContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 80%;
   height: 100%;
   margin: auto;
+  gap: 2rem;
 
   @media only screen and (max-width: 720px) {
     flex-direction: column;
     width: 100%;
-  margin: 4rem 0;
-  
+    margin: 4rem 0;
+  }
 
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 4rem 0
   }
 `;
 
@@ -41,6 +47,12 @@ export const AboutCard = styled.div`
     width: 16rem;
     height: 60vh;
     margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -82,7 +94,7 @@ export const CardBtn = styled.button`
   font-size: 1.2rem;
   outline: none;
   cursor: pointer;
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   :hover {
     box-shadow: inset 8rem 0 0 0 #f88030;
@@ -91,6 +103,10 @@ export const CardBtn = styled.button`
   @media only screen and (max-width: 720px) {
     width: 7rem;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+   margin-bottom: 1rem;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 4rem;
+    
   }
 `;

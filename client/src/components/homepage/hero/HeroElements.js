@@ -12,6 +12,13 @@ export const HeroContainer = styled.div`
     width: 100%;
     flex-direction: column;
   }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 90%;
+
+    gap: 1rem;
+    margin-top: 1rem;
+  }
 `;
 
 export const HeroSection1 = styled.div`
@@ -43,6 +50,10 @@ export const HeroTitle = styled.h2`
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1.2rem;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 2.6rem;
   }
 `;
 
@@ -88,8 +99,6 @@ export const HeroBtn1 = styled.button`
 
   @media only screen and (max-width: 720px) {
     margin-right: 0;
-    
-
   }
 `;
 
@@ -120,9 +129,17 @@ export const HeroBtn2 = styled.button`
 
 export const HeroImg = styled.img`
   width: 35rem;
+  margin-left: 8rem;
 
   @media only screen and (max-width: 720px) {
-    width: 150%;
+    width: 20rem;
     margin-bottom: 1rem;
+    margin-left: 0;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 22rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
   }
 `;

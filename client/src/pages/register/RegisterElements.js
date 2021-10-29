@@ -64,12 +64,13 @@ export const FormDesc = styled.p`
 export const RegisterBtn = styled.button`
   background: ${btnAzul};
   color: ${txBranco};
-  padding: 0.6rem 1.8rem;
+  padding: 0.8rem 1.8rem;
   border: none;
   border-radius: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
+  font-size: 1.1rem;
 
   :hover {
     background: ${btnAzulEscuro};

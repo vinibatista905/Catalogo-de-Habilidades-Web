@@ -145,12 +145,25 @@ const userController = {
   create_skill: async function (req, res) {
     const skill = {
       name: req.body.name,
+      level: req.body.level,
       type: req.body.type,
+      idUser: req.body.idUser,
     };
 
     try {
       const savedSkill = await Skill.create(skill);
       res.status(200).send(savedSkill);
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  },
+
+  check_skill: async function (req, res) {
+    const userId = req.params.userId;
+
+    try {
+      const skills = await Skill.findAll({ where: { idUser: userId } });
+      res.status(200).send(skills);
     } catch (error) {
       res.status(400).send(error);
     }

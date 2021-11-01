@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = (models) => {
     User.hasMany(models.Skill, {
-      foreignKey: 'idUser'
+      foreignKey: 'idUser',
+      constraint: true
     })
   }
  

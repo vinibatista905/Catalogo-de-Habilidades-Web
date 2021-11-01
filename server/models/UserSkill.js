@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       primaryKey: true,
     },
+    
   });
 
   return UserSkill;

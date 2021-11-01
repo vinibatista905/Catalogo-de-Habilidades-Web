@@ -154,7 +154,7 @@ const userController = {
       const savedSkill = await Skill.create(skill);
       res.status(200).send(savedSkill);
     } catch (error) {
-      res.status(400).send(error);
+      res.status(400).send("Erro na criação da habilidade");
     }
   },
 
@@ -164,6 +164,31 @@ const userController = {
     try {
       const skills = await Skill.findAll({ where: { idUser: userId } });
       res.status(200).send(skills);
+    } catch (error) {
+      res.status(400).send("Erro na busca de habilidades");
+    }
+  },
+
+  update_skill: async function (req, res) {
+    const skillId = req.params.skillId;
+
+    const newSkill = req.body;
+
+    try {
+      await Skill.update(newSkill, { where: { id: skillId } });
+      res.status(200).send(newSkill);
+    } catch (error) {
+      console.log(error);
+      res.status(400).send("Erro na atualização da habilidade");
+    }
+  },
+
+  delete_skill: async function (req, res) {
+    const skillId = req.params.skillId;
+
+    try {
+      const deleteSkill = await Skill.destroy({ where: { id: skillId } });
+      res.status(200).send("Deletado com sucesso");
     } catch (error) {
       res.status(400).send(error);
     }

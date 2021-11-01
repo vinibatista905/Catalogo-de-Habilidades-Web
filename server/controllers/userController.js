@@ -1,4 +1,5 @@
 const { User } = require("../models/");
+const { Skill } = require("../models/");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
@@ -138,6 +139,20 @@ const userController = {
       res
         .status(400)
         .send({ error: "Não foi possível alterar a senha, tente novamente." });
+    }
+  },
+
+  create_skill: async function (req, res) {
+    const skill = {
+      name: req.body.name,
+      type: req.body.type,
+    };
+
+    try {
+      const savedSkill = await Skill.create(skill);
+      res.status(200).send(savedSkill);
+    } catch (error) {
+      res.status(400).send(error);
     }
   },
 };

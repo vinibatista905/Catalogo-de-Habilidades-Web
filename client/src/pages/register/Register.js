@@ -101,7 +101,7 @@ const Register = () => {
                     onClick={() =>
                       setTimeout(() => {
                         setIsVisible(true);
-                      }, 2000)
+                      }, 3000)
                     }
                     type="submit"
                   >

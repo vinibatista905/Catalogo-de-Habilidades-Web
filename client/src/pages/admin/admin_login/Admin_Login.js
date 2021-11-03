@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-import { history } from "../../history";
-import Logo from "../../components/logo/Logo";
-import Footer from "../../components/footer/Footer";
+import { history } from "../../../history";
+import Logo from "../../../components/logo/Logo";
+import Footer from "../../../components/footer/Footer";
 import "./Admin_Login.css";
 import {
   BannerContainer,
@@ -52,7 +52,7 @@ const Login = () => {
             Faça login para acessar como Administrador.
           </BannerDesc>
           <BannerImg
-            src={require("../../assets/admin.png").default}
+            src={require("../../../assets/admin.png").default}
           ></BannerImg>
         </BannerContainer>
 

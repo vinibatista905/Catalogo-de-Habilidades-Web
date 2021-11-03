@@ -30,8 +30,9 @@ const Login = () => {
   const handleSubmit = (values) => {
     console.log(values);
     axios.post("http://localhost:5000/user/login", values).then((resp) => {
-      const { data } = resp;
+      const data = resp.data;
       if (data) {
+        console.log(resp.data);
         localStorage.setItem("auth-token", data);
         history.push("/home");
       }

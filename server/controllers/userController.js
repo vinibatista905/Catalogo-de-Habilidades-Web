@@ -55,8 +55,18 @@ const userController = {
       { _id: selectedUser._id, admin: selectedUser.admin },
       process.env.TOKEN_SECRET
     );
+
+    const userID = selectedUser.id;
+
+    const userData = {
+      "auth-token": token,
+      "user-ID": userID,
+    }
+
     res.header("authorization-token", token);
-    res.send(token);
+    res.header("user-ID", userID);
+    res.status(200).send(userData);
+
   },
 
   forgot_password: async function (req, res) {
@@ -191,6 +201,17 @@ const userController = {
       res.status(200).send("Deletado com sucesso");
     } catch (error) {
       res.status(400).send(error);
+    }
+  },
+
+  user_info: async function (req, res) {
+    const userId = req.params.userId;
+
+    try {
+      const userInfo = await User.findByPk(userId);
+      res.status(200).send(userInfo);
+    } catch (error) {
+      res.status(400).send("Erro na busca de usuário");
     }
   },
 };

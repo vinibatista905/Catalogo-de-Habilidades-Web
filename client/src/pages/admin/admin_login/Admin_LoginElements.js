@@ -6,7 +6,7 @@ import {
   btnAzulEscuro,
   txBranco,
   txPreto,
-} from "../../components/UI/variaveis";
+} from "../../../components/UI/variaveis";
 
 export const LoginContainer = styled.div`
   display: grid;

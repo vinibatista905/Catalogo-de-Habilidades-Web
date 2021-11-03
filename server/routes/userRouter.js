@@ -10,6 +10,8 @@ router.post("/create_skill" , userController.create_skill)
 router.get("/check_skill/:userId" , userController.check_skill)
 router.put("/update_skill/:skillId" , userController.update_skill)
 router.delete("/delete_skill/:skillId" , userController.delete_skill)
+router.get("/info/:userId" , userController.user_info)
+
 
 
 module.exports = router;

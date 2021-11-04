@@ -58,15 +58,16 @@ const userController = {
 
     const userID = selectedUser.id;
 
-    const userData = {
-      "auth-token": token,
-      "user-ID": userID,
-    }
+    const userData = [
+      {
+        "auth_token": token,
+        "user_id": userID,
+      },
+    ];
 
     res.header("authorization-token", token);
     res.header("user-ID", userID);
     res.status(200).send(userData);
-
   },
 
   forgot_password: async function (req, res) {

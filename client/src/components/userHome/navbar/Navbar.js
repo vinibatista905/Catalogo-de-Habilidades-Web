@@ -1,6 +1,5 @@
 import React from "react";
-import Logo from "../../logo/Logo";
-import { LogoutBtn, NavContainer } from "./NavbarElements";
+import { LogoIcon, LogoLink, LogoTitle, LogoutBtn, LogoWrap, NavContainer } from "./NavbarElements";
 import { MdOutlineLogout } from "react-icons/md";
 import { history } from "../../../history";
 
@@ -12,7 +11,12 @@ const Navbar = () => {
   return (
     <>
       <NavContainer>
-        <Logo />
+        <LogoLink href="/home">
+        <LogoWrap>
+          <LogoTitle>Skills Cat</LogoTitle>
+          <LogoIcon />
+        </LogoWrap>
+          </LogoLink>
         <LogoutBtn onClick={logout}>
           <MdOutlineLogout />
           Log Out

@@ -58,12 +58,12 @@ const userController = {
 
     const userID = selectedUser.id;
 
-    const userData = [
+    const userData = 
       {
         "auth_token": token,
         "user_id": userID,
-      },
-    ];
+      }
+    ;
 
     res.header("authorization-token", token);
     res.header("user-ID", userID);

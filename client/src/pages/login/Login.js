@@ -27,13 +27,13 @@ import {
 const Login = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     console.log(values);
-    axios.post("http://localhost:5000/user/login", values).then((resp) => {
+    await axios.post("http://localhost:5000/user/login", values).then((resp) => {
       const data = resp.data;
       if (data) {
-        console.log(resp.data);
-        localStorage.setItem("auth-token", data);
+        localStorage.setItem("auth_token", data.auth_token);
+        localStorage.setItem("user_id", data.user_id);
         history.push("/home");
       }
     });
@@ -95,7 +95,9 @@ const Login = () => {
                       className="Login-Error"
                     />
                   </FieldWrap>
-                  <PasswordLink href='/forgot_password'>Esqueceu a senha?</PasswordLink>
+                  <PasswordLink href="/forgot_password">
+                    Esqueceu a senha?
+                  </PasswordLink>
                   <FormBtn
                     onClick={() =>
                       setTimeout(() => {

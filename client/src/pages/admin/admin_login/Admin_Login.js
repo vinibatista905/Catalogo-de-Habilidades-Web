@@ -107,7 +107,7 @@ const Login = () => {
                   </FormBtn>
                   <br />
                   <span className={isVisible ? "error-show" : "error-hidden"}>
-                    E-mail ou senha inválido
+                    Acesso Negado
                   </span>
                   <RegisterDesc>
                     Não é Administrador?

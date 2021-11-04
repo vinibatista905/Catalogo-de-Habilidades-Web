@@ -6,11 +6,11 @@ export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   background: ${bgAzul};
-  padding: 0 1.4rem;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  padding: 0 2rem;
+  box-shadow: 0 12px 10px rgba(0, 0, 0, 0.3);
 `;
 
 export const LogoWrap = styled.div`

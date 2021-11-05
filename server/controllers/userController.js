@@ -210,7 +210,7 @@ const userController = {
 
     try {
       const userInfo = await User.findByPk(userId);
-      res.status(200).send(userInfo);
+      res.status(200).send([userInfo]);
     } catch (error) {
       res.status(400).send("Erro na busca de usuário");
     }

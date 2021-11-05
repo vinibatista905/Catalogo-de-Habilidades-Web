@@ -57,3 +57,4 @@ export const LogoutBtn = styled.button`
     border: 2px ${bgAmarelo} solid;
   }
 `;
+

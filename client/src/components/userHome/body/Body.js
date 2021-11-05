@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   BodyContainer,
   Card1,
@@ -18,17 +19,31 @@ import {
   Section1,
   Section2,
   Title,
+  User,
   WelcomeCard,
 } from "./BodyElements";
 
 const Body = () => {
+  const [userInfo, setUserInfo] = useState([]);
+
+  const userId = localStorage.getItem("user_id");
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/user/info/${userId}`).then(({ data }) => {
+      setUserInfo(data);
+      // eslint-disable-next-line
+    });
+  }, []);
+
   return (
     <BodyContainer>
       <WelcomeCard>
         <Section1>
-          <Title>Olá Fulano(a)!</Title>
+          <Title>Seja Bem Vindo </Title>
+          {userInfo?.map((user) => (
+            <User>{user.name}</User>
+          ))}
           <Message1>O que você quer fazer hoje?</Message1>
-          <Message2>Veja abaixo algumas opções:</Message2>
         </Section1>
         <Section2>
           <CardImg
@@ -38,7 +53,7 @@ const Body = () => {
       </WelcomeCard>
 
       <OptionCards>
-        <CardLink href="/">
+        <CardLink href="/create_skill">
           <Card1>
             <CardIcon1></CardIcon1>
             <CardDesc>Adicionar Habilidades</CardDesc>

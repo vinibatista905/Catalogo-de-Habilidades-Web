@@ -1,7 +1,17 @@
 import styled from "styled-components";
 import { FaClipboardList, FaEdit, FaUserFriends } from "react-icons/fa";
 import { MdAddToPhotos } from "react-icons/md";
-import { bgAmarelo, btnAmarelo, btnAzul, btnVerde, txBranco, txCinza, txCinzaEscuro, txPreto, txVermelho } from "../../UI/variaveis";
+import {
+  bgAmarelo,
+  btnAmarelo,
+  btnAzul,
+  btnVerde,
+  txBranco,
+  txCinza,
+  txCinzaEscuro,
+  txPreto,
+  txVermelho,
+} from "../../UI/variaveis";
 
 export const BodyContainer = styled.div`
   display: flex;
@@ -11,7 +21,6 @@ export const BodyContainer = styled.div`
   width: 100%;
   height: 100vh;
   background: ${txCinza};
-
 `;
 
 export const WelcomeCard = styled.div`
@@ -37,11 +46,18 @@ export const Title = styled.h2`
   margin: 2rem 0;
   padding-left: 2rem;
 `;
+
+export const User = styled.h2`
+  font-size: 3.4rem;
+  color: ${txPreto};
+  padding-left: 2rem;
+`;
+
 export const Message1 = styled.p`
   font-size: 1.2rem;
   color: ${txPreto};
   padding-left: 2rem;
-
+  padding-top: 5rem;
 `;
 
 export const Message2 = styled.p`
@@ -49,7 +65,6 @@ export const Message2 = styled.p`
   color: ${txPreto};
   padding-top: 12rem;
   padding-left: 2rem;
-
 `;
 
 export const Section2 = styled.div`
@@ -75,7 +90,7 @@ export const OptionCards = styled.div`
 `;
 
 export const CardLink = styled.a`
-text-decoration: none;
+  text-decoration: none;
 `;
 
 export const Card1 = styled.div`
@@ -130,7 +145,7 @@ export const Card2 = styled.div`
   }
 `;
 
-export const CardIcon2= styled(FaClipboardList)`
+export const CardIcon2 = styled(FaClipboardList)`
   font-size: 3rem;
   margin-bottom: 2rem;
 `;

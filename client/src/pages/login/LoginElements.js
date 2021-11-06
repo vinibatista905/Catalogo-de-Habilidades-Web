@@ -4,7 +4,6 @@ import {
   bgAzul,
   btnAzul,
   btnAzulEscuro,
-  txAzul,
   txBranco,
   txPreto,
 } from "../../components/UI/variaveis";

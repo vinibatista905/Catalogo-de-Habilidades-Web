@@ -27,15 +27,19 @@ import {
 const Login = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     console.log(values);
-    axios.post("http://localhost:5000/admin/login", values).then((resp) => {
-      const { data } = resp;
-      if (data) {
-        localStorage.setItem("auth-token", data);
-        history.push("/admin/home");
-      }
-    });
+    await axios
+      .post("http://localhost:5000/admin/login", values)
+      .then((resp) => {
+        const data = resp.data;
+        if (data) {
+          console.log(data);
+          localStorage.setItem("auth_token", data.auth_token);
+          localStorage.setItem("user_id", data.user_id);
+          history.push("/admin/home");
+        }
+      });
   };
   const validations = yup.object().shape({
     email: yup.string().email().required(),
@@ -48,9 +52,7 @@ const Login = () => {
           <BannerLogo>
             <Logo />
           </BannerLogo>
-          <BannerDesc>
-            Faça login para acessar como Administrador.
-          </BannerDesc>
+          <BannerDesc>Faça login para acessar como Administrador.</BannerDesc>
           <BannerImg
             src={require("../../../assets/admin.png").default}
           ></BannerImg>
@@ -94,7 +96,9 @@ const Login = () => {
                       className="Login-Error"
                     />
                   </FieldWrap>
-                  <PasswordLink href='/forgot_password'>Esqueceu a senha?</PasswordLink>
+                  <PasswordLink href="/forgot_password">
+                    Esqueceu a senha?
+                  </PasswordLink>
                   <FormBtn
                     onClick={() =>
                       setTimeout(() => {

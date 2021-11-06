@@ -29,14 +29,17 @@ const Login = () => {
 
   const handleSubmit = async (values) => {
     console.log(values);
-    await axios.post("http://localhost:5000/user/login", values).then((resp) => {
-      const data = resp.data;
-      if (data) {
-        localStorage.setItem("auth_token", data.auth_token);
-        localStorage.setItem("user_id", data.user_id);
-        history.push("/home");
-      }
-    });
+    await axios
+      .post("http://localhost:5000/user/login", values)
+      .then((resp) => {
+        const data = resp.data;
+        if (data) {
+          console.log(data);
+          localStorage.setItem("auth_token", data.auth_token);
+          localStorage.setItem("user_id", data.user_id);
+          history.push("/home");
+        }
+      });
   };
   const validations = yup.object().shape({
     email: yup.string().email().required(),

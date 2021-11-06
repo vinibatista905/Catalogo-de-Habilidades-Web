@@ -6,6 +6,7 @@ import Register from "../pages/register/Register";
 import Forgot_Password from "../pages/forgot_password/Forgot_Password";
 import Reset_Password from "../pages/reset_password/Reset_Password";
 import Admin_Login from "../pages/admin/admin_login/Admin_Login";
+import AdminHome from "../pages/admin/adminHome/AdminHome";
 import Home from "../pages/home/Home";
 import CreateSkill from "../pages/home/create_skill/CreateSkill";
 import Homepage from "../pages/homepage/Homepage";
@@ -26,6 +27,7 @@ const Routes = () => (
       <Route component={Admin_Login} exact path="/admin/login" />
       <Route component={Homepage} exact path="/" />
       <PrivateRoute component={Home} exact path="/home" />
+      <PrivateRoute component={AdminHome} exact path="/admin/home" />
       <PrivateRoute component={CreateSkill} exact path="/create_skill" />
       <PrivateRoute component={NotFound} />
     </Switch>

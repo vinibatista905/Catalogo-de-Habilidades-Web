@@ -14,7 +14,6 @@ import {
   CardImg,
   CardLink,
   Message1,
-  Message2,
   OptionCards,
   Section1,
   Section2,

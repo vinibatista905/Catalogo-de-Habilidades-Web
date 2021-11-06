@@ -12,7 +12,7 @@ const adminController = {
 
     const selectedUser = await User.findOne({
       where: { email: req.body.email, admin: 1 },
-    //   também verificar se o usuario é admin no banco
+      //   também verificar se o usuario é admin no banco
     });
     if (!selectedUser) {
       return res.status(400).send("Acesso Negado");
@@ -29,12 +29,19 @@ const adminController = {
       { _id: selectedUser._id, admin: selectedUser.admin },
       process.env.TOKEN_SECRET
     );
+
+    const userID = selectedUser.id;
+
+    const userData = {
+      auth_token: token,
+      user_id: userID,
+    };
     res.header("authorization-token", token);
-    res.send(token);
+    res.header("user-ID", userID);
+    res.status(200).send(userData);
   },
 
   check_users: async function (req, res) {
-
     try {
       const users = await User.findAll();
       res.status(200).send(users);
@@ -73,7 +80,6 @@ const adminController = {
   },
 
   check_skills: async function (req, res) {
-
     try {
       const skills = await Skill.findAll();
       res.status(200).send(skills);
@@ -117,7 +123,6 @@ const adminController = {
       res.status(400).send(error);
     }
   },
-
 };
 
 module.exports = adminController;

@@ -12,6 +12,7 @@ import Home from "../pages/home/Home";
 import CreateSkill from "../pages/home/create_skill/CreateSkill";
 import AllSkills from "../pages/home/all_skills/AllSkills";
 import AllUsers from "../pages/home/all_users/AllUsers";
+import SpecUserSkills from "../pages/home/specific_user_skills/SpecUserSkills";
 import NotFound from "./notFound/NotFound";
 import PrivateRoute from './PrivateRoute'
 
@@ -33,6 +34,7 @@ const Routes = () => (
       <PrivateRoute component={CreateSkill} exact path="/create_skill" />
       <PrivateRoute component={AllSkills} exact path="/all_skills" />
       <PrivateRoute component={AllUsers} exact path="/all_users" />
+      <PrivateRoute component={SpecUserSkills} exact path="/users/:id" />
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>

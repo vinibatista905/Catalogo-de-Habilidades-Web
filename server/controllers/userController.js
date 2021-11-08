@@ -221,6 +221,18 @@ const userController = {
       res.status(400).send("Erro na busca de usuários");
     }
   },
+
+  check_skills_byUser: async function (req, res) {
+    const userId = req.params.userId;
+
+    try {
+      const skills = await Skill.findAll({ where: { idUser: userId } });
+      res.status(200).send(skills);
+    } catch (error) {
+      res.status(400).send("Erro na busca de habilidades");
+    }
+  },
+  
 };
 
 module.exports = userController;

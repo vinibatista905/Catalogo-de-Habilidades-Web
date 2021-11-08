@@ -4,6 +4,7 @@ import axios from "axios";
 import {
   Table,
   TableBody,
+  TableContainer,
   TableHead,
   TableTD,
   TableTH,
@@ -25,8 +26,9 @@ const UsersTable = () => {
 
   return (
     <>
-      <TableWrapper>
+      <TableContainer>
         <TableTitle>Veja todos os usuários cadastrados</TableTitle>
+        <TableWrapper>
         <Table>
           <TableHead>
             <TableTR>
@@ -37,17 +39,18 @@ const UsersTable = () => {
           </TableHead>
           <TableBody>
             {usersInfo?.map((user) => (
-              <TableTR>
+              <TableTR key={user.id}> 
                 <TableTD>{user.name}</TableTD>
                 <TableTD>{user.email}</TableTD>
                 <TableTD>
-                  <button className="tdButton">Ver Skills</button>
+                  <button className="tdButton"><a href={'/users/' + user.id} className='btnLink'>Ver Skills</a></button>
                 </TableTD>
               </TableTR>
             ))}
           </TableBody>
         </Table>
-      </TableWrapper>
+        </TableWrapper>
+      </TableContainer>
     </>
   );
 };

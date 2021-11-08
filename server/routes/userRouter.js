@@ -12,5 +12,6 @@ router.put("/update_skill/:skillId", userController.update_skill);
 router.delete("/delete_skill/:skillId", userController.delete_skill);
 router.get("/info/:userId", userController.user_info);
 router.get("/all_users", userController.all_users);
+router.get("/check_skills_byUser/:userId",userController.check_skills_byUser)
 
 module.exports = router;

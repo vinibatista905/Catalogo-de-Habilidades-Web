@@ -3,10 +3,8 @@ import {
   bgAmarelo,
   bgAzul,
   bgCinza,
-  btnAmarelo,
   txBranco,
   txCinzaEscuro,
-  txPreto,
 } from "../../UI/variaveis";
 
 export const TableContainer = styled.div`
@@ -74,24 +72,4 @@ export const TableTD = styled.td`
   padding: 12px 15px;
   font-size: 1rem;
 
-  .tdButton {
-    width: 6rem;
-    height: 2.2rem;
-    border-radius: 10px;
-    background: ${btnAmarelo};
-    border: none;
-    transition: ease-out 0.3s;
-    box-shadow: inset 0 0 0 0 ${btnAmarelo};
-    outline: none;
-    cursor: pointer;
-
-    :hover {
-      box-shadow: inset 8rem 0 0 0 #f24b43;
-    }
-
-    .btnLink{
-      text-decoration: none;
-      color: ${txPreto};
-    }
-  }
 `;

@@ -20,7 +20,7 @@ const SpecUserSkillsTable = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/user/check_skills_byUser/${userId}`)
+      .get(`http://localhost:5000/user/check_skills_byUser/${userId.id}`)
       .then(({ data }) => {
         setUserSkills(data);
         console.log(data);

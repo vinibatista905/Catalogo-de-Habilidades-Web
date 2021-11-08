@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CustomSelect,
   FieldDesc,
@@ -57,7 +57,7 @@ const backOptions = [
 ];
 
 const dbOptions = [
-  { label: "AWS", value: "AWS" },
+  { label: "Firebase", value: "Firebase" },
   { label: "MongoDB", value: "MongoDB" },
   { label: "MySQL", value: "MySQL" },
   { label: "NoSQL", value: "NoSQL" },
@@ -84,10 +84,7 @@ const handleSubmit = (values) => {
   console.log(values);
 };
 
-function onChangeInput(value) {
-  const skillType = value;
-  console.log(skillType);
-}
+
 
 function skillOptions(skillType) {
   if (skillType.label === "Front-End") {
@@ -101,9 +98,21 @@ function skillOptions(skillType) {
   if (skillType.label === "Banco de Dados") {
     return dbOptions;
   }
+
+  if (skillType.label === "DevOps") {
+    return devOpsOptions;
+  }
 }
 
 const SkillForm = () => {
+
+  const [skillType, setSkillType] = useState({})
+
+  function onChangeInput(value) {
+    const skillType = value;
+    setSkillType(skillType);
+  }
+
   return (
     <SkillFormWrap>
       <Form onSubmit={handleSubmit}>
@@ -114,7 +123,7 @@ const SkillForm = () => {
 
         <FieldWrap>
           <FieldDesc>Habilidade</FieldDesc>
-          <CustomSelect options={skillOptions} />
+          <CustomSelect options={skillOptions(skillType)} />
         </FieldWrap>
 
         <FieldWrap>

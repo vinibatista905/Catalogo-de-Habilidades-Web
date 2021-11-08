@@ -7,9 +7,11 @@ import Forgot_Password from "../pages/forgot_password/Forgot_Password";
 import Reset_Password from "../pages/reset_password/Reset_Password";
 import Admin_Login from "../pages/admin/admin_login/Admin_Login";
 import AdminHome from "../pages/admin/adminHome/AdminHome";
+import Homepage from "../pages/homepage/Homepage";
 import Home from "../pages/home/Home";
 import CreateSkill from "../pages/home/create_skill/CreateSkill";
-import Homepage from "../pages/homepage/Homepage";
+import AllSkills from "../pages/home/all_skills/AllSkills";
+import AllUsers from "../pages/home/all_users/AllUsers";
 import NotFound from "./notFound/NotFound";
 import PrivateRoute from './PrivateRoute'
 
@@ -29,6 +31,8 @@ const Routes = () => (
       <PrivateRoute component={Home} exact path="/home" />
       <PrivateRoute component={AdminHome} exact path="/admin/home" />
       <PrivateRoute component={CreateSkill} exact path="/create_skill" />
+      <PrivateRoute component={AllSkills} exact path="/all_skills" />
+      <PrivateRoute component={AllUsers} exact path="/all_users" />
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>

@@ -59,7 +59,7 @@ const Body = () => {
           </Card1>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/all_skills">
           <Card2>
             <CardIcon2></CardIcon2>
             <CardDesc>Ver Suas Habilidades</CardDesc>
@@ -73,7 +73,7 @@ const Body = () => {
           </Card3>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/all_users">
           <Card4>
             <CardIcon4></CardIcon4>
             <CardDesc>Ver Outros Usuários</CardDesc>

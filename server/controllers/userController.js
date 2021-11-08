@@ -212,6 +212,15 @@ const userController = {
       res.status(400).send("Erro na busca de usuário");
     }
   },
+
+  all_users: async function (req, res) {
+    try {
+      const users = await User.findAll();
+      res.status(200).send(users);
+    } catch (error) {
+      res.status(400).send("Erro na busca de usuários");
+    }
+  },
 };
 
 module.exports = userController;

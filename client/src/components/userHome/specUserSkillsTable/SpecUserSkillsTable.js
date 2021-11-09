@@ -11,6 +11,7 @@ import {
   TableTitle,
   TableTR,
   TableWrapper,
+  UserName,
 } from "./SpecUserSkillsElements";
 
 const SpecUserSkillsTable = () => {
@@ -29,10 +30,26 @@ const SpecUserSkillsTable = () => {
       });
   }, []);
 
+  const [userInfo, setUserInfo] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/user/info/${userId.id}`)
+      .then(({ data }) => {
+        setUserInfo(data);
+        console.log(data);
+
+        // eslint-disable-next-line
+      });
+  }, []);
+
   return (
     <>
       <TableContainer>
-        <TableTitle>Veja as habilidades do usuário</TableTitle>
+        <TableTitle>Veja as habilidades do(a) usuário(a)</TableTitle>
+        {userInfo?.map((user) => (
+          <UserName key={user.id}>{user.name}</UserName>
+        ))}
         <TableWrapper>
           <Table>
             <TableHead>

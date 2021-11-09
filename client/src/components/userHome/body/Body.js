@@ -40,7 +40,7 @@ const Body = () => {
         <Section1>
           <Title>Seja Bem Vindo </Title>
           {userInfo?.map((user) => (
-            <User>{user.name}</User>
+            <User key={user.id}>{user.name}</User>
           ))}
           <Message1>O que você quer fazer hoje?</Message1>
         </Section1>

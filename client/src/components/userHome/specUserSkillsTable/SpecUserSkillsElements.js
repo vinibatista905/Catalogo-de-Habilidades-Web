@@ -73,3 +73,9 @@ export const TableTD = styled.td`
   font-size: 1rem;
 
 `;
+
+export const UserName = styled.h2`
+  font-size: 2.5rem;
+  color: ${txCinzaEscuro};
+
+`;

@@ -52,3 +52,7 @@ export const FormBtn = styled.button`
     transition: all 0.2s linear;
   }
 `;
+
+export const IdInput = styled.input`
+  opacity: 0;
+`;

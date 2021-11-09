@@ -1,5 +1,6 @@
 const { User } = require("../models/");
 const { Skill } = require("../models/");
+const { AllSkills } = require("../models/");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
@@ -228,6 +229,15 @@ const userController = {
     try {
       const skills = await Skill.findAll({ where: { idUser: userId } });
       res.status(200).send(skills);
+    } catch (error) {
+      res.status(400).send("Erro na busca de habilidades");
+    }
+  },
+
+  all_skills: async function (req, res) {
+    try {
+      const allNewSkills = await AllSkills.findAll();
+      res.status(200).send(allNewSkills);
     } catch (error) {
       res.status(400).send("Erro na busca de habilidades");
     }

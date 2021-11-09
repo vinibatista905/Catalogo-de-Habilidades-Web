@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import {
   CustomSelect,
@@ -5,6 +6,7 @@ import {
   FieldWrap,
   Form,
   FormBtn,
+  IdInput,
   SkillFormWrap,
 } from "./SkillFormElements";
 
@@ -80,10 +82,6 @@ const levelOptions = [
   { label: "Especialista", value: "Especialista" },
 ];
 
-const handleSubmit = (values) => {
-  console.log(values);
-};
-
 
 
 function skillOptions(skillType) {
@@ -113,6 +111,23 @@ const SkillForm = () => {
     setSkillType(skillType);
   }
 
+  const handleSubmit = async (values) => {
+   
+    console.log(values);
+    // await axios
+    //   .post("localhost:5000/user/create_skill", values)
+    //   .then((resp) => {
+    //     const data = resp.data;
+    //     if (data) {
+    //       console.log(data);
+  
+    //     }
+    //   });
+  };
+
+  const userId = localStorage.getItem("user_id")
+  console.log(userId)
+
   return (
     <SkillFormWrap>
       <Form onSubmit={handleSubmit}>
@@ -129,6 +144,7 @@ const SkillForm = () => {
         <FieldWrap>
           <FieldDesc>Nível</FieldDesc>
           <CustomSelect options={levelOptions} />
+          {/* <IdInput type="text">{userId}</IdInput> */}
         </FieldWrap>
         <FormBtn type="submit">Adicionar</FormBtn>
       </Form>

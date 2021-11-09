@@ -1,5 +1,6 @@
 const { User } = require("../models/");
 const { Skill } = require("../models/");
+const { AllSkills } = require("../models/");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -121,6 +122,41 @@ const adminController = {
       res.status(200).send("Deletado com sucesso");
     } catch (error) {
       res.status(400).send(error);
+    }
+  },
+
+  create_new_skill: async function (req, res) {
+    const newSkill = {
+      name: req.body.name,
+      category: req.body.category,
+    };
+
+    try {
+      console.log(newSkill);
+      const savedSkill = await AllSkills.create(newSkill);
+      res.status(200).send(savedSkill);
+    } catch (error) {
+      res.status(400).send("Erro na criação da habilidade");
+    }
+  },
+
+  delete_new_skill: async function (req, res) {
+    const newSkillId = req.params.newSkillId;
+
+    try {
+      const deleteNewSkill = await AllSkills.destroy({ where: { id: newSkillId } });
+      res.status(200).send("Deletado com sucesso");
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  },
+
+  all_new_skills: async function (req, res) {
+    try {
+      const allNewSkills = await AllSkills.findAll();
+      res.status(200).send(allNewSkills);
+    } catch (error) {
+      res.status(400).send("Erro na busca de habilidades");
     }
   },
 };

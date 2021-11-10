@@ -1,32 +1,29 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   CustomSelect,
   FieldDesc,
   FieldWrap,
   Form,
   FormBtn,
-  IdInput,
   SkillFormWrap,
 } from "./SkillFormElements";
 
 const typeOptions = [
-  { label: "Front-End", value: "Front-End" },
-  { label: "Back-End", value: "Back-End" },
-  { label: "Banco de Dados", value: "Database" },
-  { label: "DevOps", value: "DevOps" },
+  { value: "Front-End", label: "Front-End" },
+  { value: "Back-End", label: "Back-End" },
+  { value: "Database", label: "Banco de Dados" },
+  { value: "DevOps", label: "DevOps" },
 ];
 
 const levelOptions = [
-  { label: "Básico", value: "Básico" },
-  { label: "Intermediário", value: "Intermediário" },
-  { label: "Avançado", value: "Avançado" },
-  { label: "Especialista", value: "Especialista" },
+  { value: "Básico", label: "Básico" },
+  { value: "Intermediário", label: "Intermediário" },
+  { value: "Avançado", label: "Avançado" },
+  { value: "Especialista", label: "Especialista" },
 ];
 
-
 const SkillForm = () => {
-
   // REQ PARA RECEBER TODAS AS HABILIDADES
   const [allSkills, setAllSkills] = useState([]);
 
@@ -38,8 +35,6 @@ const SkillForm = () => {
     });
   }, []);
 
-
-
   // SELEÇÃO DE HABILIDADES
   const [skillType, setSkillType] = useState({});
 
@@ -49,42 +44,71 @@ const SkillForm = () => {
     console.log(skillType);
   }
 
-
+  
   // LÓGICA PARA FILTRAR AS HABILIDADES
   function skillOptions(skillType) {
-  return allSkills.filter((skill) => skill.category === skillType.value).map((skill) => {
-    return {label: skill.name, value: skill.name}
-  })
-
+    return allSkills
+      .filter((skill) => skill.category === skillType.value)
+      .map((skill) => {
+        return { value: skill.name, label: skill.name };
+      });
   }
 
-  // SUBMIT DO FORMULARIO
-  const handleSubmit = async (values) => {
-    console.log(values);
-    
-    // const userId = localStorage.getItem("user_id")
-    // console.log(userId)
+  const [valor, setValor] = useState(null);
+  const skillSelect = (value) => {
+    setValor(value);
+    console.log(value);
   };
-    
+
+  const [selectedLevel, setSelectedLevel] = useState(null);
+  const skillLevel = selectedLevel;
+  console.log(skillLevel);
+
+
+  // SUBMIT DA HABILIDADE
+  const onSubmit = async () => {
+    const userId = localStorage.getItem("user_id");
+    const skillData = {
+      name: valor.value,
+      level: skillLevel.value,
+      type: skillType.value,
+      idUser: userId,
+    };
+    alert("Habilidade Adicionada!");
+
+    await axios
+      .post("http://localhost:5000/user/create_skill", skillData)
+      .then((resp) => {
+        const data = resp.data;
+        if (data) {
+          console.log(data);
+        }
+      });
+  };
+
   return (
     <SkillFormWrap>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <FieldWrap>
-          <FieldDesc>Tipo</FieldDesc>
-          <CustomSelect options={typeOptions} onChange={onChangeInput} />
+          <FieldDesc htmlFor="type">Tipo</FieldDesc>
+          <CustomSelect onChange={onChangeInput} options={typeOptions} />
         </FieldWrap>
 
         <FieldWrap>
-          <FieldDesc>Habilidade</FieldDesc>
-          <CustomSelect options={skillOptions(skillType)} />
+          <FieldDesc htmlFor="name">Habilidade</FieldDesc>
+          <CustomSelect
+            onChange={skillSelect}
+            options={skillOptions(skillType)}
+          />
         </FieldWrap>
 
         <FieldWrap>
-          <FieldDesc>Nível</FieldDesc>
-          <CustomSelect options={levelOptions} />
-          {/* <IdInput type="text">{userId}</IdInput> */}
+          <FieldDesc htmlFor="level">Nível</FieldDesc>
+          <CustomSelect onChange={setSelectedLevel} options={levelOptions} />
         </FieldWrap>
-        <FormBtn type="submit">Adicionar</FormBtn>
+        <FormBtn type="button" onClick={onSubmit}>
+          Adicionar
+        </FormBtn>
       </Form>
     </SkillFormWrap>
   );

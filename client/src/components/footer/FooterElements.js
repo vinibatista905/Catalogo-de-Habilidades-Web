@@ -34,6 +34,7 @@ export const IconsWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 10vw;
+  gap: 1rem;
 
   @media only screen and (max-width: 720px) {
     display: flex;

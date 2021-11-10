@@ -17,7 +17,7 @@ export const FieldWrap = styled.div`
   flex-direction: column;
 `;
 
-export const FieldDesc = styled.p`
+export const FieldDesc = styled.label`
   font-size: 1.2rem;
   font-weight: 700;
   color: ${txCinzaEscuro};

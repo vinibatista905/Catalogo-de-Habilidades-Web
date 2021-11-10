@@ -55,6 +55,20 @@ export const LogoutBtn = styled.button`
   :hover {
     box-shadow: inset 8rem 0 0 0 ${bgAmarelo};
     border: 2px ${bgAmarelo} solid;
+    font-weight: 700;
   }
 `;
 
+export const UserInfoWrap = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+gap: 1.5rem;
+
+
+`;
+
+export const UserName = styled.h3`
+  font-size: 1.5rem;
+  color: ${txBranco};
+`;

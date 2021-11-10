@@ -152,6 +152,18 @@ const userController = {
   },
 
   create_skill: async function (req, res) {
+    const selectedSkill = await Skill.findOne({
+      where: {
+        name: req.body.name,
+        level: req.body.level,
+        type: req.body.type,
+        idUser: req.body.idUser,
+      },
+    });
+    if (selectedSkill) {
+      return res.status(400).send("Habilidade já cadastrada");
+    }
+
     const skill = {
       name: req.body.name,
       level: req.body.level,
@@ -242,7 +254,6 @@ const userController = {
       res.status(400).send("Erro na busca de habilidades");
     }
   },
-  
 };
 
 module.exports = userController;

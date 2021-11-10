@@ -38,7 +38,7 @@ const Body = () => {
     <BodyContainer>
       <WelcomeCard>
         <Section1>
-          <Title>Seja Bem Vindo </Title>
+          <Title>Seja Bem Vindo(a)</Title>
           {userInfo?.map((user) => (
             <User key={user.id}>{user.name}</User>
           ))}

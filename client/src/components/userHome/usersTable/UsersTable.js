@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import ReactPaginate from "react-paginate";
 import {
   Table,
   TableBody,
@@ -24,32 +24,65 @@ const UsersTable = () => {
     });
   }, []);
 
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const usersPerPage = 10;
+  const pagesVisited = pageNumber * usersPerPage;
+
+  const displayUsers = usersInfo
+    .slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((user) => {
+      return (
+        <TableTR key={user.id}>
+          <TableTD>{user.name}</TableTD>
+          <TableTD>{user.email}</TableTD>
+          <TableTD>
+            <button className="tdButton">
+              <a href={"/users/" + user.id} className="btnLink">
+                Ver Skills
+              </a>
+            </button>
+          </TableTD>
+        </TableTR>
+      );
+    });
+
+    const pageCount = Math.ceil(usersInfo.length / usersPerPage);
+
+    const changePage = ({selected}) => {
+      setPageNumber(selected)
+    }
+
   return (
     <>
       <TableContainer>
         <TableTitle>Veja todos os usuários cadastrados</TableTitle>
         <TableWrapper>
-        <Table>
-          <TableHead>
-            <TableTR>
-              <TableTH>Nome</TableTH>
-              <TableTH>E-mail</TableTH>
-              <TableTH>Skills</TableTH>
-            </TableTR>
-          </TableHead>
-          <TableBody>
-            {usersInfo?.map((user) => (
-              <TableTR key={user.id}> 
-                <TableTD>{user.name}</TableTD>
-                <TableTD>{user.email}</TableTD>
-                <TableTD>
-                  <button className="tdButton"><a href={'/users/' + user.id} className='btnLink'>Ver Skills</a></button>
-                </TableTD>
+          <Table>
+            <TableHead>
+              <TableTR>
+                <TableTH>Nome</TableTH>
+                <TableTH>E-mail</TableTH>
+                <TableTH>Skills</TableTH>
               </TableTR>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {displayUsers}
+            
+            </TableBody>
+          </Table>
         </TableWrapper>
+        <ReactPaginate 
+            previousLabel={"Anterior"}
+            nextLabel={"Próximo"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"paginationBtn"}
+            previousLinkClassName={"previousBtn"}
+            nextLinkClassName={"nextBtn"}
+            disabledClassName={"paginationDisable"}
+            activeClassName={"paginationActive"}
+            />
       </TableContainer>
     </>
   );

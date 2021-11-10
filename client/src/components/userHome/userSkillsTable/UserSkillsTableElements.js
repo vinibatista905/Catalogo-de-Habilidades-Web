@@ -3,11 +3,8 @@ import {
   bgAmarelo,
   bgAzul,
   bgCinza,
-  btnAmarelo,
-  btnAzul,
   txBranco,
   txCinzaEscuro,
-  txPreto,
 } from "../../UI/variaveis";
 
 export const TableContainer = styled.div`
@@ -16,41 +13,11 @@ export const TableContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 95vh;
+  height: 80vh;
   background: ${txBranco};
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
-
-  .paginationBtn {
-    width: 0%;
-    height: 3.5rem;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 4rem;
-  }
-
-  .paginationBtn a {
-    padding: 0.8rem;
-    margin: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid ${bgAzul};
-    color: ${bgAzul};
-    cursor: pointer;
-  }
-
-  .paginationBtn a:hover {
-    color: ${txBranco};
-    background-color: ${bgAzul};
-    transition: ease 0.3s;
-  }
-
-  .paginationActive a {
-    color: ${txBranco};
-    background-color: ${bgAzul};
-  }
 `;
 
 export const TableTitle = styled.h2`
@@ -62,11 +29,12 @@ export const TableTitle = styled.h2`
 
 export const TableWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   padding-bottom: 2rem;
+  
 `;
 
 export const Table = styled.table`
@@ -97,31 +65,17 @@ export const TableTR = styled.tr`
 
 export const TableTH = styled.th`
   padding: 12px 15px;
-  font-size: 1.4rem;
+  font-size: 1rem;
 `;
 
 export const TableTD = styled.td`
   padding: 12px 15px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
-  .tdButton {
-    width: 6rem;
-    height: 2.3rem;
-    border-radius: 10px;
-    background: ${btnAmarelo};
-    border: none;
-    transition: ease-out 0.3s;
-    box-shadow: inset 0 0 0 0 ${btnAmarelo};
-    outline: none;
-    cursor: pointer;
+`;
 
-    :hover {
-      box-shadow: inset 8rem 0 0 0 #f24b43;
-    }
+export const UserName = styled.h2`
+  font-size: 2.5rem;
+  color: ${txCinzaEscuro};
 
-    .btnLink {
-      text-decoration: none;
-      color: ${txPreto};
-    }
-  }
 `;

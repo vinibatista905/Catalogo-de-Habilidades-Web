@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Navbar from "../../../components/userHome/navbar/Navbar";
+import Footer from "../../../components/footer/Footer";
+import { Container } from "./AllSkillsElements";
+import UserSkillsTable from '../../../components/userHome/userSkillsTable/UserSkillsTable';
 
 const AllSkills = () => {
     return (
-        <div>
-            Ver todas as habilidades
-        </div>
+        <>
+        <Container>
+          <Navbar />
+         <UserSkillsTable />
+          <Footer />
+        </Container>
+      </>
     )
 }
 

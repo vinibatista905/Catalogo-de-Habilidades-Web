@@ -44,7 +44,6 @@ const SkillForm = () => {
     console.log(skillType);
   }
 
-  
   // LÓGICA PARA FILTRAR AS HABILIDADES
   function skillOptions(skillType) {
     return allSkills
@@ -64,7 +63,6 @@ const SkillForm = () => {
   const skillLevel = selectedLevel;
   console.log(skillLevel);
 
-
   // SUBMIT DA HABILIDADE
   const onSubmit = async () => {
     const userId = localStorage.getItem("user_id");
@@ -74,7 +72,6 @@ const SkillForm = () => {
       type: skillType.value,
       idUser: userId,
     };
-    alert("Habilidade Adicionada!");
 
     await axios
       .post("http://localhost:5000/user/create_skill", skillData)
@@ -82,7 +79,11 @@ const SkillForm = () => {
         const data = resp.data;
         if (data) {
           console.log(data);
+          alert("Habilidade Adicionada!");
         }
+      })
+      .catch((err) => {
+        alert("Habilidade já cadastrada! Por favor adicione outra habilidade.");
       });
   };
 

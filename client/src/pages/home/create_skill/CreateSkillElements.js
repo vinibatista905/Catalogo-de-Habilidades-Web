@@ -1,11 +1,17 @@
 import styled from "styled-components";
-import { bgAmarelo, bgAzul, txBranco, txCinza, txCinzaEscuro } from "../../../components/UI/variaveis";
+import {
+  bgAmarelo,
+  bgAzul,
+  txBranco,
+  txCinza,
+  txCinzaEscuro,
+} from "../../../components/UI/variaveis";
 
 export const Container = styled.div`
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   gap: 5rem;
@@ -16,7 +22,7 @@ justify-content: space-between;
 `;
 
 export const FormCard = styled.div`
-  width: 90rem;
+  width: 95rem;
   height: 45rem;
   margin-bottom: 4.2rem;
   display: flex;
@@ -40,7 +46,6 @@ export const BannerSection = styled.div`
 
 export const BannerImg = styled.img`
   width: 80%;
-
 `;
 
 export const FormSection = styled.div`
@@ -53,9 +58,9 @@ export const FormSection = styled.div`
 `;
 
 export const CardTitle = styled.h2`
- font-size: 2.5rem;
- color: ${txCinzaEscuro};
- margin: 4rem 0;
- position: relative;
- bottom: 10rem;
+  font-size: 2.5rem;
+  color: ${txCinzaEscuro};
+  margin: 0;
+  position: relative;
+  bottom: 10rem;
 `;

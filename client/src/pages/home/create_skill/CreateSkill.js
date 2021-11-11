@@ -1,7 +1,14 @@
 import React from "react";
 import Navbar from "../../../components/userHome/navbar/Navbar";
 import Footer from "../../../components/footer/Footer";
-import { BannerImg, BannerSection, CardTitle, Container, FormCard, FormSection } from "./CreateSkillElements";
+import {
+  BannerImg,
+  BannerSection,
+  CardTitle,
+  Container,
+  FormCard,
+  FormSection,
+} from "./CreateSkillElements";
 import SkillForm from "../../../components/userHome/skillForm/SkillForm";
 
 const CreateSkill = () => {
@@ -12,7 +19,9 @@ const CreateSkill = () => {
 
         <FormCard>
           <BannerSection>
-            <BannerImg src={require('../../../assets/add-skills.png').default} />
+            <BannerImg
+              src={require("../../../assets/add-skills.png").default}
+            />
           </BannerSection>
 
           <FormSection>
@@ -20,8 +29,8 @@ const CreateSkill = () => {
             <SkillForm />
           </FormSection>
         </FormCard>
-        
-      <Footer />
+
+        <Footer />
       </Container>
     </>
   );

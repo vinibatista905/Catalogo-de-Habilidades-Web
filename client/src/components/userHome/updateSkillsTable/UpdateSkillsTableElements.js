@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import { FiEdit } from "react-icons/fi";
+import { MdDeleteForever } from "react-icons/md";
 import {
   bgAmarelo,
   bgAzul,
   bgCinza,
   btnAmarelo,
   btnAzul,
+  btnVerde,
   txBranco,
   txCinzaEscuro,
+  txVermelho,
 } from "../../UI/variaveis";
 
 export const TableContainer = styled.div`
@@ -15,7 +19,7 @@ export const TableContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 55rem;
+  height: 65rem;
   background: ${txBranco};
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
@@ -153,7 +157,29 @@ export const AddSkillLink = styled.a`
   }
 `;
 
-export const LinksWrap = styled.div`
- display: flex;
- gap: 1rem;
+export const IconsWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+`;
+
+export const EditIcon = styled(FiEdit)`
+  font-size: 1.5rem;
+  color: ${btnVerde};
+
+  :hover {
+    transform: scale(1.2);
+    transition: ease 0.3s;
+  }
+`;
+
+export const DeleteIcon = styled(MdDeleteForever)`
+  font-size: 2rem;
+  color: ${txVermelho};
+  cursor: pointer;
+  :hover {
+    transform: scale(1.2);
+    transition: ease 0.3s;
+  }
 `;

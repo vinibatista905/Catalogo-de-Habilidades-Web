@@ -66,7 +66,7 @@ const Body = () => {
           </Card2>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/update_skill">
           <Card3>
             <CardIcon3></CardIcon3>
             <CardDesc>Editar Suas Habilidades</CardDesc>

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
+  BtnWrap,
+  CheckSkillsLink,
   CustomSelect,
+  FieldContainer,
   FieldDesc,
   FieldWrap,
   Form,
@@ -90,6 +93,7 @@ const SkillForm = () => {
   return (
     <SkillFormWrap>
       <Form>
+        <FieldContainer>
         <FieldWrap>
           <FieldDesc htmlFor="type">Tipo</FieldDesc>
           <CustomSelect onChange={onChangeInput} options={typeOptions} />
@@ -107,9 +111,15 @@ const SkillForm = () => {
           <FieldDesc htmlFor="level">Nível</FieldDesc>
           <CustomSelect onChange={setSelectedLevel} options={levelOptions} />
         </FieldWrap>
-        <FormBtn type="button" onClick={onSubmit}>
-          Adicionar
-        </FormBtn>
+        </FieldContainer>
+        <BtnWrap>
+          <FormBtn type="button" onClick={onSubmit}>
+            Adicionar
+          </FormBtn>
+          <CheckSkillsLink href="/all_skills">
+            <button type="button" className="linkBtn">Visualizar Catalogo</button>
+          </CheckSkillsLink>
+        </BtnWrap>
       </Form>
     </SkillFormWrap>
   );

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
+
 import {
   AddSkillLink,
-  LinksWrap,
+  DeleteIcon,
+  EditIcon,
+  IconsWrap,
   SearchField,
   Table,
   TableBody,
@@ -14,10 +17,10 @@ import {
   TableTitle,
   TableTR,
   TableWrapper,
-} from "./UserSkillsTableElements";
+} from "./UpdateSkillsTableElements";
 
-const UserSkillsTable = () => {
-  // REQ PARA A API
+const UpdateSkillsTable = () => {
+  // REQ PARA A API ---> RECEBE AS HABILIDADES
   const userId = localStorage.getItem("user_id");
 
   const [userSkills, setUserSkills] = useState([]);
@@ -76,6 +79,24 @@ const UserSkillsTable = () => {
           <TableTD>{skill.type}</TableTD>
           <TableTD>{skill.name}</TableTD>
           <TableTD>{skill.level}</TableTD>
+          <TableTD>
+            <IconsWrap>
+              <a href="/">
+                <EditIcon />
+              </a>
+              <DeleteIcon
+                onClick={() => {
+                  const skillId = skill.id;
+                  alert("Deseja deletar essa habilidade?");
+                  axios.delete(
+                    `http://localhost:5000/user/delete_skill/${skillId}`
+                  );
+                  alert("Habilidade Deletada!");
+                  window.location.reload(false);
+                }}
+              />
+            </IconsWrap>
+          </TableTD>
         </TableTR>
       );
     });
@@ -86,10 +107,12 @@ const UserSkillsTable = () => {
     setPageNumber(selected);
   };
 
+  // REQ PARA A API ---> DELETAR UMA HABILIDADE
+
   return (
     <>
       <TableContainer>
-        <TableTitle>Esse é o seu catálogo de habilidades</TableTitle>
+        <TableTitle>Edite suas habilidades</TableTitle>
         <SearchField
           type="text"
           placeholder="Pesquisar..."
@@ -104,6 +127,7 @@ const UserSkillsTable = () => {
                 <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
                 <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
                 <TableTH onClick={() => sorting("level")}>Nível</TableTH>
+                <TableTH>Editar</TableTH>
               </TableTR>
             </TableHead>
             <TableBody>{displaySkills}</TableBody>
@@ -120,13 +144,12 @@ const UserSkillsTable = () => {
           disabledClassName={"paginationDisable"}
           activeClassName={"paginationActive"}
         />
-        <LinksWrap>
-        <AddSkillLink href="/create_skill"><button className='addBtn'>Adicionar Habilidades</button></AddSkillLink>
-        <AddSkillLink href="/update_skill"><button className='addBtn'>Editar Habilidades</button></AddSkillLink>
-        </LinksWrap>
+        <AddSkillLink href="/create_skill">
+          <button className="addBtn">Adicionar Habilidades</button>
+        </AddSkillLink>
       </TableContainer>
     </>
   );
 };
 
-export default UserSkillsTable;
+export default UpdateSkillsTable;

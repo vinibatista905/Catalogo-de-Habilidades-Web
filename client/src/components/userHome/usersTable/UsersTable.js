@@ -9,6 +9,8 @@ import {
   TableHead,
   TableTD,
   TableTH,
+  TableTHEmail,
+  TableTHName,
   TableTitle,
   TableTR,
   TableWrapper,
@@ -102,8 +104,8 @@ const UsersTable = () => {
             <TableHead>
               <TableTR>
                 <TableTH>ID</TableTH>
-                <TableTH onClick={() => sorting("name")}>Nome</TableTH>
-                <TableTH>E-mail</TableTH>
+                <TableTHName onClick={() => sorting("name")}>Nome</TableTHName>
+                <TableTHEmail onClick={() => sorting("email")}>E-mail</TableTHEmail>
                 <TableTH>Skills</TableTH>
               </TableTR>
             </TableHead>

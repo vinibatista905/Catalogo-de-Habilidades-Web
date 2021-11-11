@@ -4,6 +4,7 @@ import {
   bgAzul,
   bgCinza,
   btnAmarelo,
+  btnAzul,
   txBranco,
   txCinzaEscuro,
   txPreto,
@@ -113,7 +114,30 @@ export const TableTR = styled.tr`
 export const TableTH = styled.th`
   padding: 12px 15px;
   font-size: 1.4rem;
+`;
+
+export const TableTHName = styled.th`
+  padding: 12px 15px;
+  font-size: 1.4rem;
   cursor: pointer;
+
+  :hover {
+    color: ${bgAmarelo};
+    background: ${btnAzul};
+    transition: ease 0.3s;
+  }
+`;
+
+export const TableTHEmail = styled.th`
+  padding: 12px 15px;
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  :hover {
+    color: ${bgAmarelo};
+    background: ${btnAzul};
+    transition: ease 0.3s;
+  }
 `;
 
 export const TableTD = styled.td`

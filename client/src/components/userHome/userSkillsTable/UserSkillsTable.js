@@ -31,6 +31,25 @@ const UserSkillsTable = () => {
       });
   }, []);
 
+  // ORDENAR OS DADOS DA TABELA
+  const [order, setOrder] = useState("ASC");
+  const sorting = (col) => {
+    if (order === "ASC") {
+      const sorted = [...userSkills].sort((a, b) =>
+        a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+      );
+      setUserSkills(sorted);
+      setOrder("DSC");
+    }
+    if (order === "DSC") {
+      const sorted = [...userSkills].sort((a, b) =>
+        a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+      );
+      setUserSkills(sorted);
+      setOrder("ASC");
+    }
+  };
+
   // FILTRAR AS HABILIDADES
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -80,9 +99,9 @@ const UserSkillsTable = () => {
           <Table>
             <TableHead>
               <TableTR>
-                <TableTH>Tipo</TableTH>
-                <TableTH>Habilidade</TableTH>
-                <TableTH>Nível</TableTH>
+                <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
+                <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
+                <TableTH onClick={() => sorting("level")}>Nível</TableTH>
               </TableTR>
             </TableHead>
             <TableBody>{displaySkills}</TableBody>

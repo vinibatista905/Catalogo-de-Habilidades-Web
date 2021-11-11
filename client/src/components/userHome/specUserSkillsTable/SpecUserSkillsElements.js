@@ -3,6 +3,7 @@ import {
   bgAmarelo,
   bgAzul,
   bgCinza,
+  btnAzul,
   txBranco,
   txCinzaEscuro,
 } from "../../UI/variaveis";
@@ -13,11 +14,42 @@ export const TableContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 80vh;
+  height: 55rem;
   background: ${txBranco};
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+  
+  .paginationBtn {
+    width: 0%;
+    height: 3.5rem;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+
+  .paginationBtn a {
+    padding: 0.8rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid ${bgAzul};
+    color: ${bgAzul};
+    cursor: pointer;
+  }
+
+  .paginationBtn a:hover {
+    color: ${txBranco};
+    background-color: ${bgAzul};
+    transition: ease 0.3s;
+  }
+
+  .paginationActive a {
+    color: ${txBranco};
+    background-color: ${bgAzul};
+  }
+
 `;
 
 export const TableTitle = styled.h2`
@@ -27,9 +59,23 @@ export const TableTitle = styled.h2`
   padding-bottom: 1rem;
 `;
 
+export const SearchField = styled.input`
+  font-size: 1.2rem;
+  width: 15rem;
+  height: 3rem;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid ${bgAmarelo};
+  outline: none;
+
+  :focus {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  }
+`;
+
 export const TableWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -46,6 +92,8 @@ export const Table = styled.table`
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
 `;
 
 export const TableHead = styled.thead`
@@ -53,6 +101,8 @@ export const TableHead = styled.thead`
   color: ${txBranco};
   text-align: left;
   font-weight: bold;
+  text-align: center;
+
 `;
 
 export const TableBody = styled.tbody`
@@ -65,17 +115,25 @@ export const TableTR = styled.tr`
 
 export const TableTH = styled.th`
   padding: 12px 15px;
-  font-size: 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  
+  :hover{
+  color: ${bgAmarelo};
+  background: ${btnAzul};
+  transition: ease 0.3s;
+}
 `;
 
 export const TableTD = styled.td`
   padding: 12px 15px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 
 `;
 
 export const UserName = styled.h2`
   font-size: 2.5rem;
   color: ${txCinzaEscuro};
+  padding-bottom: 2rem;
 
 `;

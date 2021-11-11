@@ -19,7 +19,7 @@ const adminRouter = require("./routes/adminRouter");
 app.use("/admin", adminRouter)
 
 app.get("/", (req, res) => {
-  res.send("Essa é a Home");
+  res.send("Essa é a Homepage");
 });
 
 // DB

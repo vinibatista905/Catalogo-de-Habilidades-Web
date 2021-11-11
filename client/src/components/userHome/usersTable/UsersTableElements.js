@@ -4,7 +4,6 @@ import {
   bgAzul,
   bgCinza,
   btnAmarelo,
-  btnAzul,
   txBranco,
   txCinzaEscuro,
   txPreto,
@@ -16,7 +15,7 @@ export const TableContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 95vh;
+  height: 62rem;
   background: ${txBranco};
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
@@ -57,7 +56,22 @@ export const TableTitle = styled.h2`
   font-size: 2.5rem;
   color: ${txCinzaEscuro};
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding: 2rem 0;
+`;
+
+export const SearchField = styled.input`
+  font-size: 1.2rem;
+  width: 15rem;
+  height: 3rem;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid ${bgAmarelo};
+  outline: none;
+
+  :focus{
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+
+  }
 `;
 
 export const TableWrapper = styled.div`

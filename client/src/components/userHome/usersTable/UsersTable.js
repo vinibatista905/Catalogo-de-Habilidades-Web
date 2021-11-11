@@ -26,6 +26,25 @@ const UsersTable = () => {
     });
   }, []);
 
+  // ORDENAR OS DADOS DA TABELA
+  const [order, setOrder] = useState("ASC");
+  const sorting = (col) => {
+    if (order === "ASC") {
+      const sorted = [...usersInfo].sort((a, b) =>
+        a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+      );
+      setUsersInfo(sorted);
+      setOrder("DSC");
+    }
+    if (order === "DSC") {
+      const sorted = [...usersInfo].sort((a, b) =>
+        a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+      );
+      setUsersInfo(sorted);
+      setOrder("ASC");
+    }
+  };
+
   // FILTRAR OS USUÁRIOS
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -47,6 +66,7 @@ const UsersTable = () => {
     .map((user) => {
       return (
         <TableTR key={user.id}>
+          <TableTD>{user.id}</TableTD>
           <TableTD>{user.name}</TableTD>
           <TableTD>{user.email}</TableTD>
           <TableTD>
@@ -81,7 +101,8 @@ const UsersTable = () => {
           <Table>
             <TableHead>
               <TableTR>
-                <TableTH>Nome</TableTH>
+                <TableTH>ID</TableTH>
+                <TableTH onClick={() => sorting("name")}>Nome</TableTH>
                 <TableTH>E-mail</TableTH>
                 <TableTH>Skills</TableTH>
               </TableTR>

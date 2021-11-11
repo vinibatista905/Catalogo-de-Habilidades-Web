@@ -68,9 +68,8 @@ export const SearchField = styled.input`
   border: 1px solid ${bgAmarelo};
   outline: none;
 
-  :focus{
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-
+  :focus {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -85,13 +84,14 @@ export const TableWrapper = styled.div`
 
 export const Table = styled.table`
   border-collapse: collapse;
-  margin: 25px 0;
+  margin: 1.6rem 0;
   width: 80%;
   font-size: 1rem;
-  min-width: 400px;
+  min-width: 25rem;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
 `;
 
 export const TableHead = styled.thead`
@@ -99,6 +99,7 @@ export const TableHead = styled.thead`
   color: ${txBranco};
   text-align: left;
   font-weight: bold;
+  text-align: center;
 `;
 
 export const TableBody = styled.tbody`
@@ -112,6 +113,7 @@ export const TableTR = styled.tr`
 export const TableTH = styled.th`
   padding: 12px 15px;
   font-size: 1.4rem;
+  cursor: pointer;
 `;
 
 export const TableTD = styled.td`

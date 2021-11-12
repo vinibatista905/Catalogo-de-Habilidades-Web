@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+
+import Footer from "../../../components/footer/Footer";
+import AdminBody from "../../../components/adminHome/adminBody/AdminBody";
+import Navbar from "../../../components/userHome/navbar/Navbar";
+import { HomeContainer } from "./AdminHomeElements";
 
 const AdminHome = () => {
-    return (
-        <div>
-            <h1>Essa é a home do Admin!</h1>
-        </div>
-    )
-}
+  return (
+    <>
+      <HomeContainer>
+        <Navbar />
+        <AdminBody />
+        <Footer />
+      </HomeContainer>
+    </>
+  );
+};
 
-export default AdminHome
+export default AdminHome;

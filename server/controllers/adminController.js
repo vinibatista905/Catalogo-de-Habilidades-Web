@@ -126,6 +126,16 @@ const adminController = {
   },
 
   create_new_skill: async function (req, res) {
+    const chosenSkill = await AllSkills.findOne({
+      where: {
+        name: req.body.name,
+        category: req.body.category,
+      },
+    });
+    if (chosenSkill) {
+      return res.status(400).send("Habilidade já cadastrada");
+    }
+
     const newSkill = {
       name: req.body.name,
       category: req.body.category,

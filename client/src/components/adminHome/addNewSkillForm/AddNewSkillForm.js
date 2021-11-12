@@ -50,7 +50,7 @@ const AddNewSkillForm = () => {
           </FieldContainer>
           <BtnContainer>
           <FormBtn type="submit">Adicionar</FormBtn>
-          <CheckSkillsLink href="/all_skills">
+          <CheckSkillsLink href="/admin/skills_catalog">
             <button type="button" className="linkBtn">Visualizar Catalogo</button>
           </CheckSkillsLink>
           </BtnContainer>

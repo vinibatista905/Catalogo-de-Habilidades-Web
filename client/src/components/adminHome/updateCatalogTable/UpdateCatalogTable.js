@@ -17,40 +17,37 @@ import {
   TableTitle,
   TableTR,
   TableWrapper,
-} from "./UpdateSkillsTableElements";
+} from "./UpdateCatalogTableElements";
 
-const UpdateSkillsTable = () => {
-  // REQ PARA A API ---> RECEBE AS HABILIDADES
-  const userId = localStorage.getItem("user_id");
+const UpdateCatalogTable = () => {
+  // REQ PARA A API ---> RECEBE AS HABILIDADES CATALOGADAS
 
-  const [userSkills, setUserSkills] = useState([]);
+  const [skillsCatalog, setSkillsCatalog] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/user/check_skill/${userId}`)
-      .then(({ data }) => {
-        setUserSkills(data);
-        console.log(data);
+    axios.get(`http://localhost:5000/admin/all_new_skills`).then(({ data }) => {
+      setSkillsCatalog(data);
+      console.log(data);
 
-        // eslint-disable-next-line
-      });
+      // eslint-disable-next-line
+    });
   }, []);
 
   // ORDENAR OS DADOS DA TABELA
   const [order, setOrder] = useState("ASC");
   const sorting = (col) => {
     if (order === "ASC") {
-      const sorted = [...userSkills].sort((a, b) =>
+      const sorted = [...skillsCatalog].sort((a, b) =>
         a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
       );
-      setUserSkills(sorted);
+      setSkillsCatalog(sorted);
       setOrder("DSC");
     }
     if (order === "DSC") {
-      const sorted = [...userSkills].sort((a, b) =>
+      const sorted = [...skillsCatalog].sort((a, b) =>
         a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
       );
-      setUserSkills(sorted);
+      setSkillsCatalog(sorted);
       setOrder("ASC");
     }
   };
@@ -64,7 +61,7 @@ const UpdateSkillsTable = () => {
   const skillsPerPage = 10;
   const pagesVisited = pageNumber * skillsPerPage;
 
-  const displaySkills = userSkills
+  const displaySkills = skillsCatalog
     .slice(pagesVisited, pagesVisited + skillsPerPage)
     .filter((skill) => {
       if (searchTerm === "") {
@@ -76,12 +73,12 @@ const UpdateSkillsTable = () => {
     .map((skill) => {
       return (
         <TableTR key={skill.id}>
-          <TableTD>{skill.type}</TableTD>
+          <TableTD>{skill.id}</TableTD>
           <TableTD>{skill.name}</TableTD>
-          <TableTD>{skill.level}</TableTD>
+          <TableTD>{skill.category}</TableTD>
           <TableTD>
             <IconsWrap>
-              <a href={"/update_skill/" + skill.id}>
+              <a href={"/admin/update_catalog/" + skill.id}>
                 <EditIcon />
               </a>
               <DeleteIcon
@@ -89,9 +86,9 @@ const UpdateSkillsTable = () => {
                   const skillId = skill.id;
                   alert("Deseja deletar essa habilidade?");
                   axios.delete(
-                    `http://localhost:5000/user/delete_skill/${skillId}`
+                    `http://localhost:5000/admin//delete_new_skill/${skillId}`
                   );
-                  alert("Habilidade Deletada!");
+                  alert("Habilidade Deletada do Catálogo!");
                   window.location.reload(false);
                 }}
               />
@@ -101,18 +98,16 @@ const UpdateSkillsTable = () => {
       );
     });
 
-  const pageCount = Math.ceil(userSkills.length / skillsPerPage);
+  const pageCount = Math.ceil(skillsCatalog.length / skillsPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
 
-  
-
   return (
     <>
       <TableContainer>
-        <TableTitle>Edite suas habilidades</TableTitle>
+        <TableTitle>Edite o catálogo de habilidades</TableTitle>
         <SearchField
           type="text"
           placeholder="Pesquisar..."
@@ -124,9 +119,9 @@ const UpdateSkillsTable = () => {
           <Table>
             <TableHead>
               <TableTR>
-                <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
+                <TableTH>ID</TableTH>
                 <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
-                <TableTH onClick={() => sorting("level")}>Nível</TableTH>
+                <TableTH onClick={() => sorting("category")}>Categoria</TableTH>
                 <TableTH>Editar</TableTH>
               </TableTR>
             </TableHead>
@@ -144,7 +139,7 @@ const UpdateSkillsTable = () => {
           disabledClassName={"paginationDisable"}
           activeClassName={"paginationActive"}
         />
-        <AddSkillLink href="/create_skill">
+        <AddSkillLink href="/admin/add_skill">
           <button className="addBtn">Adicionar Habilidades</button>
         </AddSkillLink>
       </TableContainer>
@@ -152,4 +147,4 @@ const UpdateSkillsTable = () => {
   );
 };
 
-export default UpdateSkillsTable;
+export default UpdateCatalogTable;

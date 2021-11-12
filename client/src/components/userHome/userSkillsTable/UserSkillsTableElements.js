@@ -64,11 +64,13 @@ export const SearchField = styled.input`
   height: 3rem;
   padding: 0.7rem;
   border-radius: 10px;
-  border: 1px solid ${bgAmarelo};
+  border: 2px solid ${bgAmarelo};
   outline: none;
 
   :focus {
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid ${btnAzul};
+
   }
 `;
 

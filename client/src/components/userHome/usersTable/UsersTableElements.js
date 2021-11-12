@@ -66,11 +66,12 @@ export const SearchField = styled.input`
   height: 3rem;
   padding: 0.7rem;
   border-radius: 10px;
-  border: 1px solid ${bgAmarelo};
+  border: 2px solid ${bgAmarelo};
   outline: none;
 
   :focus {
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid ${btnAzul};
   }
 `;
 
@@ -142,7 +143,7 @@ export const TableTHEmail = styled.th`
 
 export const TableTD = styled.td`
   padding: 12px 15px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 
   .tdButton {
     width: 6rem;
@@ -154,9 +155,11 @@ export const TableTD = styled.td`
     box-shadow: inset 0 0 0 0 ${btnAmarelo};
     outline: none;
     cursor: pointer;
+    font-size: 1.1rem;
 
     :hover {
       box-shadow: inset 8rem 0 0 0 #f24b43;
+      font-weight: bold;
     }
 
     .btnLink {

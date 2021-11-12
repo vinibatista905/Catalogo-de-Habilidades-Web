@@ -117,7 +117,7 @@ const SkillForm = () => {
             Adicionar
           </FormBtn>
           <CheckSkillsLink href="/all_skills">
-            <button type="button" className="linkBtn">Visualizar Catalogo</button>
+            <button type="button" className="linkBtn">Visualizar Catálogo</button>
           </CheckSkillsLink>
         </BtnWrap>
       </Form>

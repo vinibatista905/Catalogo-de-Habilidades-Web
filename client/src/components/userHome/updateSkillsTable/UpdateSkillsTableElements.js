@@ -19,7 +19,7 @@ export const TableContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 65rem;
+  height: 60rem;
   background: ${txBranco};
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
@@ -68,11 +68,12 @@ export const SearchField = styled.input`
   height: 3rem;
   padding: 0.7rem;
   border-radius: 10px;
-  border: 1px solid ${bgAmarelo};
+  border: 2px solid ${bgAmarelo};
   outline: none;
 
   :focus {
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid ${btnAzul};
   }
 `;
 
@@ -137,7 +138,7 @@ export const AddSkillLink = styled.a`
   text-decoration: none;
   position: relative;
   left: 25rem;
-  bottom: 6rem;
+  bottom: 5.8rem;
 
   .addBtn {
     width: 8rem;
@@ -169,17 +170,17 @@ export const EditIcon = styled(FiEdit)`
   color: ${btnVerde};
 
   :hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
     transition: ease 0.3s;
   }
 `;
 
 export const DeleteIcon = styled(MdDeleteForever)`
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: ${txVermelho};
   cursor: pointer;
   :hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
     transition: ease 0.3s;
   }
 `;

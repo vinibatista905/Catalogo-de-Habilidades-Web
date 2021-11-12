@@ -19,7 +19,7 @@ export const TableContainer = styled.div`
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
-  
+
   .paginationBtn {
     width: 0%;
     height: 3.5rem;
@@ -49,7 +49,6 @@ export const TableContainer = styled.div`
     color: ${txBranco};
     background-color: ${bgAzul};
   }
-
 `;
 
 export const TableTitle = styled.h2`
@@ -65,11 +64,12 @@ export const SearchField = styled.input`
   height: 3rem;
   padding: 0.7rem;
   border-radius: 10px;
-  border: 1px solid ${bgAmarelo};
+  border: 2px solid ${bgAmarelo};
   outline: none;
 
   :focus {
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.3);
+    border: 2px solid ${btnAzul};
   }
 `;
 
@@ -80,7 +80,6 @@ export const TableWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-bottom: 2rem;
-  
 `;
 
 export const Table = styled.table`
@@ -93,7 +92,6 @@ export const Table = styled.table`
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-
 `;
 
 export const TableHead = styled.thead`
@@ -102,7 +100,6 @@ export const TableHead = styled.thead`
   text-align: left;
   font-weight: bold;
   text-align: center;
-
 `;
 
 export const TableBody = styled.tbody`
@@ -117,23 +114,21 @@ export const TableTH = styled.th`
   padding: 12px 15px;
   font-size: 1.4rem;
   cursor: pointer;
-  
-  :hover{
-  color: ${bgAmarelo};
-  background: ${btnAzul};
-  transition: ease 0.3s;
-}
+
+  :hover {
+    color: ${bgAmarelo};
+    background: ${btnAzul};
+    transition: ease 0.3s;
+  }
 `;
 
 export const TableTD = styled.td`
   padding: 12px 15px;
   font-size: 1.2rem;
-
 `;
 
 export const UserName = styled.h2`
   font-size: 2.5rem;
   color: ${txCinzaEscuro};
   padding-bottom: 2rem;
-
 `;

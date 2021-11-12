@@ -57,7 +57,7 @@ const AdminBody = () => {
           </Card1>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/admin/skills_catalog">
           <Card2>
             <CardIcon2></CardIcon2>
             <CardDesc>Atualizar Habilidades do Catálogo Principal</CardDesc>

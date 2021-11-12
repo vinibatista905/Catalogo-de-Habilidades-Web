@@ -18,6 +18,7 @@ import PrivateRoute from './PrivateRoute'
 import Admin_Login from "../pages/admin/admin_login/Admin_Login";
 import AdminHome from "../pages/admin/adminHome/AdminHome";
 import AddNewSkill from "../pages/admin/adminHome/addNewSkill/AddNewSkill";
+import SkillsCatalog from "../pages/admin/adminHome/skillsCatalog/SkillsCatalog";
 
 import { history } from "../history";
 
@@ -41,6 +42,7 @@ const Routes = () => (
       <PrivateRoute component={SpecUserSkills} exact path="/users/:id" />
       <PrivateRoute component={AdminHome} exact path="/admin/home" />
       <PrivateRoute component={AddNewSkill} exact path="/admin/add_skill" />
+      <PrivateRoute component={SkillsCatalog} exact path="/admin/skills_catalog" />
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>

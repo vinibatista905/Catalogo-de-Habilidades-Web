@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../../../components/userHome/navbar/Navbar";
+import AdminNavbar from "../../../../components/adminHome/navbar/AdminNavbar";
 import Footer from "../../../../components/footer/Footer";
 import AddNewSkillForm from "../../../../components/adminHome/addNewSkillForm/AddNewSkillForm";
 import {
@@ -11,12 +11,11 @@ import {
   FormSection,
 } from "./AddNewSkillElements";
 
-
 const CreateSkill = () => {
   return (
     <>
       <Container>
-        <Navbar />
+        <AdminNavbar />
 
         <FormCard>
           <BannerSection>
@@ -26,7 +25,9 @@ const CreateSkill = () => {
           </BannerSection>
 
           <FormSection>
-            <CardTitle>Adicione uma nova habilidade ao catálogo principal</CardTitle>
+            <CardTitle>
+              Adicione uma nova habilidade ao catálogo principal
+            </CardTitle>
             <AddNewSkillForm />
           </FormSection>
         </FormCard>

@@ -1,4 +1,3 @@
-import Select from "react-select";
 import styled from "styled-components";
 import {
   btnAmarelo,
@@ -15,24 +14,37 @@ export const SkillFormWrap = styled.div`
   justify-content: center;
   position: relative;
   bottom: 8rem;
-`;
 
-export const Field = styled.input`
-  width: 16rem;
-  padding: 0.6rem 0.5rem;
-  font-size: 1.2rem;
-  border-radius: 12px;
-  outline: none;
-  border: 1px ${btnAmarelo} solid;
+  .skillField {
+    width: 16rem;
+    padding: 0.6rem 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    outline: none;
+    border: 1px ${btnAmarelo} solid;
 
-  :hover{
-      box-shadow: 0 0 10px 5px rgba(0,0,0,0.25);
+    :hover {
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    :focus {
+      border: 1px ${btnAzul} solid;
+    }
   }
 
-  :focus{
-  border: 1px ${btnAzul} solid;
+  .form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    gap: 2rem;
   }
 `;
+
+
 export const FieldContainer = styled.div`
   width: 100%;
   display: flex;
@@ -51,24 +63,13 @@ export const FieldDesc = styled.label`
   color: ${txCinzaEscuro};
   padding-bottom: 1rem;
 `;
-export const Form = styled.form`
-  width: 100%;
-  height: 100%;
+export const BtnContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
   gap: 2rem;
 `;
 
-export const BtnWrap = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-`;
 
 export const FormBtn = styled.button`
   width: 6rem;
@@ -103,8 +104,7 @@ export const CheckSkillsLink = styled.a`
 
     :hover {
       box-shadow: inset 8rem 0 0 0 #f24b43;
-    font-weight: bold;
-
+      font-weight: bold;
     }
   }
 `;

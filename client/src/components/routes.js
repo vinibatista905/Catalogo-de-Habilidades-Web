@@ -11,6 +11,7 @@ import Homepage from "../pages/homepage/Homepage";
 import Home from "../pages/home/Home";
 import CreateSkill from "../pages/home/create_skill/CreateSkill";
 import UpdateSkills from "../pages/home/update_skills/UpdateSkills";
+import UpdateSkillPage from "../pages/home/update_skills/update_skill_page/UpdateSkillPage";
 import AllSkills from "../pages/home/all_skills/AllSkills";
 import AllUsers from "../pages/home/all_users/AllUsers";
 import SpecUserSkills from "../pages/home/specific_user_skills/SpecUserSkills";
@@ -34,6 +35,7 @@ const Routes = () => (
       <PrivateRoute component={AdminHome} exact path="/admin/home" />
       <PrivateRoute component={CreateSkill} exact path="/create_skill" />
       <PrivateRoute component={UpdateSkills} exact path="/update_skill" />
+      <PrivateRoute component={UpdateSkillPage} exact path="/update_skill/:id" />
       <PrivateRoute component={AllSkills} exact path="/all_skills" />
       <PrivateRoute component={AllUsers} exact path="/all_users" />
       <PrivateRoute component={SpecUserSkills} exact path="/users/:id" />

@@ -81,7 +81,7 @@ const UpdateSkillsTable = () => {
           <TableTD>{skill.level}</TableTD>
           <TableTD>
             <IconsWrap>
-              <a href="/">
+              <a href={"/update_skill/" + skill.id}>
                 <EditIcon />
               </a>
               <DeleteIcon

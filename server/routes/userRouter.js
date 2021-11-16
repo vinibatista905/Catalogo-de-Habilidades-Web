@@ -14,6 +14,8 @@ router.get("/info/:userId", userController.user_info);
 router.get("/all_users", userController.all_users);
 router.get("/check_skills_byUser/:userId",userController.check_skills_byUser)
 router.get("/all_skills", userController.all_skills);
+router.post("/add_project", userController.add_project);
+
 
 
 module.exports = router;

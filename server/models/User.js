@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     name: {
@@ -28,6 +29,12 @@ module.exports = (sequelize, DataTypes) => {
       constraint: true
     })
   }
+
+  User.associate = (models) => {
+    User.belongsToMany(models.Project, { through: 'userproject' })
+  }
+
+ 
  
   return User;
 };

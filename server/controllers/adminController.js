@@ -1,6 +1,7 @@
 const { User } = require("../models/");
 const { Skill } = require("../models/");
 const { AllSkills } = require("../models/");
+const { Project } = require("../models/");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -169,6 +170,34 @@ const adminController = {
       res.status(400).send("Erro na busca de habilidades");
     }
   },
+
+  create_project: async function (req, res) {
+    const chosenProject = await Project.findOne({
+      where: {
+        name: req.body.name,
+      },
+    });
+    if (chosenProject) {
+      return res.status(400).send("Projeto já cadastrado");
+    }
+
+    const newProject = {
+      name: req.body.name,
+      manager: req.body.manager,
+      startDate: req.body.startDate,
+      conclusionDate: req.body.conclusionDate,
+      mainSkill: req.body.mainSkill,
+    };
+
+    try {
+      console.log(newProject);
+      const savedProject = await Project.create(newProject);
+      res.status(200).send(savedProject);
+    } catch (error) {
+      res.status(400).send("Erro na criação do projeto");
+    }
+  },
+
 };
 
 module.exports = adminController;

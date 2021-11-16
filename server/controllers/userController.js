@@ -1,6 +1,7 @@
 const { User } = require("../models/");
 const { Skill } = require("../models/");
 const { AllSkills } = require("../models/");
+const { Project } = require("../models/");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
@@ -252,6 +253,29 @@ const userController = {
       res.status(200).send(allNewSkills);
     } catch (error) {
       res.status(400).send("Erro na busca de habilidades");
+    }
+  },
+
+  add_project: async function (req, res) {
+    const userId = req.body.id;
+
+    const selectedProject = await Project.findOne({
+      where: {
+        name: req.body.name,
+      },
+    });
+
+    if (!selectedProject) {
+      return res.status(400).send("Projeto não existe");
+    }
+
+    try {
+      const selectedUser = await User.findByPk(userId);
+
+      await selectedUser.addProjects(selectedProject);
+      res.status(200).send("Projeto adicionado!");
+    } catch (error) {
+      res.status(400).send("Erro em adicionar projeto");
     }
   },
 };

@@ -120,7 +120,7 @@ const adminController = {
 
     try {
       const deleteSkill = await Skill.destroy({ where: { id: skillId } });
-      res.status(200).send("Deletado com sucesso");
+      res.status(200).send("Habilidade deletada com sucesso");
     } catch (error) {
       res.status(400).send(error);
     }
@@ -195,6 +195,40 @@ const adminController = {
       res.status(200).send(savedProject);
     } catch (error) {
       res.status(400).send("Erro na criação do projeto");
+    }
+  },
+
+  check_project: async function (req, res) {
+    try {
+      const projects = await Project.findAll();
+      res.status(200).send(projects);
+    } catch (error) {
+      res.status(400).send("Erro na busca dos projetos");
+    }
+  },
+
+  update_project: async function (req, res) {
+    const projectId = req.params.projectId;
+
+    const newProject = req.body;
+
+    try {
+      await Project.update(newProject, { where: { id: projectId } });
+      res.status(200).send(newProject);
+    } catch (error) {
+      console.log(error);
+      res.status(400).send("Erro na atualização do projeto");
+    }
+  },
+
+  delete_project: async function (req, res) {
+    const projectId = req.params.projectId;
+
+    try {
+      const deleteProject = await Project.destroy({ where: { id: projectId } });
+      res.status(200).send("Projeto deletado com sucesso");
+    } catch (error) {
+      res.status(400).send(error);
     }
   },
 

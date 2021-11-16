@@ -14,6 +14,9 @@ router.post("/create_new_skill", adminController.create_new_skill);
 router.delete("/delete_new_skill/:newSkillId", adminController.delete_new_skill);
 router.get("/all_new_skills", adminController.all_new_skills);
 router.post("/create_project", adminController.create_project);
+router.get("/check_project", adminController.check_project);
+router.put("/update_project/:projectId", adminController.update_project);
+router.delete("/delete_project/:projectId", adminController.delete_project);
 
 
 

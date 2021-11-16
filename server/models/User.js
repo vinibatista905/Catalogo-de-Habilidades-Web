@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     name: {
@@ -25,16 +24,15 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = (models) => {
     User.hasMany(models.Skill, {
-      foreignKey: 'idUser',
-      constraint: true
-    })
-  }
+      foreignKey: "idUser",
+      constraint: true,
+    });
+  };
 
   User.associate = (models) => {
-    User.belongsToMany(models.Project, { through: 'userproject' })
-  }
+    User.belongsToMany(models.Project, { through: models.UserProject });
+  };
 
- 
- 
+
   return User;
 };

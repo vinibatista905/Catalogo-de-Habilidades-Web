@@ -275,7 +275,30 @@ const userController = {
       await selectedUser.addProjects(selectedProject);
       res.status(200).send("Projeto adicionado!");
     } catch (error) {
+      console.log(error);
       res.status(400).send("Erro em adicionar projeto");
+    }
+  },
+
+  check_project: async function (req, res) {
+    const userId = req.params.userId;
+    console.log(userId);
+
+    try {
+      const userProject = await User.findAll({
+        where: { id: userId },
+        include: [
+          {
+            model: Project,
+            through: {
+              attributes: [],
+            },
+          },
+        ],
+      });
+      res.status(200).send(userProject);
+    } catch (error) {
+      res.status(400).send("Erro na busca de projetos");
     }
   },
 };

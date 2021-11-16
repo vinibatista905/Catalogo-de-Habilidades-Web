@@ -280,6 +280,15 @@ const userController = {
     }
   },
 
+  all_projects: async function (req, res) {
+    try {
+      const allProjects = await Project.findAll();
+      res.status(200).send(allProjects);
+    } catch (error) {
+      res.status(400).send("Erro na busca de projetos");
+    }
+  },
+
   check_project: async function (req, res) {
     const userId = req.params.userId;
     console.log(userId);

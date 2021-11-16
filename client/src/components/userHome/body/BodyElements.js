@@ -19,7 +19,7 @@ export const BodyContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: ${txCinza};
 `;
 
@@ -83,10 +83,18 @@ export const CardImg = styled.img`
 export const OptionCards = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
   width: 95vw;
-  height: 45vh;
-  margin-bottom: 1rem;
+  height: 85vh;
+`;
+
+export const CardRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 45%;
 `;
 
 export const CardLink = styled.a`

@@ -13,6 +13,7 @@ import {
   CardIcon4,
   CardImg,
   CardLink,
+  CardRow,
   Message1,
   OptionCards,
   Section1,
@@ -52,6 +53,7 @@ const Body = () => {
       </WelcomeCard>
 
       <OptionCards>
+        <CardRow>
         <CardLink href="/create_skill">
           <Card1>
             <CardIcon1></CardIcon1>
@@ -79,7 +81,39 @@ const Body = () => {
             <CardDesc>Ver Outros Usuários</CardDesc>
           </Card4>
         </CardLink>
+        </CardRow>
+
+        <CardRow>
+        <CardLink href="/add_projects">
+          <Card1>
+            <CardIcon1></CardIcon1>
+            <CardDesc>Adicionar Projetos</CardDesc>
+          </Card1>
+        </CardLink>
+
+        <CardLink href="/all_projects">
+          <Card2>
+            <CardIcon2></CardIcon2>
+            <CardDesc>Ver Seus Projetos</CardDesc>
+          </Card2>
+        </CardLink>
+
+        <CardLink href="/update_projects">
+          <Card3>
+            <CardIcon3></CardIcon3>
+            <CardDesc>Editar Seus Projetos</CardDesc>
+          </Card3>
+        </CardLink>
+
+        {/* <CardLink href="/all_users">
+          <Card4>
+            <CardIcon4></CardIcon4>
+            <CardDesc>Ver Outros Usuários</CardDesc>
+          </Card4>
+        </CardLink> */}
+        </CardRow>
       </OptionCards>
+      
     </BodyContainer>
   );
 };

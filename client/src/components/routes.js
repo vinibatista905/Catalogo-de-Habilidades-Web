@@ -11,8 +11,11 @@ import CreateSkill from "../pages/home/create_skill/CreateSkill";
 import UpdateSkills from "../pages/home/update_skills/UpdateSkills";
 import UpdateSkillPage from "../pages/home/update_skills/update_skill_page/UpdateSkillPage";
 import AllSkills from "../pages/home/all_skills/AllSkills";
-import AllUsers from "../pages/home/all_users/AllUsers";
 import SpecUserSkills from "../pages/home/specific_user_skills/SpecUserSkills";
+import AllUsers from "../pages/home/all_users/AllUsers";
+import CreateProject from "../pages/home/create_project/CreateProject";
+import AllProjects from "../pages/home/all_projects/AllProjects";
+import UpdateProjects from "../pages/home/update_projects/UpdateProjects";
 import NotFound from "./notFound/NotFound";
 import PrivateRoute from './PrivateRoute'
 import Admin_Login from "../pages/admin/admin_login/Admin_Login";
@@ -40,6 +43,9 @@ const Routes = () => (
       <PrivateRoute component={AllSkills} exact path="/all_skills" />
       <PrivateRoute component={AllUsers} exact path="/all_users" />
       <PrivateRoute component={SpecUserSkills} exact path="/users/:id" />
+      <PrivateRoute component={CreateProject} exact path="/add_projects" />
+      <PrivateRoute component={AllProjects} exact path="/all_projects" />
+      <PrivateRoute component={UpdateProjects} exact path="/update_projects" />
       <PrivateRoute component={AdminHome} exact path="/admin/home" />
       <PrivateRoute component={AddNewSkill} exact path="/admin/add_skill" />
       <PrivateRoute component={SkillsCatalog} exact path="/admin/skills_catalog" />

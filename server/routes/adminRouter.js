@@ -19,5 +19,4 @@ router.put("/update_project/:projectId", adminController.update_project);
 router.delete("/delete_project/:projectId", adminController.delete_project);
 
 
-
 module.exports = router;

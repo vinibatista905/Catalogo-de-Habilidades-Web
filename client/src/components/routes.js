@@ -27,6 +27,8 @@ import AddNewSkill from "../pages/admin/adminHome/addNewSkill/AddNewSkill";
 import SkillsCatalog from "../pages/admin/adminHome/skillsCatalog/SkillsCatalog";
 import UpdateCatalog from "../pages/admin/adminHome/updateCatalog/UpdateCatalog";
 import AdminAllUsers from "../pages/admin/adminHome/allUsers/AdminAllUsers";
+import UpdateUsers from "../pages/admin/adminHome/updateUsers/UpdateUsers";
+import UpdateUserFormPage from "../pages/admin/adminHome/updateUserForm/UpdateUserForm";
 
 
 import { history } from "../history";
@@ -58,6 +60,8 @@ const Routes = () => (
       <AdminPrivateRoute component={SkillsCatalog} exact path="/admin/skills_catalog" />
       <AdminPrivateRoute component={UpdateCatalog} exact path="/admin/update_catalog/:id" />
       <AdminPrivateRoute component={AdminAllUsers} exact path="/admin/all_users" />
+      <AdminPrivateRoute component={UpdateUsers} exact path="/admin/update_users" />
+      <AdminPrivateRoute component={UpdateUserFormPage} exact path="/admin/update_user/:id" />
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>

@@ -67,14 +67,14 @@ const AdminBody = () => {
           </Card2>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/admin/all_users">
           <Card3>
             <CardIcon3></CardIcon3>
             <CardDesc>Consultar Usuários</CardDesc>
           </Card3>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/admin/update_users">
           <Card4>
             <CardIcon4></CardIcon4>
             <CardDesc>Editar Usuários</CardDesc>

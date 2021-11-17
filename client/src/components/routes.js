@@ -2,6 +2,7 @@ import React from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from './PrivateRoute'
 import AdminPrivateRoute from "./AdminPrivateRoute";
+import AuthRoute from "./AuthRoute";
 
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
@@ -25,6 +26,8 @@ import AdminHome from "../pages/admin/adminHome/AdminHome";
 import AddNewSkill from "../pages/admin/adminHome/addNewSkill/AddNewSkill";
 import SkillsCatalog from "../pages/admin/adminHome/skillsCatalog/SkillsCatalog";
 import UpdateCatalog from "../pages/admin/adminHome/updateCatalog/UpdateCatalog";
+import AdminAllUsers from "../pages/admin/adminHome/allUsers/AdminAllUsers";
+
 
 import { history } from "../history";
 
@@ -33,12 +36,12 @@ const Routes = () => (
     
   <Router history={history}>
     <Switch>
-      <Route component={Login} exact path="/login" />
-      <Route component={Register} exact path="/register" />
-      <Route component={Forgot_Password} exact path="/forgot_password" />
-      <Route component={Reset_Password} exact path="/reset_password" />
-      <Route component={Homepage} exact path="/" />
-      <Route component={Admin_Login} exact path="/admin/login" />
+      <AuthRoute component={Login} exact path="/login" />
+      <AuthRoute component={Register} exact path="/register" />
+      <AuthRoute component={Forgot_Password} exact path="/forgot_password" />
+      <AuthRoute component={Reset_Password} exact path="/reset_password" />
+      <AuthRoute component={Homepage} exact path="/" />
+      <AuthRoute component={Admin_Login} exact path="/admin/login" />
       <PrivateRoute component={Home} exact path="/home" />
       <PrivateRoute component={CreateSkill} exact path="/create_skill" />
       <PrivateRoute component={UpdateSkills} exact path="/update_skill" />
@@ -54,6 +57,7 @@ const Routes = () => (
       <AdminPrivateRoute component={AddNewSkill} exact path="/admin/add_skill" />
       <AdminPrivateRoute component={SkillsCatalog} exact path="/admin/skills_catalog" />
       <AdminPrivateRoute component={UpdateCatalog} exact path="/admin/update_catalog/:id" />
+      <AdminPrivateRoute component={AdminAllUsers} exact path="/admin/all_users" />
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>

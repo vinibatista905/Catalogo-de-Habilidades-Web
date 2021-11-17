@@ -33,6 +33,8 @@ export const Card = styled.div`
 
   :hover{
     transform: scale(1.1);
+  border: 2px ${btnAzul} solid;
+
   }
 `;
 

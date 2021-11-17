@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import {
   Card,
   CardImg,
@@ -15,16 +14,16 @@ import {
   Start,
   Tag,
   UserInfo,
-} from "./SpecUserProjectCardsElements";
+} from "./UpdateProjectCardsElements";
 
-const SpecUserProjectCards = () => {
-  const userId = useParams();
+const ProjectCards = () => {
+  const userId = localStorage.getItem("user_id");
 
   const [userProjects, setUserProjects] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/user/check_project/${userId.id}`)
+      .get(`http://localhost:5000/user/check_project/${userId}`)
       .then(({ data }) => {
         setUserProjects(data);
         console.log(data);
@@ -33,24 +32,31 @@ const SpecUserProjectCards = () => {
       });
   }, []);
 
-  const displayUserInfo = userProjects.map((user) => {
-    return (
-      <UserInfo>
-        Projetos que o(a) usuário(a) <span className="user"> {user.name} </span>
-        já participou
-      </UserInfo>
-    );
-  });
-
   return (
     <>
       <CardsContainer>
-        <InfoWrap>{displayUserInfo}</InfoWrap>
+        <InfoWrap>
+          <UserInfo>Clique em um projeto para removê-lo</UserInfo>
+        </InfoWrap>
         <CardsWrap>
           {userProjects?.map((user) =>
             user.Projects.map((project) => (
-              <Card>
-                <CardImg src={require("../../assets/project-3.png").default} />
+              <Card
+                onClick={() => {
+                  const userId = localStorage.getItem("user_id");
+                  const projectId = project.id;
+
+                  alert("Deseja remover esse projeto?");
+                  axios.delete(
+                    `http://localhost:5000/user/remove_project/${userId}/${projectId}`
+                  );
+                  alert("Projeto removido!");
+                  window.location.reload(false);
+                }}
+              >
+                <CardImg
+                  src={require("../../../assets/project-3.png").default}
+                />
                 <Project key={project.id}>{project.name}</Project>
                 <Manager>
                   <span className="span">Gestor:</span> {project.manager}
@@ -102,4 +108,4 @@ const SpecUserProjectCards = () => {
   );
 };
 
-export default SpecUserProjectCards;
+export default ProjectCards;

@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../../../components/footer/Footer";
 import Navbar from "../../../components/userHome/navbar/Navbar";
+import UpdateProjectCards from "../../../components/userHome/updateProjectCards/UpdateProjectCards";
 import { Container } from "./UpdateProjectsElements";
 
 const UpdateProjects = () => {
@@ -8,7 +9,7 @@ const UpdateProjects = () => {
     <>
       <Container>
         <Navbar />
-        Projetos aqui
+        <UpdateProjectCards />
         <Footer />
       </Container>
     </>

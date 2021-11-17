@@ -110,6 +110,11 @@ export const TableBody = styled.tbody`
 
 export const TableTR = styled.tr`
   border-bottom: 1px solid ${bgCinza};
+  transition: ease 0.2s;
+
+  :hover {
+    background: ${bgCinza};
+  }
 `;
 
 export const TableTH = styled.th`
@@ -147,7 +152,7 @@ export const TableTD = styled.td`
 
   .tdButton {
     width: 6rem;
-    height: 2.3rem;
+    height: 2.5rem;
     border-radius: 10px;
     background: ${btnAmarelo};
     border: none;

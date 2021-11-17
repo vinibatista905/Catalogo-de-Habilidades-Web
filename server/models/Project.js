@@ -16,9 +16,37 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    mainSkill: {
+    skill1: {
       type: DataTypes.STRING,
-      select: false,
+      allowNull: false,
+    },
+    skill2: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    skill3: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    skill4: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    skill5: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    skill6: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    skill7: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    skill8: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   });
 

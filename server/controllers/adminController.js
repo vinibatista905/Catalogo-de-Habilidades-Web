@@ -186,7 +186,14 @@ const adminController = {
       manager: req.body.manager,
       startDate: req.body.startDate,
       conclusionDate: req.body.conclusionDate,
-      mainSkill: req.body.mainSkill,
+      skill1: req.body.skill1,
+      skill2: req.body.skill2,
+      skill3: req.body.skill3,
+      skill4: req.body.skill4,
+      skill5: req.body.skill5,
+      skill6: req.body.skill6,
+      skill7: req.body.skill7,
+      skill8: req.body.skill8,
     };
 
     try {

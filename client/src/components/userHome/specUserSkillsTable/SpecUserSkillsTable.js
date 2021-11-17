@@ -117,11 +117,9 @@ const SpecUserSkillsTable = () => {
         <TableWrapper>
           <Table>
             <TableHead>
-              <TableTR>
-                <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
-                <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
-                <TableTH onClick={() => sorting("level")}>Nível</TableTH>
-              </TableTR>
+              <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
+              <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
+              <TableTH onClick={() => sorting("level")}>Nível</TableTH>
             </TableHead>
             <TableBody>{displaySkills}</TableBody>
           </Table>

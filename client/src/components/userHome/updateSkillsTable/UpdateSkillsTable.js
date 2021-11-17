@@ -107,8 +107,6 @@ const UpdateSkillsTable = () => {
     setPageNumber(selected);
   };
 
-  
-
   return (
     <>
       <TableContainer>
@@ -123,12 +121,10 @@ const UpdateSkillsTable = () => {
         <TableWrapper>
           <Table>
             <TableHead>
-              <TableTR>
-                <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
-                <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
-                <TableTH onClick={() => sorting("level")}>Nível</TableTH>
-                <TableTH>Editar</TableTH>
-              </TableTR>
+              <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
+              <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
+              <TableTH onClick={() => sorting("level")}>Nível</TableTH>
+              <TableTH>Editar</TableTH>
             </TableHead>
             <TableBody>{displaySkills}</TableBody>
           </Table>

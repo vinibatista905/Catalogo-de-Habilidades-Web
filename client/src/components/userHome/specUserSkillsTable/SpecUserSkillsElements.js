@@ -108,6 +108,11 @@ export const TableBody = styled.tbody`
 
 export const TableTR = styled.tr`
   border-bottom: 1px solid ${bgCinza};
+  transition: ease 0.2s;
+
+  :hover {
+    background: ${bgCinza};
+  }
 `;
 
 export const TableTH = styled.th`

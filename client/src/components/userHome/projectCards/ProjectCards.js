@@ -7,7 +7,10 @@ import {
   End,
   Manager,
   Project,
+  ProjectSkills,
+  SkillTag,
   Start,
+  Tag,
 } from "./ProjectCardsElements";
 
 const ProjectCards = () => {
@@ -32,7 +35,7 @@ const ProjectCards = () => {
         {userProjects?.map((user) =>
           user.Projects.map((project) => (
             <Card>
-              <CardImg src={require("../../../assets/project-2.png").default} />
+              <CardImg src={require("../../../assets/project-3.png").default} />
               <Project key={project.id}>{project.name}</Project>
               <Manager>
                 <span className="span">Gestor:</span> {project.manager}
@@ -41,9 +44,22 @@ const ProjectCards = () => {
                 <span className="span">Início:</span> {project.startDate}
               </Start>
               <End>
-                <span className="span">Conclusão:</span>
+                <span className="span">Conclusão: </span>
                 {project.conclusionDate}
               </End>
+
+                <ProjectSkills><span className="span">Skills do Projeto: </span></ProjectSkills>
+                
+              <SkillTag> 
+                <Tag>{project.skill1}</Tag>
+                <Tag>{project.skill2}</Tag>
+                <Tag>{project.skill3}</Tag>
+                <Tag>{project.skill4}</Tag>
+                <Tag>{project.skill5}</Tag>
+                <Tag>{project.skill6}</Tag>
+                <Tag>{project.skill7}</Tag>
+                <Tag>{project.skill8}</Tag>
+              </SkillTag>
             </Card>
           ))
         )}

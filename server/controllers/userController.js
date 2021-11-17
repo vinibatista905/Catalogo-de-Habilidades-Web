@@ -2,6 +2,7 @@ const { User } = require("../models/");
 const { Skill } = require("../models/");
 const { AllSkills } = require("../models/");
 const { Project } = require("../models/");
+const { UserProject } = require("../models/");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
@@ -308,6 +309,20 @@ const userController = {
       res.status(200).send(userProject);
     } catch (error) {
       res.status(400).send("Erro na busca de projetos");
+    }
+  },
+
+  remove_project: async function (req, res) {
+    const userId = req.params.userId;
+    const ProjectId = req.params.projectId;
+
+    try {
+      const removeProject = await UserProject.destroy({
+        where: { ProjectId: ProjectId, UserId: userId },
+      });
+      res.status(200).send("Projeto removido com sucesso");
+    } catch (error) {
+      res.status(400).send(error);
     }
   },
 };

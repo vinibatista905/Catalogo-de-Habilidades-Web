@@ -17,6 +17,7 @@ router.get("/all_skills", userController.all_skills);
 router.post("/add_project", userController.add_project);
 router.get("/all_projects", userController.all_projects);
 router.get("/check_project/:userId", userController.check_project);
+router.delete("/remove_project/:userId/:projectId", userController.remove_project);
 
 
 module.exports = router;

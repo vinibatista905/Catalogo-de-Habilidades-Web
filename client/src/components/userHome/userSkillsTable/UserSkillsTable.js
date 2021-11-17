@@ -100,11 +100,9 @@ const UserSkillsTable = () => {
         <TableWrapper>
           <Table>
             <TableHead>
-              <TableTR>
-                <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
-                <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
-                <TableTH onClick={() => sorting("level")}>Nível</TableTH>
-              </TableTR>
+              <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
+              <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
+              <TableTH onClick={() => sorting("level")}>Nível</TableTH>
             </TableHead>
             <TableBody>{displaySkills}</TableBody>
           </Table>
@@ -121,8 +119,12 @@ const UserSkillsTable = () => {
           activeClassName={"paginationActive"}
         />
         <LinksWrap>
-        <AddSkillLink href="/create_skill"><button className='addBtn'>Adicionar Habilidades</button></AddSkillLink>
-        <AddSkillLink href="/update_skill"><button className='addBtn'>Editar Habilidades</button></AddSkillLink>
+          <AddSkillLink href="/create_skill">
+            <button className="addBtn">Adicionar Habilidades</button>
+          </AddSkillLink>
+          <AddSkillLink href="/update_skill">
+            <button className="addBtn">Editar Habilidades</button>
+          </AddSkillLink>
         </LinksWrap>
       </TableContainer>
     </>

@@ -78,6 +78,13 @@ const UsersTable = () => {
               </a>
             </button>
           </TableTD>
+          <TableTD>
+            <button className="tdButton">
+              <a href={"/users/" + user.id} className="btnLink">
+                Visualizar
+              </a>
+            </button>
+          </TableTD>
         </TableTR>
       );
     });
@@ -102,12 +109,13 @@ const UsersTable = () => {
         <TableWrapper>
           <Table>
             <TableHead>
-              <TableTR>
-                <TableTH>ID</TableTH>
-                <TableTHName onClick={() => sorting("name")}>Nome</TableTHName>
-                <TableTHEmail onClick={() => sorting("email")}>E-mail</TableTHEmail>
-                <TableTH>Skills</TableTH>
-              </TableTR>
+              <TableTH>ID</TableTH>
+              <TableTHName onClick={() => sorting("name")}>Nome</TableTHName>
+              <TableTHEmail onClick={() => sorting("email")}>
+                E-mail
+              </TableTHEmail>
+              <TableTH>Skills</TableTH>
+              <TableTH>Projetos</TableTH>
             </TableHead>
             <TableBody>{displayUsers}</TableBody>
           </Table>

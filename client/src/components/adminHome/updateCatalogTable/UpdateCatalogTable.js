@@ -118,12 +118,10 @@ const UpdateCatalogTable = () => {
         <TableWrapper>
           <Table>
             <TableHead>
-              <TableTR>
-                <TableTH>ID</TableTH>
-                <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
-                <TableTH onClick={() => sorting("category")}>Categoria</TableTH>
-                <TableTH>Editar</TableTH>
-              </TableTR>
+              <TableTH>ID</TableTH>
+              <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
+              <TableTH onClick={() => sorting("category")}>Categoria</TableTH>
+              <TableTH>Editar</TableTH>
             </TableHead>
             <TableBody>{displaySkills}</TableBody>
           </Table>

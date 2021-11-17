@@ -153,6 +153,20 @@ const adminController = {
     }
   },
 
+  update_new_skill: async function (req, res) {
+    const skillId = req.params.skillId;
+
+    const newSkill = req.body;
+
+    try {
+      await AllSkills.update(newSkill, { where: { id: skillId } });
+      res.status(200).send(newSkill);
+    } catch (error) {
+      console.log(error);
+      res.status(400).send("Erro na atualização da habilidade");
+    }
+  },
+
   delete_new_skill: async function (req, res) {
     const newSkillId = req.params.newSkillId;
 

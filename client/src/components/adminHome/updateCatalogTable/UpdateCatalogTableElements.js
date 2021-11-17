@@ -72,7 +72,8 @@ export const SearchField = styled.input`
   outline: none;
 
   :focus {
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid ${btnAzul};
   }
 `;
 
@@ -109,6 +110,11 @@ export const TableBody = styled.tbody`
 
 export const TableTR = styled.tr`
   border-bottom: 1px solid ${bgCinza};
+  transition: ease 0.2s;
+
+  :hover {
+    background: ${bgCinza};
+  }
 `;
 
 export const TableTH = styled.th`
@@ -167,19 +173,20 @@ export const IconsWrap = styled.div`
 export const EditIcon = styled(FiEdit)`
   font-size: 1.5rem;
   color: ${btnVerde};
+  transition: ease 0.3s;
 
   :hover {
-    transform: scale(1.2);
-    transition: ease 0.3s;
+    transform: scale(1.5);
   }
 `;
 
 export const DeleteIcon = styled(MdDeleteForever)`
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: ${txVermelho};
   cursor: pointer;
+  transition: ease 0.3s;
+
   :hover {
-    transform: scale(1.2);
-    transition: ease 0.3s;
+    transform: scale(1.5);
   }
 `;

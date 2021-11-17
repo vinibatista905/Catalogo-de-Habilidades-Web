@@ -173,10 +173,10 @@ export const IconsWrap = styled.div`
 export const EditIcon = styled(FiEdit)`
   font-size: 1.5rem;
   color: ${btnVerde};
+  transition: ease 0.3s;
 
   :hover {
     transform: scale(1.4);
-    transition: ease 0.3s;
   }
 `;
 
@@ -184,8 +184,9 @@ export const DeleteIcon = styled(MdDeleteForever)`
   font-size: 1.8rem;
   color: ${txVermelho};
   cursor: pointer;
+  transition: ease 0.3s;
+
   :hover {
     transform: scale(1.4);
-    transition: ease 0.3s;
   }
 `;

@@ -11,8 +11,10 @@ import {
   CardIcon2,
   CardIcon3,
   CardIcon4,
+  CardIcon5,
   CardImg,
   CardLink,
+  CardRow,
   Message1,
   OptionCards,
   Section1,
@@ -50,6 +52,7 @@ const AdminBody = () => {
       </WelcomeCard>
 
       <OptionCards>
+        <CardRow>
         <CardLink href="/admin/add_skill">
           <Card1>
             <CardIcon1></CardIcon1>
@@ -77,6 +80,35 @@ const AdminBody = () => {
             <CardDesc>Editar Usuários</CardDesc>
           </Card4>
         </CardLink>
+
+        <CardLink href="/admin/add_skill">
+          <Card1>
+            <CardIcon1></CardIcon1>
+            <CardDesc>Criar Novo Projeto</CardDesc>
+          </Card1>
+        </CardLink>
+
+        <CardLink href="/admin/skills_catalog">
+          <Card2>
+            <CardIcon5></CardIcon5>
+            <CardDesc>Consultar Projetos</CardDesc>
+          </Card2>
+        </CardLink>
+
+        <CardLink href="/">
+          <Card3>
+            <CardIcon2></CardIcon2>
+            <CardDesc>Editar Projetos</CardDesc>
+          </Card3>
+        </CardLink>
+
+        <CardLink href="/">
+          <Card4>
+            <CardIcon4></CardIcon4>
+            <CardDesc>(Opção Reserva)</CardDesc>
+          </Card4>
+        </CardLink>
+        </CardRow>
       </OptionCards>
     </BodyContainer>
   );

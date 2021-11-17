@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaUserEdit, FaEdit, FaUserFriends } from "react-icons/fa";
+import { FaUserEdit, FaEdit, FaUserFriends, FaClipboardList } from "react-icons/fa";
 import { MdAddToPhotos } from "react-icons/md";
 import {
   bgAmarelo,
@@ -19,7 +19,7 @@ export const BodyContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: ${txCinza};
 `;
 
@@ -83,10 +83,21 @@ export const CardImg = styled.img`
 export const OptionCards = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  flex-direction: column;
   width: 95vw;
-  height: 45vh;
-  margin-bottom: 1rem;
+  height: 100%;
+  padding: 4rem;
+`;
+
+export const CardRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  gap: 3rem;
 `;
 
 export const CardLink = styled.a`
@@ -104,7 +115,6 @@ export const Card1 = styled.div`
   transition: ease 0.3s;
   border-radius: 15px;
   box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2);
-  margin: 4rem 0;
   color: ${txCinzaEscuro};
 
   :hover {
@@ -135,7 +145,6 @@ export const Card2 = styled.div`
   transition: ease 0.3s;
   border-radius: 15px;
   box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2);
-  margin: 4rem 0;
   color: ${txCinzaEscuro};
 
   :hover {
@@ -161,7 +170,6 @@ export const Card3 = styled.div`
   transition: ease 0.3s;
   border-radius: 15px;
   box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2);
-  margin: 4rem 0;
   color: ${txCinzaEscuro};
 
   :hover {
@@ -187,7 +195,6 @@ export const Card4 = styled.div`
   transition: ease 0.3s;
   border-radius: 15px;
   box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2);
-  margin: 4rem 0;
   color: ${txCinzaEscuro};
 
   :hover {
@@ -198,6 +205,11 @@ export const Card4 = styled.div`
 `;
 
 export const CardIcon4 = styled(FaUserEdit)`
+  font-size: 3rem;
+  margin-bottom: 2rem;
+`;
+
+export const CardIcon5 = styled(FaClipboardList)`
   font-size: 3rem;
   margin-bottom: 2rem;
 `;

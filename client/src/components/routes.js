@@ -24,6 +24,7 @@ import Admin_Login from "../pages/admin/admin_login/Admin_Login";
 import AdminHome from "../pages/admin/adminHome/AdminHome";
 import AddNewSkill from "../pages/admin/adminHome/addNewSkill/AddNewSkill";
 import SkillsCatalog from "../pages/admin/adminHome/skillsCatalog/SkillsCatalog";
+import UpdateCatalog from "../pages/admin/adminHome/updateCatalog/UpdateCatalog";
 
 import { history } from "../history";
 
@@ -52,6 +53,7 @@ const Routes = () => (
       <AdminPrivateRoute component={AdminHome} exact path="/admin/home" />
       <AdminPrivateRoute component={AddNewSkill} exact path="/admin/add_skill" />
       <AdminPrivateRoute component={SkillsCatalog} exact path="/admin/skills_catalog" />
+      <AdminPrivateRoute component={UpdateCatalog} exact path="/admin/update_catalog/:id" />
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>

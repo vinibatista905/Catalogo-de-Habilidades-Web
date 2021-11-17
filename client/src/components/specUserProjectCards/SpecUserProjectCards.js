@@ -5,13 +5,16 @@ import {
   Card,
   CardImg,
   CardsContainer,
+  CardsWrap,
   End,
+  InfoWrap,
   Manager,
   Project,
   ProjectSkills,
   SkillTag,
   Start,
   Tag,
+  UserInfo,
 } from "./SpecUserProjectCardsElements";
 
 const SpecUserProjectCards = () => {
@@ -30,12 +33,20 @@ const SpecUserProjectCards = () => {
       });
   }, []);
 
+  const displayUserInfo =  userProjects.map((user) => {
+      return (<UserInfo>Projetos que o(a) usuário(a) <span className='user'> {user.name} </span> já participou</UserInfo>)
+  } )
+  
+
+
   return (
     <>
       <CardsContainer>
-        {userProjects?.map((user) =>
+          <InfoWrap>{displayUserInfo}</InfoWrap>
+          <CardsWrap>
+        {userProjects?.map((user) => 
           user.Projects.map((project) => (
-            <Card>
+              <Card>
               <CardImg src={require("../../assets/project-3.png").default} />
               <Project key={project.id}>{project.name}</Project>
               <Manager>
@@ -82,6 +93,7 @@ const SpecUserProjectCards = () => {
             </Card>
           ))
         )}
+        </CardsWrap>
       </CardsContainer>
     </>
   );

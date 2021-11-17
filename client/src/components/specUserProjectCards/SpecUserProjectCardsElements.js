@@ -10,6 +10,31 @@ export const CardsContainer = styled.div`
   width: 95vw;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+`;
+
+export const InfoWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const UserInfo = styled.h2`
+  font-size: 2.8rem;
+  color: ${txCinzaEscuro};
+
+  .user {
+    color: ${btnAzul};
+  }
+`;
+
+export const CardsWrap = styled.div`
+  display: flex;
+  align-items: center;
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
@@ -29,12 +54,11 @@ export const Card = styled.div`
   border: 2px ${bgAmarelo} solid;
   padding: 0 0.6rem;
   transition: ease 0.3s;
-  box-shadow: 10px 10px 10px 6px rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 10px 6px rgba(0, 0, 0, 0.2);
 
-  :hover{
+  :hover {
     transform: scale(1.1);
-  border: 2px ${btnAzul} solid;
-
+    border: 2px ${btnAzul} solid;
   }
 `;
 
@@ -76,7 +100,6 @@ export const End = styled.p`
 `;
 
 export const ProjectSkills = styled.div`
- 
   .span {
     font-size: 1.2rem;
     font-weight: bold;
@@ -90,7 +113,6 @@ export const SkillTag = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 0.5rem;
-
 `;
 
 export const Tag = styled.label`

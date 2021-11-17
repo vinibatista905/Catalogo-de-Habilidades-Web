@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    idUser: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   });
 
   // Skill.associate = (models) => {

@@ -22,6 +22,7 @@ export const LogoWrap = styled.div`
 export const LogoLink = styled.a`
   text-decoration: none;
   color: ${txBranco};
+  transition: ease 0.2s;
 
   :hover {
     color: ${bgAmarelo};
@@ -60,12 +61,10 @@ export const LogoutBtn = styled.button`
 `;
 
 export const UserInfoWrap = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-gap: 1.5rem;
-
-
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5rem;
 `;
 
 export const UserName = styled.h3`

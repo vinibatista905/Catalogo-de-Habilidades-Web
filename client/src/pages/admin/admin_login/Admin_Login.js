@@ -37,6 +37,7 @@ const Login = () => {
           console.log(data);
           localStorage.setItem("auth_token", data.auth_token);
           localStorage.setItem("user_id", data.user_id);
+          localStorage.setItem("admin", data.admin);
           history.push("/admin/home");
         }
       });

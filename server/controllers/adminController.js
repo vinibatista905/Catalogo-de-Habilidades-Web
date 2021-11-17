@@ -33,10 +33,12 @@ const adminController = {
     );
 
     const userID = selectedUser.id;
+    const adminID = selectedUser.admin;
 
     const userData = {
       auth_token: token,
       user_id: userID,
+      admin: adminID
     };
     res.header("authorization-token", token);
     res.header("user-ID", userID);

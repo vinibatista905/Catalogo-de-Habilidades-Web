@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       select: false,
     },
+    admin: {
+      type: DataTypes.TINYINT,
+      allowNull: true,
+    },
   });
 
   User.associate = (models) => {

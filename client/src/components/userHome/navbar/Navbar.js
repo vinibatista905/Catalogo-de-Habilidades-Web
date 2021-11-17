@@ -18,7 +18,8 @@ const Navbar = () => {
   }, []);
 
   const logout = () => {
-    localStorage.removeItem("auth-token");
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("user_id");
     history.push("/");
   };
   return (

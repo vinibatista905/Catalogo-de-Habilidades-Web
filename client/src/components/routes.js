@@ -16,6 +16,7 @@ import AllUsers from "../pages/home/all_users/AllUsers";
 import CreateProject from "../pages/home/create_project/CreateProject";
 import AllProjects from "../pages/home/all_projects/AllProjects";
 import UpdateProjects from "../pages/home/update_projects/UpdateProjects";
+import SpecUserProjects from "../pages/home/specific_user_projects/SpecUserProjects";
 import NotFound from "./notFound/NotFound";
 import PrivateRoute from './PrivateRoute'
 import Admin_Login from "../pages/admin/admin_login/Admin_Login";
@@ -46,6 +47,7 @@ const Routes = () => (
       <PrivateRoute component={CreateProject} exact path="/add_projects" />
       <PrivateRoute component={AllProjects} exact path="/all_projects" />
       <PrivateRoute component={UpdateProjects} exact path="/update_projects" />
+      <PrivateRoute component={SpecUserProjects} exact path="/users/projects/:id" />
       <PrivateRoute component={AdminHome} exact path="/admin/home" />
       <PrivateRoute component={AddNewSkill} exact path="/admin/add_skill" />
       <PrivateRoute component={SkillsCatalog} exact path="/admin/skills_catalog" />

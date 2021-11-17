@@ -80,7 +80,7 @@ const UsersTable = () => {
           </TableTD>
           <TableTD>
             <button className="tdButton">
-              <a href={"/users/" + user.id} className="btnLink">
+              <a href={"/users/projects/" + user.id} className="btnLink">
                 Visualizar
               </a>
             </button>

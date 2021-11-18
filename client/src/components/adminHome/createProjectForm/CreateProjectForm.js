@@ -54,9 +54,7 @@ const CreateProjectForm = () => {
               <FieldDesc>Data de Início*</FieldDesc>
               <Field
                 name="startDate"
-                placeholder="Ex: Front-End"
                 type="date"
-                
                 className="formField"
               />
             </FieldWrap>

@@ -134,6 +134,6 @@ export const TableTD = styled.td`
 
 export const UserName = styled.h2`
   font-size: 2.5rem;
-  color: ${txCinzaEscuro};
+  color: ${btnAzul};
   padding-bottom: 2rem;
 `;

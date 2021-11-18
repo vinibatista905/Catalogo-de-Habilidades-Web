@@ -19,6 +19,10 @@ export const ProjectFormWrap = styled.div`
 
 export const CustomSelect = styled(Select)`
   width: 16rem;
+
+  :hover{
+    background: yellow;
+  }
 `;
 export const FieldContainer = styled.div`
   width: 100%;
@@ -45,7 +49,7 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
-  gap: 2rem;
+  gap: 3rem;
 `;
 
 export const BtnWrap = styled.div`

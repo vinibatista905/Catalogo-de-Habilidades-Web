@@ -131,12 +131,16 @@ export const EditIcon = styled(FiEdit)`
 `;
 
 export const DeleteIcon = styled(MdDeleteForever)`
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: ${txVermelho};
   cursor: pointer;
   transition: ease 0.3s;
 
   :hover {
+    transform: scale(1.4);
+  }
+
+  :hover ~ .card {
     transform: scale(1.4);
   }
 `;

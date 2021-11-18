@@ -11,6 +11,11 @@ export const NavContainer = styled.div`
   background: ${bgAzul};
   padding: 0 2rem;
   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.3);
+
+  @media only screen and (max-width: 720px) {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
 `;
 
 export const LogoWrap = styled.div`
@@ -32,12 +37,21 @@ export const LogoLink = styled.a`
 
 export const LogoTitle = styled.h1`
   font-size: 3rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1rem;
+  }
 `;
 
 export const LogoIcon = styled(IoLogoOctocat)`
   font-size: 3rem;
   margin-left: 0.5rem;
   margin-top: 0.1rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+  }
 `;
 
 export const LogoutBtn = styled.button`
@@ -58,6 +72,12 @@ export const LogoutBtn = styled.button`
     border: 2px ${bgAmarelo} solid;
     font-weight: 700;
   }
+
+  @media only screen and (max-width: 720px) {
+    width: 4.5rem;
+    height: 2rem;
+    font-size: 0.6rem;
+  }
 `;
 
 export const UserInfoWrap = styled.div`
@@ -70,4 +90,8 @@ export const UserInfoWrap = styled.div`
 export const UserName = styled.h3`
   font-size: 1.5rem;
   color: ${txBranco};
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1rem;
+  }
 `;

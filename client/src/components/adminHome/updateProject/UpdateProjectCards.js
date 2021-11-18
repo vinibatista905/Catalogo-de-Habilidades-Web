@@ -32,7 +32,7 @@ const ProjectCards = () => {
     <>
       <CardsContainer>
         {projects?.map((project) => (
-          <Card className="card">
+          <Card id="target">
             <CardImg src={require("../../../assets/project-3.png").default} />
             <Project key={project.id}>{project.name}</Project>
             <Manager>

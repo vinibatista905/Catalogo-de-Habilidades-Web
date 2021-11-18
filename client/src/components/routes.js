@@ -29,6 +29,7 @@ import UpdateCatalog from "../pages/admin/adminHome/updateCatalog/UpdateCatalog"
 import AdminAllUsers from "../pages/admin/adminHome/allUsers/AdminAllUsers";
 import UpdateUsers from "../pages/admin/adminHome/updateUsers/UpdateUsers";
 import UpdateUserFormPage from "../pages/admin/adminHome/updateUserForm/UpdateUserForm";
+import CreateNewProject from "../pages/admin/adminHome/createProject/CreateNewProject";
 
 
 import { history } from "../history";
@@ -62,6 +63,7 @@ const Routes = () => (
       <AdminPrivateRoute component={AdminAllUsers} exact path="/admin/all_users" />
       <AdminPrivateRoute component={UpdateUsers} exact path="/admin/update_users" />
       <AdminPrivateRoute component={UpdateUserFormPage} exact path="/admin/update_user/:id" />
+      <AdminPrivateRoute component={CreateNewProject} exact path="/admin/create_project" />
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>

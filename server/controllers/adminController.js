@@ -191,6 +191,7 @@ const adminController = {
     const chosenProject = await Project.findOne({
       where: {
         name: req.body.name,
+        manager: req.body.manager
       },
     });
     if (chosenProject) {

@@ -4,14 +4,17 @@ import {
   Card,
   CardImg,
   CardsContainer,
+  DeleteIcon,
+  EditIcon,
   End,
+  IconsWrap,
   Manager,
   Project,
   ProjectSkills,
   SkillTag,
   Start,
   Tag,
-} from "./ProjectCardsElements";
+} from "./UpdateProjectCardsElements";
 
 const ProjectCards = () => {
   const [projects, setProjects] = useState([]);
@@ -29,7 +32,7 @@ const ProjectCards = () => {
     <>
       <CardsContainer>
         {projects?.map((project) => (
-          <Card>
+          <Card className="card">
             <CardImg src={require("../../../assets/project-3.png").default} />
             <Project key={project.id}>{project.name}</Project>
             <Manager>
@@ -73,6 +76,23 @@ const ProjectCards = () => {
                 <Tag>{project.skill8}</Tag>
               ) : null}
             </SkillTag>
+
+            <IconsWrap className="icons">
+            <a href={"/admin/update_project/" + project.id}>
+                <EditIcon />
+              </a>
+              <DeleteIcon
+                onClick={() => {
+                  const projectId = project.id;
+                  alert("Deseja deletar esse projeto?");
+                  axios.delete(
+                    `http://localhost:5000/admin/delete_project/${projectId}`
+                  );
+                  alert("Projeto Deletado!");
+                  window.location.reload(false);
+                }}
+              />
+            </IconsWrap>
           </Card>
         ))}
       </CardsContainer>

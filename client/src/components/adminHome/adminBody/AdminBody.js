@@ -95,7 +95,7 @@ const AdminBody = () => {
           </Card2>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/admin/update_projects">
           <Card3>
             <CardIcon2></CardIcon2>
             <CardDesc>Editar Projetos</CardDesc>

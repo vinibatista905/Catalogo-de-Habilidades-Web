@@ -231,6 +231,18 @@ const adminController = {
     }
   },
 
+  get_project: async function (req, res) {
+
+    const projectId = req.params.projectId;
+
+    try {
+      const project = await Project.findAll({ where: { id: projectId } });
+      res.status(200).send(project);
+    } catch (error) {
+      res.status(400).send("Erro na busca do projeto");
+    }
+  },
+
   update_project: async function (req, res) {
     const projectId = req.params.projectId;
 

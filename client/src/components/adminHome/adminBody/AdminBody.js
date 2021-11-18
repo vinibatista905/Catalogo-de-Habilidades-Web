@@ -88,7 +88,7 @@ const AdminBody = () => {
           </Card1>
         </CardLink>
 
-        <CardLink href="/admin/skills_catalog">
+        <CardLink href="/admin/all_projects">
           <Card2>
             <CardIcon5></CardIcon5>
             <CardDesc>Consultar Projetos</CardDesc>

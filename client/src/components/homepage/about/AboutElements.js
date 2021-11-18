@@ -35,12 +35,12 @@ export const AboutCard = styled.div`
   border: 2px ${bgAzul} solid;
   border-radius: 20px;
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.251);
+  transition: all 0.3s ease;
 
   :hover {
     border: 2px ${bgAmarelo} solid;
     background: ${bgCinza};
     transform: scale(1.1);
-    transition: all 0.4s ease-in-out;
   }
 
   @media only screen and (max-width: 720px) {

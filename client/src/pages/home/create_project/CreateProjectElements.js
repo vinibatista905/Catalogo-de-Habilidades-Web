@@ -45,7 +45,7 @@ export const BannerSection = styled.div`
 `;
 
 export const BannerImg = styled.img`
-  width: 80%;
+  width: 90%;
 `;
 
 export const FormSection = styled.div`

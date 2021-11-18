@@ -157,8 +157,6 @@ const userController = {
     const selectedSkill = await Skill.findOne({
       where: {
         name: req.body.name,
-        level: req.body.level,
-        type: req.body.type,
         idUser: req.body.idUser,
       },
     });

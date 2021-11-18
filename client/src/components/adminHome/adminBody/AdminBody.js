@@ -102,7 +102,7 @@ const AdminBody = () => {
           </Card3>
         </CardLink>
 
-        <CardLink href="/">
+        <CardLink href="/admin/home">
           <Card4>
             <CardIcon4></CardIcon4>
             <CardDesc>(Opção Reserva)</CardDesc>

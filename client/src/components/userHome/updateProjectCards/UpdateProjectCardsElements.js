@@ -63,6 +63,10 @@ export const Card = styled.div`
     border: 2px ${txVermelho} solid;
     background: rgba(255, 1, 1, 0.2);
 
+    .tag{
+      background: ${txVermelho};
+    }
+
   }
 `;
 
@@ -129,4 +133,6 @@ export const Tag = styled.label`
   border-radius: 0.5rem;
   width: 6.2rem;
   height: 2.5rem;
+  transition: ease 0.3s;
+
 `;

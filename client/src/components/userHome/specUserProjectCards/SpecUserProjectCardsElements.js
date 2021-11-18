@@ -4,7 +4,8 @@ import {
   btnAzul,
   txBranco,
   txCinzaEscuro,
-} from "../../components/UI/variaveis";
+  txPreto,
+} from "../../../components/UI/variaveis";
 
 export const CardsContainer = styled.div`
   width: 95vw;
@@ -59,6 +60,12 @@ export const Card = styled.div`
   :hover {
     transform: scale(1.1);
     border: 2px ${btnAzul} solid;
+
+    .tag {
+      background: ${bgAmarelo};
+      color: ${txPreto};
+      font-weight: bold;
+    }
   }
 `;
 
@@ -125,4 +132,5 @@ export const Tag = styled.label`
   border-radius: 0.5rem;
   width: 6.2rem;
   height: 2.5rem;
+  transition: ease 0.3s;
 `;

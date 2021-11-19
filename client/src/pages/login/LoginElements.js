@@ -87,6 +87,7 @@ export const FieldContainer = styled.div`
   @media only screen and (max-width: 720px) {
     width: 100%;
   }
+  
 `;
 
 export const FieldWrap = styled.div`

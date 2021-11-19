@@ -57,21 +57,38 @@ export const Card = styled.div`
   transition: ease 0.3s;
   box-shadow: 10px 10px 10px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  position: relative;
 
   :hover {
     transform: scale(1.1);
     border: 2px ${txVermelho} solid;
     background: rgba(255, 1, 1, 0.2);
 
-    .tag{
+    .tag {
       background: ${txVermelho};
     }
 
+    .image1 {
+      opacity: 0;
+    }
+
+    .image2 {
+      opacity: 1;
+    }
   }
 `;
 
-export const CardImg = styled.img`
+export const CardImg1 = styled.img`
   width: 62%;
+  position: relative;
+  transition: ease 0.25s;
+`;
+
+export const CardImg2 = styled.img`
+  width: 62%;
+  position: absolute;
+  opacity: 0;
+  transition: ease 0.25s;
 `;
 
 export const Project = styled.h2`
@@ -134,5 +151,4 @@ export const Tag = styled.label`
   width: 6.2rem;
   height: 2.5rem;
   transition: ease 0.3s;
-
 `;

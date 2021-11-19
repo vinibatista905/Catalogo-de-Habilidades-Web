@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import {
   BodyContainer,
   Card1,
@@ -25,17 +24,6 @@ import {
 } from "./AdminBodyElements";
 
 const AdminBody = () => {
-  const [userInfo, setUserInfo] = useState([]);
-
-  const userId = localStorage.getItem("user_id");
-
-  useEffect(() => {
-    axios.get(`http://localhost:5000/user/info/${userId}`).then(({ data }) => {
-      setUserInfo(data);
-      // eslint-disable-next-line
-    });
-  }, []);
-
   return (
     <BodyContainer>
       <WelcomeCard>
@@ -53,61 +41,61 @@ const AdminBody = () => {
 
       <OptionCards>
         <CardRow>
-        <CardLink href="/admin/add_skill">
-          <Card1>
-            <CardIcon1></CardIcon1>
-            <CardDesc>Adicionar Habilidades ao Catálogo Principal</CardDesc>
-          </Card1>
-        </CardLink>
+          <CardLink href="/admin/add_skill">
+            <Card1>
+              <CardIcon1></CardIcon1>
+              <CardDesc>Adicionar Habilidades ao Catálogo Principal</CardDesc>
+            </Card1>
+          </CardLink>
 
-        <CardLink href="/admin/skills_catalog">
-          <Card2>
-            <CardIcon2></CardIcon2>
-            <CardDesc>Atualizar Habilidades do Catálogo Principal</CardDesc>
-          </Card2>
-        </CardLink>
+          <CardLink href="/admin/skills_catalog">
+            <Card2>
+              <CardIcon2></CardIcon2>
+              <CardDesc>Atualizar Habilidades do Catálogo Principal</CardDesc>
+            </Card2>
+          </CardLink>
 
-        <CardLink href="/admin/all_users">
-          <Card3>
-            <CardIcon3></CardIcon3>
-            <CardDesc>Consultar Usuários</CardDesc>
-          </Card3>
-        </CardLink>
+          <CardLink href="/admin/all_users">
+            <Card3>
+              <CardIcon3></CardIcon3>
+              <CardDesc>Consultar Usuários</CardDesc>
+            </Card3>
+          </CardLink>
 
-        <CardLink href="/admin/update_users">
-          <Card4>
-            <CardIcon4></CardIcon4>
-            <CardDesc>Editar Usuários</CardDesc>
-          </Card4>
-        </CardLink>
+          <CardLink href="/admin/update_users">
+            <Card4>
+              <CardIcon4></CardIcon4>
+              <CardDesc>Editar Usuários</CardDesc>
+            </Card4>
+          </CardLink>
 
-        <CardLink href="/admin/create_project">
-          <Card1>
-            <CardIcon1></CardIcon1>
-            <CardDesc>Criar Novo Projeto</CardDesc>
-          </Card1>
-        </CardLink>
+          <CardLink href="/admin/create_project">
+            <Card1>
+              <CardIcon1></CardIcon1>
+              <CardDesc>Criar Novo Projeto</CardDesc>
+            </Card1>
+          </CardLink>
 
-        <CardLink href="/admin/all_projects">
-          <Card2>
-            <CardIcon5></CardIcon5>
-            <CardDesc>Consultar Projetos</CardDesc>
-          </Card2>
-        </CardLink>
+          <CardLink href="/admin/all_projects">
+            <Card2>
+              <CardIcon5></CardIcon5>
+              <CardDesc>Consultar Projetos</CardDesc>
+            </Card2>
+          </CardLink>
 
-        <CardLink href="/admin/update_projects">
-          <Card3>
-            <CardIcon2></CardIcon2>
-            <CardDesc>Editar Projetos</CardDesc>
-          </Card3>
-        </CardLink>
+          <CardLink href="/admin/update_projects">
+            <Card3>
+              <CardIcon2></CardIcon2>
+              <CardDesc>Editar Projetos</CardDesc>
+            </Card3>
+          </CardLink>
 
-        <CardLink href="/admin/home">
-          <Card4>
-            <CardIcon4></CardIcon4>
-            <CardDesc>(Opção Reserva)</CardDesc>
-          </Card4>
-        </CardLink>
+          <CardLink href="/admin/home">
+            <Card4>
+              <CardIcon4></CardIcon4>
+              <CardDesc>(Opção Reserva)</CardDesc>
+            </Card4>
+          </CardLink>
         </CardRow>
       </OptionCards>
     </BodyContainer>

@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {
   Card,
-  CardImg,
+  CardImg1,
+  CardImg2,
   CardsContainer,
   End,
   Manager,
@@ -35,7 +36,8 @@ const ProjectCards = () => {
         {userProjects?.map((user) =>
           user.Projects.map((project) => (
             <Card>
-              <CardImg src={require("../../../assets/project-3.png").default} />
+              <CardImg1 className='image1' src={require("../../../assets/project-3.png").default} />
+              <CardImg2 className='image2' src={require("../../../assets/project-2.png").default} />
               <Project key={project.id}>{project.name}</Project>
               <Manager>
                 <span className="span">Gestor:</span> {project.manager}

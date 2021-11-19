@@ -31,6 +31,7 @@ export const Card = styled.div`
   padding: 0 0.6rem;
   transition: ease 0.3s;
   box-shadow: 10px 10px 10px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
 
   :hover {
     transform: scale(1.1);
@@ -41,11 +42,30 @@ export const Card = styled.div`
       color: ${txPreto};
       font-weight: bold;
     }
+
+    .image1{
+      opacity: 0;
+    }
+
+    .image2{
+      opacity: 1;
+    }
   }
 `;
 
-export const CardImg = styled.img`
+export const CardImg1 = styled.img`
   width: 62%;
+  position: relative;
+  transition: ease 0.3s;
+
+`;
+
+export const CardImg2 = styled.img`
+  width: 62%;
+  position: absolute;
+  opacity: 0;
+  transition: ease 0.3s;
+
 `;
 
 export const Project = styled.h2`

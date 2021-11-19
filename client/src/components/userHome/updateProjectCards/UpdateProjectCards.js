@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {
   Card,
-  CardImg,
+  CardImg1,
+  CardImg2,
   CardsContainer,
   CardsWrap,
   End,
@@ -54,8 +55,11 @@ const ProjectCards = () => {
                   window.location.reload(false);
                 }}
               >
-                <CardImg
+                <CardImg1 className='image1'
                   src={require("../../../assets/project-3.png").default}
+                />
+                <CardImg2 className='image2'
+                  src={require("../../../assets/project-4.png").default}
                 />
                 <Project key={project.id}>{project.name}</Project>
                 <Manager>

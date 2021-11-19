@@ -21,14 +21,14 @@ export const SkillFormWrap = styled.div`
     font-size: 1.2rem;
     border-radius: 12px;
     outline: none;
-    border: 1px ${btnAmarelo} solid;
+    border: 2px ${btnAmarelo} solid;
 
     :hover {
       box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
     }
 
     :focus {
-      border: 1px ${btnAzul} solid;
+      border: 2px ${btnAzul} solid;
     }
   }
 

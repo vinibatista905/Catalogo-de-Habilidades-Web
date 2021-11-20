@@ -85,6 +85,11 @@ export const UserInfoWrap = styled.div`
   align-items: center;
   justify-content: space-evenly;
   gap: 1.5rem;
+
+  .userImg{
+    width: 10%;
+    border-radius: 50%;
+  }
 `;
 
 export const UserName = styled.h3`

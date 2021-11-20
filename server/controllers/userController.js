@@ -3,6 +3,7 @@ const { Skill } = require("../models/");
 const { AllSkills } = require("../models/");
 const { Project } = require("../models/");
 const { UserProject } = require("../models/");
+const { Profile } = require("../models/");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
@@ -323,6 +324,70 @@ const userController = {
       res.status(400).send(error);
     }
   },
+
+  create_profile: async function (req, res) {
+    const selectedProfile = await Profile.findOne({
+      where: {
+        role: req.body.role,
+        idUser: req.body.idUser,
+      },
+    });
+    if (selectedProfile) {
+      return res.status(400).send("Habilidade já cadastrada");
+    }
+
+    const profile = {
+      role: req.body.role,
+      team: req.body.team,
+      profileImage: req.body.profileImage,
+      startDate: req.body.startDate,
+      idUser: req.body.idUser,
+    };
+
+    try {
+      const savedProfile = await Profile.create(profile);
+      res.status(200).send(savedProfile);
+    } catch (error) {
+      res.status(400).send("Erro na criação do perfil");
+    }
+  },
+
+  check_profile: async function (req, res) {
+    const userId = req.params.userId;
+
+    try {
+      const userProfile = await Profile.findAll({ where: { idUser: userId } });
+      res.status(200).send(userProfile);
+    } catch (error) {
+      res.status(400).send("Erro na busca de perfil");
+    }
+  },
+
+  update_profile: async function (req, res) {
+    const profileId = req.params.profileId;
+
+    const newProfile = req.body;
+
+    try {
+      await Profile.update(newProfile, { where: { id: profileId } });
+      res.status(200).send(newProfile);
+    } catch (error) {
+      console.log(error);
+      res.status(400).send("Erro na atualização do perfil");
+    }
+  },
+
+  delete_profile: async function (req, res) {
+    const profileId = req.params.profileId;
+
+    try {
+      const deleteProfile = await Profile.destroy({ where: { id: profileId } });
+      res.status(200).send("Deletado com sucesso");
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  },
+
 };
 
 module.exports = userController;

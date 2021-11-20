@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Image } from 'cloudinary-react';
 import { LogoIcon, LogoLink, LogoTitle, LogoutBtn, LogoWrap, NavContainer, UserInfoWrap, UserName } from "./NavbarElements";
 import { MdOutlineLogout } from "react-icons/md";
 import { history } from "../../../history";
@@ -35,7 +36,9 @@ const Navbar = () => {
           <UserInfoWrap>
           {userInfo?.map((user) => (
             <UserName key={user.id}>{user.name}</UserName>
-          ))}
+            ))}
+
+            <Image className="userImg" cloudName="dudmycscb" publicId="https://res.cloudinary.com/dudmycscb/image/upload/v1637432647/bcyzt4b4irixivike7sb.jpg" />
         <LogoutBtn onClick={logout}>
           <MdOutlineLogout />
           Log Out

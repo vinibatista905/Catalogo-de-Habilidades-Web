@@ -18,15 +18,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  // Skill.associate = (models) => {
-  //   Skill.belongsToMany(models.User, {
-  //     through: {
-  //       model: models.UserSkill
-  //     },
-  //     foreignKey: 'idSkill',
-  //     constraint: true
-  //   })
-  // }
-
   return Skill;
 };

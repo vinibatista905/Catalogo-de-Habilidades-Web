@@ -24,8 +24,8 @@ const ProfileForm = () => {
       .post("https://api.cloudinary.com/v1_1/dudmycscb/image/upload", formData)
       .then((response) => {
         setProfileImage(response);
-        console.log(profileImage);
-        console.log(profileImage.data.public_id);
+        // console.log(profileImage);
+        // console.log(profileImage.data.public_id);
       });
   };
 

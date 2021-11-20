@@ -328,12 +328,11 @@ const userController = {
   create_profile: async function (req, res) {
     const selectedProfile = await Profile.findOne({
       where: {
-        role: req.body.role,
         idUser: req.body.idUser,
       },
     });
     if (selectedProfile) {
-      return res.status(400).send("Habilidade já cadastrada");
+      return res.status(400).send("Perfil já cadastrado");
     }
 
     const profile = {

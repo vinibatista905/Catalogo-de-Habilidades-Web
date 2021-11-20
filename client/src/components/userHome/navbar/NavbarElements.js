@@ -81,13 +81,14 @@ export const LogoutBtn = styled.button`
 `;
 
 export const UserInfoWrap = styled.div`
+  width: 30%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 1.5rem;
 
-  .userImg{
-    width: 10%;
+  .userImg {
+    width: 5rem;
     border-radius: 50%;
   }
 `;

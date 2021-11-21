@@ -11,8 +11,7 @@ import {
   UserInfoWrap,
   UserName,
 } from "./NavbarElements";
-import { MdOutlineLogout } from "react-icons/md";
-import { history } from "../../../history";
+import Dropdown from "./dropdown/Dropdown";
 
 const Navbar = () => {
   const [userInfo, setUserInfo] = useState([]);
@@ -37,12 +36,13 @@ const Navbar = () => {
       });
   }, []);
 
-  const logout = () => {
-    localStorage.removeItem("auth_token");
-    localStorage.removeItem("user_id");
-    localStorage.removeItem("admin");
-    history.push("/");
-  };
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleDropdown = () => {
+
+  }
+
+
   return (
     <>
       <NavContainer>
@@ -52,7 +52,7 @@ const Navbar = () => {
             <LogoIcon />
           </LogoWrap>
         </LogoLink>
-        <UserInfoWrap>
+        <UserInfoWrap onClick={() => setIsOpen(!isOpen)}>
           {userInfo?.map((user) => (
             <UserName key={user.id}>{user.name}</UserName>
           ))}
@@ -65,11 +65,11 @@ const Navbar = () => {
               publicId={`https://res.cloudinary.com/dudmycscb/image/upload/v1637432647/${profile.profileImage}.jpg`}
             />
           ))}
-          <LogoutBtn onClick={logout}>
-            <MdOutlineLogout />
-            Log Out
-          </LogoutBtn>
+
         </UserInfoWrap>
+
+        {isOpen && <Dropdown className='dropdown' isOpen={isOpen} setIsOpen={setIsOpen} />}
+
       </NavContainer>
     </>
   );

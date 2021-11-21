@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgAmarelo, bgAzul, txBranco, txPreto } from "../../UI/variaveis";
+import { bgAmarelo, bgAzul, btnAmarelo, btnAzul, txBranco, txPreto } from "../../UI/variaveis";
 import { IoLogoOctocat } from "react-icons/io";
 
 export const NavContainer = styled.div`
@@ -11,6 +11,10 @@ export const NavContainer = styled.div`
   background: ${bgAzul};
   padding: 0 2rem;
   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.3);
+
+  .dropdown{
+    transition: ease 0.3s;
+  }
 
   @media only screen and (max-width: 720px) {
     padding: 0 1rem;
@@ -81,21 +85,32 @@ export const LogoutBtn = styled.button`
 `;
 
 export const UserInfoWrap = styled.div`
-  width: 30%;
+  width: 15%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  color: ${txBranco};
+  transition: ease 0.2s;
+position: relative;
+
+  :hover{
+    background: ${btnAzul};
+    color: ${btnAmarelo};
+    cursor: pointer;
+  }
 
   .userImg {
-    width: 5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
     border-radius: 50%;
   }
 `;
 
 export const UserName = styled.h3`
   font-size: 1.5rem;
-  color: ${txBranco};
 
   @media only screen and (max-width: 720px) {
     font-size: 1rem;

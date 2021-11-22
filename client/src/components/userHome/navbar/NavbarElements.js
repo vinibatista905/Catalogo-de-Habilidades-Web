@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { bgAmarelo, bgAzul, btnAmarelo, btnAzul, txBranco, txPreto } from "../../UI/variaveis";
+import {
+  bgAmarelo,
+  bgAzul,
+  btnAmarelo,
+  btnAzul,
+  txBranco,
+  txPreto,
+} from "../../UI/variaveis";
 import { IoLogoOctocat } from "react-icons/io";
 
 export const NavContainer = styled.div`
@@ -11,10 +18,6 @@ export const NavContainer = styled.div`
   background: ${bgAzul};
   padding: 0 2rem;
   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.3);
-
-  .dropdown{
-    transition: ease 0.3s;
-  }
 
   @media only screen and (max-width: 720px) {
     padding: 0 1rem;
@@ -93,9 +96,9 @@ export const UserInfoWrap = styled.div`
   gap: 1rem;
   color: ${txBranco};
   transition: ease 0.2s;
-position: relative;
+  position: relative;
 
-  :hover{
+  :hover {
     background: ${btnAzul};
     color: ${btnAmarelo};
     cursor: pointer;

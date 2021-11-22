@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { FaUserAlt, FaUserEdit } from "react-icons/fa";
-import { bgCinza, btnAzul, txBranco, txCinzaEscuro } from "../../../UI/variaveis";
+import {
+  bgCinza,
+  btnAzul,
+  txBranco,
+  txCinzaEscuro,
+} from "../../../UI/variaveis";
 import { MdOutlineLogout } from "react-icons/md";
 
 export const DropdownContainer = styled.div`
@@ -15,6 +20,34 @@ export const DropdownContainer = styled.div`
   background: ${txBranco};
   border-radius: 12px;
   box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+  animation: Slide_Up 1s ease;
+
+  @keyframes Slide_Up {
+    0% {
+      transform: translateY(4rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  ::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -0.5rem;
+    background: ${txBranco};
+    width: 1rem;
+    height: 1rem;
+    transform: translateX(-50%) rotate(45deg);
+    transition: ease 0.2s;
+  }
+
+  :hover::before {
+    background: ${bgCinza};
+  }
 `;
 
 export const ItemWrap1 = styled.div`
@@ -53,7 +86,6 @@ export const ItemWrap2 = styled.div`
   :hover {
     background: ${bgCinza};
     color: ${btnAzul};
-   
   }
 `;
 

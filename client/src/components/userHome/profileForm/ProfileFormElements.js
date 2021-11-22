@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { ImSpinner2 } from "react-icons/im";
 import {
   btnAmarelo,
   btnAzul,
   btnAzulEscuro,
+  btnVerde,
   txBranco,
   txCinzaEscuro,
 } from "../../UI/variaveis";
@@ -15,7 +17,6 @@ export const ProjectFormWrap = styled.div`
   justify-content: center;
   position: relative;
   bottom: 1rem;
- 
 
   .formField {
     width: 20rem;
@@ -46,7 +47,6 @@ export const ProjectFormWrap = styled.div`
   }
 `;
 
-
 export const FieldContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -62,10 +62,10 @@ export const FieldWrap = styled.div`
   display: flex;
   flex-direction: column;
 
-  .upload{
+  .upload {
     width: 12rem;
     height: 3.4rem;
-    margin: 2rem 0 ;
+    margin: 2rem 0;
   }
 `;
 
@@ -75,13 +75,14 @@ export const FieldDesc = styled.label`
   color: ${txCinzaEscuro};
   padding-bottom: 1rem;
 `;
+
 export const BtnContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  padding-top: 2rem;
 `;
-
 
 export const FormBtn = styled.button`
   width: 6rem;
@@ -117,6 +118,57 @@ export const CheckSkillsLink = styled.a`
     :hover {
       box-shadow: inset 8.5rem 0 0 0 #f24b43;
       font-weight: bold;
+    }
+  }
+`;
+
+export const BtnWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+
+`;
+
+export const LoadingWrap = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  .loaded-on {
+    opacity: 1;
+    font-size: 1.2rem;
+    color: ${btnVerde};
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+
+  .loaded-off {
+    opacity: 0;
+  }
+`;
+
+export const LoadingSpinner = styled(ImSpinner2)`
+  font-size: 2.5rem;
+  color: ${btnAzul};
+  animation: Spinner 0.5s infinite ease-in-out;
+
+  @keyframes Spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 `;

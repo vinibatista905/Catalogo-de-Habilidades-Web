@@ -20,7 +20,7 @@ export const DropdownContainer = styled.div`
   background: ${txBranco};
   border-radius: 12px;
   box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
-  animation: Slide_Up 1s ease;
+  animation: Slide_Up 0.8s ease;
 
   @keyframes Slide_Up {
     0% {

@@ -3,19 +3,24 @@ import { Formik, Form, Field } from "formik";
 import axios from "axios";
 import {
   BtnContainer,
+  BtnWrap,
   CheckSkillsLink,
   FieldContainer,
   FieldDesc,
   FieldWrap,
   FormBtn,
+  LoadingSpinner,
+  LoadingWrap,
   ProjectFormWrap,
 } from "./ProfileFormElements";
 
 const ProfileForm = () => {
+  //UPLOAD DA IMAGEM NO CLOUDINARY
   const [imageSelected, setImageSelected] = useState("");
   const [profileImage, setProfileImage] = useState([]);
 
   const uploadImage = async () => {
+    setLoading(true);
     const formData = new FormData();
     formData.append("file", imageSelected);
     formData.append("upload_preset", "kgem041l");
@@ -24,9 +29,16 @@ const ProfileForm = () => {
       .post("https://api.cloudinary.com/v1_1/dudmycscb/image/upload", formData)
       .then((response) => {
         setProfileImage(response);
+        setLoading(false);
+        setImageLoaded(true);
       });
   };
 
+  //LOADING DA IMAGEM
+  const [loading, setLoading] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  //CRIAÇÃO DO PERFIL
   const handleSubmit = async (values) => {
     const userId = localStorage.getItem("user_id");
 
@@ -124,9 +136,18 @@ const ProfileForm = () => {
                   setImageSelected(event.target.files[0]);
                 }}
               />
-              <FormBtn className="upload" type="button" onClick={uploadImage}>
-                Fazer Upload da Imagem
-              </FormBtn>
+              <BtnWrap>
+                <FormBtn className="upload" type="button" onClick={uploadImage}>
+                  Fazer Upload da Imagem
+                </FormBtn>
+                {loading ? <LoadingSpinner /> : null}
+              </BtnWrap>
+
+              <LoadingWrap>
+                <span className={imageLoaded ? "loaded-on" : "loaded-off"}>
+                  Upload Realizado!
+                </span>
+              </LoadingWrap>
             </FieldWrap>
           </FieldContainer>
           <BtnContainer>

@@ -61,5 +61,6 @@ export const CardTitle = styled.h2`
   font-size: 2.5rem;
   color: ${txCinzaEscuro};
   margin: 0;
-  padding: 3rem 0;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
 `;

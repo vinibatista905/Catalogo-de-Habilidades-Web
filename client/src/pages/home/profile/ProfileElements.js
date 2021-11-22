@@ -16,13 +16,13 @@ export const Container = styled.div`
 `;
 
 export const ProfileCard = styled.div`
-  width: 95rem;
-  height: 50rem;
+  width: 50rem;
+  height: 60rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${txBranco};
   border-radius: 12px;
-  border: 1.5px ${bgAmarelo} solid;
+  border: 2px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
 `;

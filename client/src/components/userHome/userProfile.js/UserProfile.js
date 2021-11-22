@@ -4,6 +4,8 @@ import { Image } from "cloudinary-react";
 
 import {
   Field,
+  Link,
+  LinksWrap,
   ProfileContainer,
   ProfileField,
   ProfileWrap,
@@ -74,15 +76,20 @@ const UserProfile = () => {
 
             <ProfileField>
               <Field>LinkedIn:</Field>
-              <UserInfo>{profile.linkedin}</UserInfo>
+              <UserInfo><a className="userLink" href={`https://${profile.linkedin}`} target="_blank">{profile.linkedin}</a></UserInfo>
             </ProfileField>
 
             <ProfileField>
               <Field>Github:</Field>
-              <UserInfo>{profile.github}</UserInfo>
+              <UserInfo><a className="userLink" href={`https://${profile.github}`} target="_blank">{profile.github}</a></UserInfo>
             </ProfileField>
           </ProfileWrap>
         ))}
+
+        <LinksWrap>
+        <Link>Ainda não criou o seu perfil? <a className='profile-link' href='/create_profile'>Clique Aqui!</a></Link>
+        <Link>Deseja alterar o seu perfil? <a className='profile-link' href='/update_profile'>Clique Aqui!</a></Link>
+        </LinksWrap>
       </ProfileContainer>
     </>
   );

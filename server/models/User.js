@@ -34,16 +34,15 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.associate = (models) => {
-    User.belongsToMany(models.Project, { through: models.UserProject });
-  };
-
-  User.associate = (models) => {
     User.hasMany(models.Profile, {
       foreignKey: "idUser",
       constraint: true,
     });
   };
 
+  User.associate = (models) => {
+    User.belongsToMany(models.Project, { through: models.UserProject });
+  };
 
   return User;
 };

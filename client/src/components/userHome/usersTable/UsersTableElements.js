@@ -150,6 +150,15 @@ export const TableTD = styled.td`
   padding: 12px 15px;
   font-size: 1.2rem;
 
+  .user-link{
+    text-decoration: none;
+    color: ${txPreto};
+
+    :hover{
+      color: ${btnAzul};
+    }
+  }
+
   .tdButton {
     width: 6rem;
     height: 2.5rem;

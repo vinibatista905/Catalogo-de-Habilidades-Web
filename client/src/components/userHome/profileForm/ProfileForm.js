@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
+import { history } from '../../../history';
 import axios from "axios";
 import {
   BtnContainer,
   BtnWrap,
-  CheckSkillsLink,
   FieldContainer,
   FieldDesc,
   FieldWrap,
@@ -12,6 +12,7 @@ import {
   LoadingSpinner,
   LoadingWrap,
   ProjectFormWrap,
+  SubmitBtn,
 } from "./ProfileFormElements";
 
 const ProfileForm = () => {
@@ -63,6 +64,7 @@ const ProfileForm = () => {
         if (data) {
           console.log(data);
           alert("Perfil Criado!");
+          history.push("/profile")
         }
       })
       .catch((err) => {
@@ -151,12 +153,8 @@ const ProfileForm = () => {
             </FieldWrap>
           </FieldContainer>
           <BtnContainer>
-            <FormBtn type="submit">Criar</FormBtn>
-            <CheckSkillsLink href="/admin/all_projects">
-              <button type="button" className="linkBtn">
-                Visualizar Perfil
-              </button>
-            </CheckSkillsLink>
+            <SubmitBtn type="submit">Criar Perfil</SubmitBtn>
+  
           </BtnContainer>
         </Form>
       </Formik>

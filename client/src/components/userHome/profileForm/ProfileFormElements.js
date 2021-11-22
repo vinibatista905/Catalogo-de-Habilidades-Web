@@ -103,22 +103,23 @@ export const FormBtn = styled.button`
 
 export const CheckSkillsLink = styled.a`
   text-decoration: none;
+`;
 
-  .linkBtn {
-    width: 8.5rem;
-    height: 3.4rem;
-    border-radius: 10px;
-    background: ${btnAmarelo};
-    border: none;
-    transition: ease-out 0.3s;
-    box-shadow: inset 0 0 0 0 ${btnAmarelo};
-    outline: none;
-    cursor: pointer;
+export const SubmitBtn = styled.button`
+  width: 8.5rem;
+  height: 3.4rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background: ${btnAmarelo};
+  border: none;
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 ${btnAmarelo};
+  outline: none;
+  cursor: pointer;
 
-    :hover {
-      box-shadow: inset 8.5rem 0 0 0 #f24b43;
-      font-weight: bold;
-    }
+  :hover {
+    box-shadow: inset 8.5rem 0 0 0 #f24b43;
+    font-weight: bold;
   }
 `;
 
@@ -127,7 +128,6 @@ export const BtnWrap = styled.div`
   align-items: center;
   justify-content: start;
   gap: 2rem;
-
 `;
 
 export const LoadingWrap = styled.div`

@@ -38,6 +38,7 @@ import AdminUpdateProjects from "../pages/admin/adminHome/updateProject/AdminUpd
 import UpdateProjectFormPage from "../pages/admin/adminHome/updateProjectFormPage/UpdateProjectFormPage";
 
 import { history } from "../history";
+import SpecUserProfilePage from "../pages/home/spec_user_profile/SpecUserProfilePage";
 
 const Routes = () => (
     
@@ -64,6 +65,7 @@ const Routes = () => (
       <PrivateRoute component={Profile} exact path="/profile" />
       <PrivateRoute component={CreateProfile} exact path="/create_profile" />
       <PrivateRoute component={UpdateProfile} exact path="/update_profile" />
+      <PrivateRoute component={SpecUserProfilePage} exact path="/profiles/:id" />
 
       <AdminPrivateRoute component={AdminHome} exact path="/admin/home" />
       <AdminPrivateRoute component={AddNewSkill} exact path="/admin/add_skill" />

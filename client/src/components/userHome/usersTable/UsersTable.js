@@ -69,7 +69,7 @@ const UsersTable = () => {
       return (
         <TableTR key={user.id}>
           <TableTD>{user.id}</TableTD>
-          <TableTD>{user.name}</TableTD>
+          <TableTD><a className='user-link' href={`/profiles/${user.id}`}>{user.name}</a></TableTD>
           <TableTD>{user.email}</TableTD>
           <TableTD>
             <button className="tdButton">

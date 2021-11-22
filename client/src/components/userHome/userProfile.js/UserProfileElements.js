@@ -34,9 +34,9 @@ export const ProfileField = styled.div`
   justify-content: center;
   gap: 1rem;
 
-  .userLink{
-      text-decoration: none;
-      color: ${btnAzul};
+  .userLink {
+    text-decoration: none;
+    color: ${btnAzul};
   }
 `;
 
@@ -51,9 +51,12 @@ export const UserInfo = styled.h3`
 `;
 
 export const UserName = styled.h2`
+  width: 100%;
   font-size: 3.5rem;
   color: ${txPreto};
+  border-bottom: 1.6px solid rgba(0, 0, 0, 0.2);
   padding: 1rem 0;
+  margin-bottom: 2rem;
 `;
 
 export const LinksWrap = styled.div`

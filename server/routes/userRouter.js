@@ -27,7 +27,7 @@ router.delete("/remove_project/:userId/:projectId", userController.remove_projec
 //PERFIL
 router.post("/create_profile", userController.create_profile);
 router.get("/check_profile/:userId", userController.check_profile);
-router.put("/update_profile/:profileId", userController.update_profile);
+router.put("/update_profile/:userId", userController.update_profile);
 router.delete("/delete_profile/:profileId", userController.delete_profile);
 
 

@@ -88,7 +88,7 @@ export const LogoutBtn = styled.button`
 `;
 
 export const UserInfoWrap = styled.div`
-  width: 15%;
+  width: auto;
   height: 100%;
   display: flex;
   align-items: center;
@@ -97,6 +97,7 @@ export const UserInfoWrap = styled.div`
   color: ${txBranco};
   transition: ease 0.2s;
   position: relative;
+  padding: 0 0.5rem ;
 
   :hover {
     background: ${btnAzul};

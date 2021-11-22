@@ -366,12 +366,12 @@ const userController = {
   },
 
   update_profile: async function (req, res) {
-    const profileId = req.params.profileId;
+    const userId = req.params.userId;
 
     const newProfile = req.body;
 
     try {
-      await Profile.update(newProfile, { where: { id: profileId } });
+      await Profile.update(newProfile, { where: { idUser: userId } });
       res.status(200).send(newProfile);
     } catch (error) {
       console.log(error);

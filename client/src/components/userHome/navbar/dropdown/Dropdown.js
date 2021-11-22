@@ -21,15 +21,19 @@ const Dropdown = () => {
 
   return (
     <DropdownContainer>
-      <ItemWrap1>
-        <ProfileIcon />
-        <Item>Perfil</Item>
-      </ItemWrap1>
+      <a className='dropdown-link' href="/profile">
+        <ItemWrap1>
+          <ProfileIcon />
+          <Item>Perfil</Item>
+        </ItemWrap1>
+      </a>
 
-      <ItemWrap2>
-        <EditProfileIcon />
-        <Item>Editar Perfil</Item>
-      </ItemWrap2>
+      <a className='dropdown-link' href="/update_profile">
+        <ItemWrap2>
+          <EditProfileIcon />
+          <Item>Editar Perfil</Item>
+        </ItemWrap2>
+      </a>
 
       <ItemWrapLogout className="logout" onClick={logout}>
         <LogoutIcon />

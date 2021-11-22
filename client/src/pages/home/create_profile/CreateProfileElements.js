@@ -23,7 +23,7 @@ export const Container = styled.div`
 
 export const FormCard = styled.div`
   width: 95rem;
-  height: 45rem;
+  height: 52rem;
   margin-bottom: 4.2rem;
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@ export const FormSection = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 `;
 
@@ -61,6 +61,5 @@ export const CardTitle = styled.h2`
   font-size: 2.5rem;
   color: ${txCinzaEscuro};
   margin: 0;
-  position: relative;
-  bottom: 10rem;
+  padding: 3rem 0;
 `;

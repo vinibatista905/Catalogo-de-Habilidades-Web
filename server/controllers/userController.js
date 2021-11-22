@@ -340,6 +340,9 @@ const userController = {
       team: req.body.team,
       profileImage: req.body.profileImage,
       startDate: req.body.startDate,
+      phone: req.body.phone,
+      linkedin: req.body.linkedin,
+      github: req.body.github,
       idUser: req.body.idUser,
     };
 

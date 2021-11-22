@@ -48,6 +48,10 @@ export const DropdownContainer = styled.div`
   :hover::before {
     background: ${bgCinza};
   }
+
+  .dropdown-link{
+    text-decoration: none;
+  }
 `;
 
 export const ItemWrap1 = styled.div`

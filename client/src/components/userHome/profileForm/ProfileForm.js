@@ -24,8 +24,6 @@ const ProfileForm = () => {
       .post("https://api.cloudinary.com/v1_1/dudmycscb/image/upload", formData)
       .then((response) => {
         setProfileImage(response);
-        // console.log(profileImage);
-        // console.log(profileImage.data.public_id);
       });
   };
 
@@ -38,6 +36,9 @@ const ProfileForm = () => {
       role: values.role,
       team: values.team,
       startDate: values.startDate,
+      phone: values.phone,
+      linkedin: values.linkedin,
+      github: values.github,
       profileImage: imageID,
       idUser: userId,
     };
@@ -80,11 +81,39 @@ const ProfileForm = () => {
               />
             </FieldWrap>
             <FieldWrap>
-              <FieldDesc>Data de Ingresso*</FieldDesc>
+              <FieldDesc>Data de Início*</FieldDesc>
               <Field name="startDate" type="date" className="formField" />
             </FieldWrap>
 
-            {/* Upload de imagem aqui */}
+            <FieldWrap>
+              <FieldDesc>Celular</FieldDesc>
+              <Field
+                name="phone"
+                placeholder="Ex: (11) 12345-6789"
+                type="text"
+                className="formField"
+              />
+            </FieldWrap>
+
+            <FieldWrap>
+              <FieldDesc>LinkedIn</FieldDesc>
+              <Field
+                name="linkedin"
+                placeholder="Ex: linkedin.com/fulano"
+                type="text"
+                className="formField"
+              />
+            </FieldWrap>
+
+            <FieldWrap>
+              <FieldDesc>Github</FieldDesc>
+              <Field
+                name="github"
+                placeholder="Ex: github.com/fulano"
+                type="text"
+                className="formField"
+              />
+            </FieldWrap>
 
             <FieldWrap>
               <FieldDesc>Foto de Perfil</FieldDesc>
@@ -95,13 +124,13 @@ const ProfileForm = () => {
                   setImageSelected(event.target.files[0]);
                 }}
               />
-              <button className='upload' type="button" onClick={uploadImage}>
+              <FormBtn className="upload" type="button" onClick={uploadImage}>
                 Fazer Upload da Imagem
-              </button>
+              </FormBtn>
             </FieldWrap>
           </FieldContainer>
           <BtnContainer>
-            <FormBtn type="submit">Adicionar</FormBtn>
+            <FormBtn type="submit">Criar</FormBtn>
             <CheckSkillsLink href="/admin/all_projects">
               <button type="button" className="linkBtn">
                 Visualizar Perfil

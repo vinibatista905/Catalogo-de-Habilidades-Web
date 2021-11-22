@@ -20,12 +20,12 @@ const CreateProfile = () => {
         <FormCard>
           <BannerSection>
             <BannerImg
-              src={require("../../../assets/add-skills.png").default}
+              src={require("../../../assets/profile-1.png").default}
             />
           </BannerSection>
 
           <FormSection>
-            <CardTitle>Adicione o seu perfil</CardTitle>
+            <CardTitle>Crie o seu perfil</CardTitle>
             <ProfileForm />
           </FormSection>
         </FormCard>

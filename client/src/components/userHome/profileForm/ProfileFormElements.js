@@ -9,15 +9,16 @@ import {
 
 export const ProjectFormWrap = styled.div`
   width: 100%;
-  height: 65%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  bottom: 5.5rem;
+  bottom: 1rem;
+ 
 
   .formField {
-    width: 16rem;
+    width: 20rem;
     padding: 0.6rem 0.5rem;
     font-size: 1.2rem;
     border-radius: 12px;
@@ -48,10 +49,13 @@ export const ProjectFormWrap = styled.div`
 
 export const FieldContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: inherit;
   gap: 2.5rem;
+  padding-left: 2rem;
 `;
 
 export const FieldWrap = styled.div`
@@ -61,18 +65,7 @@ export const FieldWrap = styled.div`
   .upload{
     width: 12rem;
     height: 3.4rem;
-    border-radius: 10px;
-    background: ${btnAmarelo};
-    border: none;
-    transition: ease-out 0.3s;
-    box-shadow: inset 0 0 0 0 ${btnAmarelo};
-    outline: none;
-    cursor: pointer;
-
-    :hover {
-      box-shadow: inset 12rem 0 0 0 #f24b43;
-      font-weight: bold;
-    }
+    margin: 2rem 0 ;
   }
 `;
 

@@ -21,6 +21,8 @@ import AllProjects from "../pages/home/all_projects/AllProjects";
 import UpdateProjects from "../pages/home/update_projects/UpdateProjects";
 import SpecUserProjects from "../pages/home/specific_user_projects/SpecUserProjects";
 import CreateProfile from "../pages/home/create_profile/CreateProfile";
+import UpdateProfile from "../pages/home/update_profile/UpdateProfile";
+import Profile from "../pages/home/profile/Profile";
 import NotFound from "./notFound/NotFound";
 import Admin_Login from "../pages/admin/admin_login/Admin_Login";
 import AdminHome from "../pages/admin/adminHome/AdminHome";
@@ -59,7 +61,9 @@ const Routes = () => (
       <PrivateRoute component={AllProjects} exact path="/all_projects" />
       <PrivateRoute component={UpdateProjects} exact path="/update_projects" />
       <PrivateRoute component={SpecUserProjects} exact path="/users/projects/:id" />
+      <PrivateRoute component={Profile} exact path="/profile" />
       <PrivateRoute component={CreateProfile} exact path="/create_profile" />
+      <PrivateRoute component={UpdateProfile} exact path="/update_profile" />
 
       <AdminPrivateRoute component={AdminHome} exact path="/admin/home" />
       <AdminPrivateRoute component={AddNewSkill} exact path="/admin/add_skill" />

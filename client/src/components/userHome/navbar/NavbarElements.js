@@ -56,8 +56,9 @@ export const LogoIcon = styled(IoLogoOctocat)`
   margin-top: 0.1rem;
 
   @media only screen and (max-width: 720px) {
-    font-size: 1.3rem;
-    margin-left: 0.3rem;
+    font-size: 1.4rem;
+    margin-left: 0.4rem;
+    margin-bottom: 0.2rem;
   }
 `;
 
@@ -97,7 +98,7 @@ export const UserInfoWrap = styled.div`
   color: ${txBranco};
   transition: ease 0.2s;
   position: relative;
-  padding: 0 0.5rem ;
+  padding: 0 0.5rem;
 
   :hover {
     background: ${btnAzul};
@@ -113,14 +114,15 @@ export const UserInfoWrap = styled.div`
   }
 
   @media only screen and (max-width: 720px) {
-    .userImg {
-    width: 2.5rem;
-    height: 2.5rem;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  }
+    gap: 0.5rem;
 
+    .userImg {
+      width: 2.5rem;
+      height: 2.5rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
 `;
 
 export const UserName = styled.h3`

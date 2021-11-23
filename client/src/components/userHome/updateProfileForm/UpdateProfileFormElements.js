@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { ImSpinner2 } from "react-icons/im";
 import { MdEdit } from "react-icons/md";
 import {
   btnAmarelo,
   btnAzul,
   btnAzulEscuro,
-  btnVerde,
   txBranco,
   txCinzaEscuro,
 } from "../../UI/variaveis";
@@ -20,7 +18,7 @@ export const ProjectFormWrap = styled.div`
   bottom: 1rem;
 
   .formField {
-    width: 20rem;
+    width: 75%;
     padding: 0.6rem 0.5rem;
     font-size: 1.2rem;
     border-radius: 12px;
@@ -34,6 +32,19 @@ export const ProjectFormWrap = styled.div`
     :focus {
       border: 2px ${btnAzul} solid;
     }
+
+    @media only screen and (max-width: 720px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 720px) {
+      height: 100%;
+      position: static;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      width: 100%;
+    }
   }
 
   .form {
@@ -45,6 +56,10 @@ export const ProjectFormWrap = styled.div`
     justify-content: center;
     padding: 2rem 0;
     gap: 2rem;
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+   padding: 0;
+  }
   }
 `;
 
@@ -57,6 +72,14 @@ export const FieldContainer = styled.div`
   flex-direction: inherit;
   gap: 2.5rem;
   padding-left: 2rem;
+
+  @media only screen and (max-width: 720px) {
+    padding: 0 1rem;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+   padding: 0 3rem;
+  }
 `;
 
 export const FieldWrap = styled.div`
@@ -67,6 +90,11 @@ export const FieldWrap = styled.div`
     width: 10rem;
     height: 3.4rem;
     margin: 2rem 0;
+  }
+
+  @media only screen and (max-width: 720px) {
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -80,6 +108,12 @@ export const ImageWrap = styled.div`
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 8px 10px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

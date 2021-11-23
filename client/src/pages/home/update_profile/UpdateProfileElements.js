@@ -19,12 +19,16 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background: ${txCinza};
+
+  @media only screen and (max-width: 720px) {
+    gap: 3rem;
+  }
 `;
 
 export const FormCard = styled.div`
-  width: 95rem;
-  height: 52rem;
-  margin-bottom: 4.2rem;
+  width: 85%;
+  height: 88vh;
+  margin-bottom: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +36,20 @@ export const FormCard = styled.div`
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+
+  @media only screen and (max-width: 720px) {
+    width: 90vw;
+    height: auto;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 90vw;
+    height: auto;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 `;
 
 export const BannerSection = styled.div`
@@ -42,6 +60,14 @@ export const BannerSection = styled.div`
   align-items: center;
   background: ${bgAzul};
   border-radius: 12px;
+
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 100%;
+  }
 `;
 
 export const BannerImg = styled.img`
@@ -55,6 +81,14 @@ export const FormSection = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: center;
+
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 100%;
+  }
 `;
 
 export const CardTitle = styled.h2`
@@ -63,4 +97,9 @@ export const CardTitle = styled.h2`
   margin: 0;
   padding: 2rem 0;
   margin-bottom: 3rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
 `;

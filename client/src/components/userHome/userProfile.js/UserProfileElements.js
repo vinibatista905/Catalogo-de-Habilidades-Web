@@ -1,6 +1,13 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import styled from "styled-components";
-import { btnAmarelo, btnAzul, btnAzulEscuro, txBranco, txCinzaEscuro, txPreto } from "../../UI/variaveis";
+import {
+  btnAmarelo,
+  btnAzul,
+  btnAzulEscuro,
+  txBranco,
+  txCinzaEscuro,
+  txPreto,
+} from "../../UI/variaveis";
 
 export const ProfileContainer = styled.div`
   display: flex;
@@ -26,6 +33,11 @@ export const ProfileWrap = styled.div`
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 8px 10px 6px rgba(0, 0, 0, 0.25);
+
+    @media only screen and (max-width: 720px) {
+      width: 10rem;
+      height: 10rem;
+    }
   }
 `;
 
@@ -37,6 +49,11 @@ export const UserInfoWrap = styled.div`
   gap: 2rem;
   border-bottom: 1.6px solid rgba(0, 0, 0, 0.2);
   padding: 1rem 0;
+
+  @media only screen and (max-width: 720px) {
+    gap: 0;
+    justify-content: space-between;
+  }
 `;
 
 export const UserLinksWrap = styled.div`
@@ -47,6 +64,10 @@ export const UserLinksWrap = styled.div`
   gap: 1.4rem;
   position: relative;
   top: 0.4rem;
+
+  @media only screen and (max-width: 720px) {
+    gap: 1rem;
+  }
 `;
 
 export const Linkedin = styled(BsLinkedin)`
@@ -58,6 +79,9 @@ export const Linkedin = styled(BsLinkedin)`
     transform: scale(1.3);
     color: ${btnAzul};
   }
+  @media only screen and (max-width: 720px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Github = styled(BsGithub)`
@@ -68,6 +92,9 @@ export const Github = styled(BsGithub)`
   :hover {
     transform: scale(1.3);
     color: ${btnAzul};
+  }
+  @media only screen and (max-width: 720px) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -86,11 +113,19 @@ export const ProfileField = styled.div`
 export const Field = styled.h3`
   font-size: 2.2rem;
   color: ${txCinzaEscuro};
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const UserInfo = styled.h3`
   font-size: 2rem;
   color: ${btnAzul};
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const UserName = styled.h2`
@@ -98,6 +133,9 @@ export const UserName = styled.h2`
   font-size: 3.5rem;
   color: ${txPreto};
 
+  @media only screen and (max-width: 720px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const LinksWrap = styled.div`
@@ -120,6 +158,10 @@ export const LinksWrap = styled.div`
 
 export const Link = styled.p`
   font-size: 1.2rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const BtnsLinksWrap = styled.div`
@@ -128,6 +170,10 @@ export const BtnsLinksWrap = styled.div`
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
+
+  @media only screen and (max-width: 720px) {
+    width: 100%
+  }
 `;
 
 export const LinkBtn = styled.button`

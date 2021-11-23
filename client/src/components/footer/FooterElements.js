@@ -42,6 +42,10 @@ export const IconsWrap = styled.div`
     align-items: center;
     width: 20vw;
   }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 16vw;
+  }
 `;
 
 export const FooterIcon = styled.a`

@@ -15,15 +15,31 @@ export const SkillFormWrap = styled.div`
   justify-content: center;
   position: relative;
   bottom: 8rem;
+
+  @media only screen and (max-width: 720px) {
+    height: 100%;
+    position: static;
+  }
 `;
 
 export const CustomSelect = styled(Select)`
   width: 15rem;
+
+  @media only screen and (max-width: 720px) {
+    width: 16rem;
+  }
 `;
 export const FieldContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
 `;
 
 export const FieldWrap = styled.div`
@@ -36,7 +52,13 @@ export const FieldDesc = styled.label`
   font-weight: 700;
   color: ${txCinzaEscuro};
   padding-bottom: 1rem;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.1rem;
+
+  }
 `;
+
 export const Form = styled.form`
   width: 100%;
   height: 100%;
@@ -46,6 +68,11 @@ export const Form = styled.form`
   justify-content: center;
   padding: 2rem 0;
   gap: 2rem;
+
+  @media only screen and (max-width: 720px) {
+    width: auto;
+    padding: 0;
+  }
 `;
 
 export const BtnWrap = styled.div`
@@ -54,6 +81,10 @@ export const BtnWrap = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media only screen and (max-width: 720px) {
+   padding: 2rem 0;
+  }
 `;
 
 export const FormBtn = styled.button`
@@ -71,6 +102,9 @@ export const FormBtn = styled.button`
     color: ${btnAmarelo};
     font-weight: bold;
   }
+
+  
+
 `;
 
 export const CheckSkillsLink = styled.a`
@@ -89,8 +123,7 @@ export const CheckSkillsLink = styled.a`
 
     :hover {
       box-shadow: inset 8rem 0 0 0 #f24b43;
-    font-weight: bold;
-
+      font-weight: bold;
     }
   }
 `;

@@ -31,6 +31,7 @@ export const DropdownContainer = styled.div`
       transform: translateY(0);
       opacity: 1;
     }
+    
   }
 
   ::before {
@@ -51,6 +52,11 @@ export const DropdownContainer = styled.div`
 
   .dropdown-link{
     text-decoration: none;
+  }
+
+  @media only screen and (max-width: 720px) {
+    top: 5.5rem;
+
   }
 `;
 

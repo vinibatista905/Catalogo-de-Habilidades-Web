@@ -81,7 +81,7 @@ export const Message1 = styled.p`
   font-size: 1.2rem;
   color: ${txPreto};
   padding-left: 2rem;
-  padding-top: 5rem;
+  padding-top: 8rem;
 
   @media only screen and (max-width: 720px) {
     font-size: 1rem;

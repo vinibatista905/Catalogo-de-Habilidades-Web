@@ -15,14 +15,14 @@ export const Container = styled.div`
   background: ${txCinza};
 `;
 
-export const ProfileCard = styled.div`
-  width: 50rem;
-  height: 55rem;
+export const FormCard = styled.div`
+  width: 80rem;
+  height: 45rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${txBranco};
   border-radius: 12px;
-  border: 2px ${bgAmarelo} solid;
+  border: 1.5px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
 `;

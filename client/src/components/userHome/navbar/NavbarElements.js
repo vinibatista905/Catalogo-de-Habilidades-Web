@@ -46,7 +46,7 @@ export const LogoTitle = styled.h1`
   font-size: 3rem;
 
   @media only screen and (max-width: 720px) {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -56,7 +56,7 @@ export const LogoIcon = styled(IoLogoOctocat)`
   margin-top: 0.1rem;
 
   @media only screen and (max-width: 720px) {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-left: 0.3rem;
   }
 `;
@@ -111,6 +111,16 @@ export const UserInfoWrap = styled.div`
     object-fit: cover;
     border-radius: 50%;
   }
+
+  @media only screen and (max-width: 720px) {
+    .userImg {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  }
+
 `;
 
 export const UserName = styled.h3`

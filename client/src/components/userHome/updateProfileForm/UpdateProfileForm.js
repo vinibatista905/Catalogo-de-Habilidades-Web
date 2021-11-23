@@ -66,7 +66,6 @@ const UpdateProfileForm = () => {
       role: values.role,
       team: values.team,
       startDate: values.startDate,
-    
       phone: values.phone,
       linkedin: values.linkedin,
       github: values.github,

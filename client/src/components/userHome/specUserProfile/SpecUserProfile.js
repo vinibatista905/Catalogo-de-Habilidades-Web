@@ -100,7 +100,7 @@ const SpecUserProfile = () => {
 
         <LinksWrap>
           <Link>
-            Ainda não criou o seu perfil?
+            Ainda não criou o seu perfil? 
             <a className="profile-link" href="/create_profile">
               Clique Aqui!
             </a>

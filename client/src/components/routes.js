@@ -23,6 +23,8 @@ import SpecUserProjects from "../pages/home/specific_user_projects/SpecUserProje
 import CreateProfile from "../pages/home/create_profile/CreateProfile";
 import UpdateProfile from "../pages/home/update_profile/UpdateProfile";
 import Profile from "../pages/home/profile/Profile";
+import SpecUserProfilePage from "../pages/home/spec_user_profile/SpecUserProfilePage";
+import UpdateProfileImage from "../pages/home/update_profile_image/UpdateProfileImage";
 import NotFound from "./notFound/NotFound";
 import Admin_Login from "../pages/admin/admin_login/Admin_Login";
 import AdminHome from "../pages/admin/adminHome/AdminHome";
@@ -38,7 +40,6 @@ import AdminUpdateProjects from "../pages/admin/adminHome/updateProject/AdminUpd
 import UpdateProjectFormPage from "../pages/admin/adminHome/updateProjectFormPage/UpdateProjectFormPage";
 
 import { history } from "../history";
-import SpecUserProfilePage from "../pages/home/spec_user_profile/SpecUserProfilePage";
 
 const Routes = () => (
     
@@ -65,6 +66,7 @@ const Routes = () => (
       <PrivateRoute component={Profile} exact path="/profile" />
       <PrivateRoute component={CreateProfile} exact path="/create_profile" />
       <PrivateRoute component={UpdateProfile} exact path="/update_profile" />
+      <PrivateRoute component={UpdateProfileImage} exact path="/update_profile_image" />
       <PrivateRoute component={SpecUserProfilePage} exact path="/profiles/:id" />
 
       <AdminPrivateRoute component={AdminHome} exact path="/admin/home" />

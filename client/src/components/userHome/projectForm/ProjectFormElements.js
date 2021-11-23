@@ -15,12 +15,17 @@ export const ProjectFormWrap = styled.div`
   justify-content: center;
   position: relative;
   bottom: 8rem;
+
+  @media only screen and (max-width: 720px) {
+    height: 100%;
+    position: static;
+  }
 `;
 
 export const CustomSelect = styled(Select)`
   width: 16rem;
 
-  :hover{
+  :hover {
     background: yellow;
   }
 `;
@@ -50,6 +55,12 @@ export const Form = styled.form`
   justify-content: center;
   padding: 2rem 0;
   gap: 3rem;
+
+  @media only screen and (max-width: 720px) {
+    padding: 3rem;
+    width: auto;
+    height: auto;
+  }
 `;
 
 export const BtnWrap = styled.div`
@@ -58,7 +69,6 @@ export const BtnWrap = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  
 `;
 
 export const FormBtn = styled.button`
@@ -69,6 +79,10 @@ export const FormBtn = styled.button`
   border: none;
   border-radius: 12px;
   cursor: pointer;
+
+  @media only screen and (max-width: 720px) {
+    width: 7rem;
+  }
 
   :hover {
     background: ${btnAzulEscuro};
@@ -94,8 +108,7 @@ export const CheckSkillsLink = styled.a`
 
     :hover {
       box-shadow: inset 8rem 0 0 0 #f24b43;
-    font-weight: bold;
-
+      font-weight: bold;
     }
   }
 `;

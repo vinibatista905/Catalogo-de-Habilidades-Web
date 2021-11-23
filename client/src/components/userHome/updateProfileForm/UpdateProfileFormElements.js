@@ -75,6 +75,7 @@ export const FieldContainer = styled.div`
 
   @media only screen and (max-width: 720px) {
     padding: 0 1rem;
+    
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -86,14 +87,9 @@ export const FieldWrap = styled.div`
   display: flex;
   flex-direction: column;
 
-  .upload {
-    width: 10rem;
-    height: 3.4rem;
-    margin: 2rem 0;
-  }
 
   @media only screen and (max-width: 720px) {
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 `;
@@ -108,6 +104,12 @@ export const ImageWrap = styled.div`
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 8px 10px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  @media only screen and (max-width: 720px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -134,6 +136,10 @@ export const ImageOverlay = styled.div`
 
   :hover {
     opacity: 1;
+  }
+
+  @media only screen and (max-width: 720px) {
+   opacity: 1;
   }
 `;
 

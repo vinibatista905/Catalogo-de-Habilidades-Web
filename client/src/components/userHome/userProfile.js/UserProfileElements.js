@@ -1,5 +1,6 @@
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import styled from "styled-components";
-import { btnAzul, txCinzaEscuro, txPreto } from "../../UI/variaveis";
+import { btnAmarelo, btnAzul, btnAzulEscuro, txBranco, txCinzaEscuro, txPreto } from "../../UI/variaveis";
 
 export const ProfileContainer = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const ProfileWrap = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 
   .userImg {
     width: 15rem;
@@ -25,6 +26,48 @@ export const ProfileWrap = styled.div`
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 8px 10px 6px rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const UserInfoWrap = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  border-bottom: 1.6px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+`;
+
+export const UserLinksWrap = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  position: relative;
+  top: 0.4rem;
+`;
+
+export const Linkedin = styled(BsLinkedin)`
+  font-size: 2rem;
+  color: ${txCinzaEscuro};
+  transition: ease 0.2s;
+
+  :hover {
+    transform: scale(1.3);
+    color: ${btnAzul};
+  }
+`;
+
+export const Github = styled(BsGithub)`
+  font-size: 2rem;
+  color: ${txCinzaEscuro};
+  transition: ease 0.2s;
+
+  :hover {
+    transform: scale(1.3);
+    color: ${btnAzul};
   }
 `;
 
@@ -51,12 +94,10 @@ export const UserInfo = styled.h3`
 `;
 
 export const UserName = styled.h2`
-  width: 100%;
+  width: auto;
   font-size: 3.5rem;
   color: ${txPreto};
-  border-bottom: 1.6px solid rgba(0, 0, 0, 0.2);
-  padding: 1rem 0;
-  margin-bottom: 2rem;
+
 `;
 
 export const LinksWrap = styled.div`
@@ -79,4 +120,31 @@ export const LinksWrap = styled.div`
 
 export const Link = styled.p`
   font-size: 1.2rem;
+`;
+
+export const BtnsLinksWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+`;
+
+export const LinkBtn = styled.button`
+  width: 7rem;
+  height: 3.2rem;
+  background: ${btnAzulEscuro};
+  color: ${txBranco};
+  border: none;
+  border-radius: 12px;
+  transition: ease 0.5s;
+  box-shadow: inset 0 0 0 0 ${btnAzulEscuro};
+  outline: none;
+  cursor: pointer;
+
+  :hover {
+    box-shadow: inset 7rem 0 0 0 ${btnAmarelo};
+    font-weight: bold;
+    color: ${txPreto};
+  }
 `;

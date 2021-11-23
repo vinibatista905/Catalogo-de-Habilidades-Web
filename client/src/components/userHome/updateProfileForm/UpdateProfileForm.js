@@ -59,14 +59,14 @@ const UpdateProfileForm = () => {
   const handleSubmit = async (values) => {
     const userId = localStorage.getItem("user_id");
 
-    const imageID = profileImage.data.public_id;
-    console.log(imageID);
+    // const imageID = profileImage.data.public_id;
+    // console.log(imageID);
 
     const profileData = {
       role: values.role,
       team: values.team,
       startDate: values.startDate,
-      profileImage: imageID,
+    
       phone: values.phone,
       linkedin: values.linkedin,
       github: values.github,
@@ -159,7 +159,7 @@ const UpdateProfileForm = () => {
                 className="formField"
               />
             </FieldWrap>
-
+{/* 
             <FieldWrap>
               <FieldDesc>Foto de Perfil</FieldDesc>
               <Field
@@ -181,7 +181,7 @@ const UpdateProfileForm = () => {
                   Upload Realizado!
                 </span>
               </LoadingWrap>
-            </FieldWrap>
+            </FieldWrap> */}
           </FieldContainer>
           <BtnContainer>
             <SubmitBtn type="submit">Atualizar Perfil</SubmitBtn>

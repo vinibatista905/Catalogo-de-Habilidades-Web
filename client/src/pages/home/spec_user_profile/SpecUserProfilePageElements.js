@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { bgAmarelo, txBranco, txCinza } from "../../../components/UI/variaveis";
+import {
+  bgAmarelo,
+  btnAmarelo,
+  btnAzulEscuro,
+  txBranco,
+  txCinza,
+  txPreto,
+} from "../../../components/UI/variaveis";
 
 export const Container = styled.div`
   display: flex;
@@ -17,7 +24,7 @@ export const Container = styled.div`
 
 export const ProfileCard = styled.div`
   width: 50rem;
-  height: 60rem;
+  height: 55rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,4 +32,6 @@ export const ProfileCard = styled.div`
   border-radius: 12px;
   border: 2px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+
 `;
+

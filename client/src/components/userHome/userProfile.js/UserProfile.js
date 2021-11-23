@@ -3,13 +3,19 @@ import React, { useEffect, useState } from "react";
 import { Image } from "cloudinary-react";
 
 import {
+  BtnsLinksWrap,
   Field,
+  Github,
   Link,
+  LinkBtn,
+  Linkedin,
   LinksWrap,
   ProfileContainer,
   ProfileField,
   ProfileWrap,
   UserInfo,
+  UserInfoWrap,
+  UserLinksWrap,
   UserName,
 } from "./UserProfileElements";
 
@@ -50,9 +56,19 @@ const UserProfile = () => {
               publicId={`https://res.cloudinary.com/dudmycscb/image/upload/v1637432647/${profile.profileImage}.jpg`}
             />
 
-            {userInfo?.map((user) => (
-              <UserName key={user.id}>{user.name}</UserName>
-            ))}
+            <UserInfoWrap>
+              {userInfo?.map((user) => (
+                <UserName key={user.id}>{user.name}</UserName>
+              ))}
+              <UserLinksWrap>
+                <a className="iconLink" href={profile.linkedin} target="_blank">
+                  <Linkedin />
+                </a>
+                <a className="iconLink" href={profile.github} target="_blank">
+                  <Github />
+                </a>
+              </UserLinksWrap>
+            </UserInfoWrap>
 
             <ProfileField>
               <Field>Cargo:</Field>
@@ -74,21 +90,27 @@ const UserProfile = () => {
               <UserInfo>{profile.phone}</UserInfo>
             </ProfileField>
 
-            <ProfileField>
-              <Field>LinkedIn:</Field>
-              <UserInfo><a className="userLink" href={`https://${profile.linkedin}`} target="_blank">{profile.linkedin}</a></UserInfo>
-            </ProfileField>
+            <BtnsLinksWrap>
+               <a href={"/users/" + profile.idUser}><LinkBtn>Ver Skills</LinkBtn></a>
+               <a href={"/users/projects/" + profile.idUser}><LinkBtn>Ver Projetos</LinkBtn></a>
+           </BtnsLinksWrap>
 
-            <ProfileField>
-              <Field>Github:</Field>
-              <UserInfo><a className="userLink" href={`https://${profile.github}`} target="_blank">{profile.github}</a></UserInfo>
-            </ProfileField>
           </ProfileWrap>
         ))}
 
         <LinksWrap>
-        <Link>Ainda não criou o seu perfil? <a className='profile-link' href='/create_profile'>Clique Aqui!</a></Link>
-        <Link>Deseja alterar o seu perfil? <a className='profile-link' href='/update_profile'>Clique Aqui!</a></Link>
+          <Link>
+            Ainda não criou o seu perfil?{" "}
+            <a className="profile-link" href="/create_profile">
+              Clique Aqui!
+            </a>
+          </Link>
+          <Link>
+            Deseja alterar o seu perfil?{" "}
+            <a className="profile-link" href="/update_profile">
+              Clique Aqui!
+            </a>
+          </Link>
         </LinksWrap>
       </ProfileContainer>
     </>

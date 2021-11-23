@@ -1,36 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
-import { history } from '../../../history';
+import { history } from "../../../history";
+import { Image } from "cloudinary-react";
 import axios from "axios";
 import {
   BtnContainer,
-  BtnWrap,
+  EditIcon,
   FieldContainer,
   FieldDesc,
   FieldWrap,
-  FormBtn,
-  LoadingSpinner,
-  LoadingWrap,
+  ImageOverlay,
+  ImageWrap,
   ProjectFormWrap,
   SubmitBtn,
 } from "./UpdateProfileFormElements";
 
 const UpdateProfileForm = () => {
+  const userId = localStorage.getItem("user_id");
+  const [userProfile, setUserProfile] = useState([]);
 
-    const userId = localStorage.getItem("user_id");
-    const [userProfile, setUserProfile] = useState([]);
+  //PEGAR OS DADOS DO PERFIL PARA MOSTRAR NOS CAMPOS DO FORMULÁRIO INICIALMENTE
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/user/check_profile/${userId}`)
+      .then(({ data }) => {
+        setUserProfile(data);
+        console.log(data);
 
-    //PEGAR OS DADOS DO PERFIL PARA MOSTRAR NOS CAMPOS DO FORMULÁRIO INICIALMENTE
-    useEffect(() => {
-        axios
-          .get(`http://localhost:5000/user/check_profile/${userId}`)
-          .then(({ data }) => {
-            setUserProfile(data);
-            console.log(data);
-    
-            // eslint-disable-next-line
-          });
-      }, []);
+        // eslint-disable-next-line
+      });
+  }, []);
 
   //UPLOAD DA IMAGEM NO CLOUDINARY
   const [imageSelected, setImageSelected] = useState("");
@@ -80,7 +79,7 @@ const UpdateProfileForm = () => {
         if (data) {
           console.log(data);
           alert("Perfil Atualizado!");
-          history.push("/profile")
+          history.push("/profile");
         }
       })
       .catch((err) => {
@@ -91,7 +90,7 @@ const UpdateProfileForm = () => {
 
   return (
     <ProjectFormWrap>
-          {userProfile?.map((profile) => (
+      {userProfile?.map((profile) => (
         <Formik
           key={profile.id}
           initialValues={{
@@ -101,92 +100,87 @@ const UpdateProfileForm = () => {
             phone: profile.phone,
             linkedin: profile.linkedin,
             github: profile.github,
+          }}
+          onSubmit={handleSubmit}
+        >
+          <Form className="form">
+            <FieldContainer>
+              <FieldWrap>
+                <FieldDesc>Cargo*</FieldDesc>
+                <Field
+                  name="role"
+                  placeholder="Ex: Desenvolvedor Java"
+                  className="formField"
+                />
+              </FieldWrap>
+              <FieldWrap>
+                <FieldDesc>Time*</FieldDesc>
+                <Field
+                  name="team"
+                  placeholder="Ex: Time Machine Learning"
+                  type="text"
+                  className="formField"
+                />
+              </FieldWrap>
+              <FieldWrap>
+                <FieldDesc>Data de Início*</FieldDesc>
+                <Field name="startDate" type="date" className="formField" />
+              </FieldWrap>
 
-          }} 
-      onSubmit={handleSubmit}
-      >
-        <Form className="form">
-          <FieldContainer>
-            <FieldWrap>
-              <FieldDesc>Cargo*</FieldDesc>
-              <Field
-                name="role"
-                placeholder="Ex: Desenvolvedor Java"
-                className="formField"
-              />
-            </FieldWrap>
-            <FieldWrap>
-              <FieldDesc>Time*</FieldDesc>
-              <Field
-                name="team"
-                placeholder="Ex: Time Machine Learning"
-                type="text"
-                className="formField"
-              />
-            </FieldWrap>
-            <FieldWrap>
-              <FieldDesc>Data de Início*</FieldDesc>
-              <Field name="startDate" type="date" className="formField" />
-            </FieldWrap>
+              <FieldWrap>
+                <FieldDesc>Celular</FieldDesc>
+                <Field
+                  name="phone"
+                  placeholder="Ex: (11) 12345-6789"
+                  type="text"
+                  className="formField"
+                />
+              </FieldWrap>
 
-            <FieldWrap>
-              <FieldDesc>Celular</FieldDesc>
-              <Field
-                name="phone"
-                placeholder="Ex: (11) 12345-6789"
-                type="text"
-                className="formField"
-              />
-            </FieldWrap>
+              <FieldWrap>
+                <FieldDesc>LinkedIn</FieldDesc>
+                <Field
+                  name="linkedin"
+                  placeholder="Ex: linkedin.com/fulano"
+                  type="text"
+                  className="formField"
+                />
+              </FieldWrap>
 
-            <FieldWrap>
-              <FieldDesc>LinkedIn</FieldDesc>
-              <Field
-                name="linkedin"
-                placeholder="Ex: linkedin.com/fulano"
-                type="text"
-                className="formField"
-              />
-            </FieldWrap>
+              <FieldWrap>
+                <FieldDesc>Github</FieldDesc>
+                <Field
+                  name="github"
+                  placeholder="Ex: github.com/fulano"
+                  type="text"
+                  className="formField"
+                />
+              </FieldWrap>
 
-            <FieldWrap>
-              <FieldDesc>Github</FieldDesc>
-              <Field
-                name="github"
-                placeholder="Ex: github.com/fulano"
-                type="text"
-                className="formField"
-              />
-            </FieldWrap>
-{/* 
-            <FieldWrap>
-              <FieldDesc>Foto de Perfil</FieldDesc>
-              <Field
-                name="profileImage"
-                type="file"
-                onChange={(event) => {
-                  setImageSelected(event.target.files[0]);
-                }}
-              />
-              <BtnWrap>
-                <FormBtn className="upload" type="button" onClick={uploadImage}>
-                  Fazer Upload da Imagem
-                </FormBtn>
-                {loading ? <LoadingSpinner /> : null}
-              </BtnWrap>
+              <FieldWrap>
+                <FieldDesc>Foto de Perfil</FieldDesc>
+                <ImageWrap>
+                  <Image
+                    key={profile.id}
+                    className="userImg"
+                    cloudName="dudmycscb"
+                    publicId={`https://res.cloudinary.com/dudmycscb/image/upload/v1637432647/${profile.profileImage}.jpg`}
+                  />
 
-              <LoadingWrap>
-                <span className={imageLoaded ? "loaded-on" : "loaded-off"}>
-                  Upload Realizado!
-                </span>
-              </LoadingWrap>
-            </FieldWrap> */}
-          </FieldContainer>
-          <BtnContainer>
-            <SubmitBtn type="submit">Atualizar Perfil</SubmitBtn>
-          </BtnContainer>
-        </Form>
-      </Formik>
+                  <a href="/update_profile_image">
+                    <ImageOverlay>
+                      <EditIcon />
+                    </ImageOverlay>
+                  </a>
+                </ImageWrap>
+              </FieldWrap>
+            </FieldContainer>
+
+            <BtnContainer>
+              <SubmitBtn type="submit">Atualizar Perfil</SubmitBtn>
+            </BtnContainer>
+          </Form>
+        </Formik>
       ))}
     </ProjectFormWrap>
   );

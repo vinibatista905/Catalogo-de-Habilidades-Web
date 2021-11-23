@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ImSpinner2 } from "react-icons/im";
+import { MdEdit } from "react-icons/md";
 import {
   btnAmarelo,
   btnAzul,
@@ -69,6 +70,44 @@ export const FieldWrap = styled.div`
   }
 `;
 
+export const ImageWrap = styled.div`
+  position: relative;
+
+  .userImg {
+    display: block;
+    width: 11.4rem;
+    height: 11.4rem;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 10px 6px rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const ImageOverlay = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11.4rem;
+  height: 11.4rem;
+  object-fit: cover;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: ease 0.3s;
+
+  :hover {
+    opacity: 1;
+  }
+`;
+
+export const EditIcon = styled(MdEdit)`
+  color: ${txBranco};
+  font-size: 3rem;
+`;
+
 export const FieldDesc = styled.label`
   font-size: 1.5rem;
   font-weight: 700;
@@ -128,47 +167,4 @@ export const BtnWrap = styled.div`
   align-items: center;
   justify-content: start;
   gap: 2rem;
-`;
-
-export const LoadingWrap = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-
-  .loaded-on {
-    opacity: 1;
-    font-size: 1.2rem;
-    color: ${btnVerde};
-    font-weight: bold;
-    padding-bottom: 1rem;
-  }
-
-  .loaded-off {
-    opacity: 0;
-  }
-`;
-
-export const LoadingSpinner = styled(ImSpinner2)`
-  font-size: 2.5rem;
-  color: ${btnAzul};
-  animation: Spinner 0.5s infinite ease-in-out;
-
-  @keyframes Spinner {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(90deg);
-    }
-    50% {
-      transform: rotate(180deg);
-    }
-    75% {
-      transform: rotate(270deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 `;

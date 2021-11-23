@@ -45,11 +45,11 @@ export const FieldContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8rem;
+  gap: 6rem;
 
   .userImg {
-    width: 20rem;
-    height: 20rem;
+    width: 25rem;
+    height: 25rem;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 8px 10px 6px rgba(0, 0, 0, 0.25);
@@ -114,6 +114,7 @@ export const SubmitBtn = styled.button`
   box-shadow: inset 0 0 0 0 ${btnAmarelo};
   outline: none;
   cursor: pointer;
+  
 
   :hover {
     box-shadow: inset 8.5rem 0 0 0 #f24b43;
@@ -136,7 +137,7 @@ export const LoadingWrap = styled.div`
 
   .loaded-on {
     opacity: 1;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: ${btnVerde};
     font-weight: bold;
     padding-bottom: 1rem;

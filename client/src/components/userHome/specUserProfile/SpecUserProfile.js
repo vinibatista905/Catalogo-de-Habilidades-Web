@@ -99,6 +99,7 @@ const SpecUserProfile = () => {
         ))}
 
         <LinksWrap>
+        {userProfile.length === 0 ? <span className='profile-message'>Que pena! O usuário ainda não possui perfil.</span> : null} 
           <Link>
             Ainda não criou o seu perfil? 
             <a className="profile-link" href="/create_profile">

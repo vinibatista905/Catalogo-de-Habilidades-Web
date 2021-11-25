@@ -154,6 +154,12 @@ export const LinksWrap = styled.div`
       font-weight: bold;
     }
   }
+
+  .profile-message{
+    font-size: 1.8rem;
+    padding-bottom: 2rem;
+    color: ${txCinzaEscuro};
+  }
 `;
 
 export const Link = styled.p`

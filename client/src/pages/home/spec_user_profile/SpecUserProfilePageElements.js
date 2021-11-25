@@ -21,7 +21,7 @@ export const Container = styled.div`
 
 export const ProfileCard = styled.div`
   width: 50rem;
-  height: 60rem;
+  height: 58rem;
   display: flex;
   justify-content: center;
   align-items: center;

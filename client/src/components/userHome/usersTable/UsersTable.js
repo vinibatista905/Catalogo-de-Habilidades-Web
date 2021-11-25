@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import {
+  Container,
   SearchField,
   Table,
   TableBody,
@@ -97,11 +98,12 @@ const UsersTable = () => {
 
   return (
     <>
+    <Container>
       <TableContainer>
         <TableTitle>Veja todos os usuários cadastrados</TableTitle>
         <SearchField
           type="text"
-          placeholder="Pesquisar..."
+          placeholder="Pesquisar usuário..."
           onChange={(event) => {
             setSearchTerm(event.target.value);
           }}
@@ -132,6 +134,7 @@ const UsersTable = () => {
           activeClassName={"paginationActive"}
         />
       </TableContainer>
+      </Container>
     </>
   );
 };

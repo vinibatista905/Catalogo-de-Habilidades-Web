@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import {
+  Container,
   SearchField,
   Table,
   TableBody,
@@ -102,6 +103,7 @@ const SpecUserSkillsTable = () => {
 
   return (
     <>
+    <Container>
       <TableContainer>
         <TableTitle>Veja as habilidades do(a) usuário(a)</TableTitle>
         {userInfo?.map((user) => (
@@ -136,6 +138,7 @@ const SpecUserSkillsTable = () => {
           activeClassName={"paginationActive"}
         />
       </TableContainer>
+      </Container>
     </>
   );
 };

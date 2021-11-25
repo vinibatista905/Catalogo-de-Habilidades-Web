@@ -28,15 +28,19 @@ const Register = () => {
 
   const handleSubmit = (values) => {
     console.log(values);
-    axios.post("http://localhost:5000/user/register", values).then((resp) => {
-      const { data } = resp;
-      if (data) {
-        window.alert("Registrado com sucesso!");
-        setTimeout(() => {
+    axios
+      .post("http://localhost:5000/user/register", values)
+      .then((resp) => {
+        const { data } = resp;
+        if (data) {
+          window.alert("Registrado com sucesso!");
           history.push("/login");
-        }, 1000);
-      }
-    });
+        }
+      })
+      .catch((err) => {
+        alert("Dados inválidos ou já cadastrados. Tente novamente");
+        console.log(err);
+      });
   };
   const validations = yup.object().shape({
     name: yup.string().required(),
@@ -97,16 +101,7 @@ const Register = () => {
                       className="Register-Error"
                     />
                   </FormFields>
-                  <RegisterBtn
-                    onClick={() =>
-                      setTimeout(() => {
-                        setIsVisible(true);
-                      }, 3000)
-                    }
-                    type="submit"
-                  >
-                    Registrar
-                  </RegisterBtn>
+                  <RegisterBtn type="submit">Registrar</RegisterBtn>
                   <br />
                   <span className={isVisible ? "error-show" : "error-hidden"}>
                     Dados inválidos ou já cadastrados

@@ -4,6 +4,7 @@ import ReactPaginate from "react-paginate";
 
 import {
   AddSkillLink,
+  Container,
   DeleteIcon,
   EditIcon,
   IconsWrap,
@@ -109,6 +110,7 @@ const UpdateSkillsTable = () => {
 
   return (
     <>
+    <Container>
       <TableContainer>
         <TableTitle>Edite suas habilidades</TableTitle>
         <SearchField
@@ -144,6 +146,7 @@ const UpdateSkillsTable = () => {
           <button className="addBtn">Adicionar Habilidades</button>
         </AddSkillLink>
       </TableContainer>
+      </Container>
     </>
   );
 };

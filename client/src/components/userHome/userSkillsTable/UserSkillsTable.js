@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import {
   AddSkillLink,
+  Container,
   LinksWrap,
   SearchField,
   Table,
@@ -88,6 +89,7 @@ const UserSkillsTable = () => {
 
   return (
     <>
+    <Container>
       <TableContainer>
         <TableTitle>Esse é o seu catálogo de habilidades</TableTitle>
         <SearchField
@@ -127,6 +129,7 @@ const UserSkillsTable = () => {
           </AddSkillLink>
         </LinksWrap>
       </TableContainer>
+      </Container>
     </>
   );
 };

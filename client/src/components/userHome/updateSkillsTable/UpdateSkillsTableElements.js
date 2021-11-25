@@ -14,17 +14,31 @@ import {
   txVermelho,
 } from "../../UI/variaveis";
 
-export const TableContainer = styled.div`
+export const Container = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+
+  @media only screen and (max-width: 720px) {
+    height: auto;
+  }
+`;
+
+export const TableContainer = styled.div`
+ display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: auto;
+  height: 90%;
   background: ${txBranco};
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+
 
   @media only screen and (max-width: 720px) {
     height: auto;
@@ -98,11 +112,12 @@ export const TableWrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  padding-bottom: 2rem;
+  height: 65vh;
+  padding-bottom: 1rem;
 
   @media only screen and (max-width: 720px) {
     align-items: center;
+    height: auto;
   }
 `;
 

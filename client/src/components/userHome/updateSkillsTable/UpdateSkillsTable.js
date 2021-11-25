@@ -76,10 +76,10 @@ const UpdateSkillsTable = () => {
     .map((skill) => {
       return (
         <TableTR key={skill.id}>
-          <TableTD>{skill.type}</TableTD>
-          <TableTD>{skill.name}</TableTD>
-          <TableTD>{skill.level}</TableTD>
-          <TableTD>
+          <TableTD data-label="Tipo">{skill.type}</TableTD>
+          <TableTD data-label="Nome">{skill.name}</TableTD>
+          <TableTD data-label="Nível">{skill.level}</TableTD>
+          <TableTD data-label="Editar">
             <IconsWrap>
               <a href={"/update_skill/" + skill.id}>
                 <EditIcon />

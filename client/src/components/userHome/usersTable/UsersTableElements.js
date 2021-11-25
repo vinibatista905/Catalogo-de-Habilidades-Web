@@ -227,7 +227,7 @@ export const TableTD = styled.td`
 
   .user-link {
     text-decoration: none;
-    color: ${txPreto};
+    color: ${btnAzul};
 
     :hover {
       color: ${btnAzul};

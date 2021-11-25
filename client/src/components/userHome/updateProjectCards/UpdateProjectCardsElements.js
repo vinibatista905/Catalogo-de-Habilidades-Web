@@ -31,6 +31,11 @@ export const UserInfo = styled.h2`
   .user {
     color: ${btnAzul};
   }
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.6rem;
+    text-align: center;
+  }
 `;
 
 export const CardsWrap = styled.div`
@@ -58,6 +63,12 @@ export const Card = styled.div`
   box-shadow: 10px 10px 10px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   position: relative;
+
+  @media only screen and (max-width: 720px) {
+    width: 85%;
+    height: auto;
+    padding: 1rem;
+  }
 
   :hover {
     transform: scale(1.1);

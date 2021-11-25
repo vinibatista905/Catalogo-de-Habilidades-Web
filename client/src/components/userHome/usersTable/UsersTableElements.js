@@ -6,6 +6,7 @@ import {
   btnAmarelo,
   btnAzul,
   txBranco,
+  txCinza,
   txCinzaEscuro,
   txPreto,
 } from "../../UI/variaveis";
@@ -16,11 +17,15 @@ export const TableContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 62rem;
+  height: auto;
   background: ${txBranco};
   border-radius: 12px;
   border: 1.5px ${bgAmarelo} solid;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+
+  @media only screen and (max-width: 720px) {
+    height: auto;
+  }
 
   .paginationBtn {
     width: 0%;
@@ -39,6 +44,10 @@ export const TableContainer = styled.div`
     border: 1px solid ${bgAzul};
     color: ${bgAzul};
     cursor: pointer;
+
+    @media only screen and (max-width: 720px) {
+      padding: 0.5rem;
+    }
   }
 
   .paginationBtn a:hover {
@@ -56,8 +65,14 @@ export const TableContainer = styled.div`
 export const TableTitle = styled.h2`
   font-size: 2.5rem;
   color: ${txCinzaEscuro};
+  text-align: center;
   padding-top: 2rem;
   padding: 2rem 0;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.6rem;
+    text-align: center;
+  }
 `;
 
 export const SearchField = styled.input`
@@ -82,6 +97,10 @@ export const TableWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-bottom: 2rem;
+
+  @media only screen and (max-width: 720px) {
+    align-items: center;
+  }
 `;
 
 export const Table = styled.table`
@@ -94,6 +113,13 @@ export const Table = styled.table`
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   text-align: center;
+
+  @media only screen and (max-width: 720px) {
+    display: block;
+    width: 95%;
+    min-width: 0;
+    box-shadow: 0;
+  }
 `;
 
 export const TableHead = styled.thead`
@@ -102,15 +128,41 @@ export const TableHead = styled.thead`
   text-align: left;
   font-weight: bold;
   text-align: center;
+
+  @media only screen and (max-width: 720px) {
+    display: none;
+    color: ${txCinzaEscuro};
+
+    .data-label {
+      padding: 0;
+      font-size: 1.2rem;
+      color: ${txCinzaEscuro};
+    }
+  }
 `;
 
 export const TableBody = styled.tbody`
   width: 100%;
+
+  @media only screen and (max-width: 720px) {
+    display: block;
+    width: 100%;
+    right: 0;
+    left: 0;
+  }
 `;
 
 export const TableTR = styled.tr`
   border-bottom: 1px solid ${bgCinza};
   transition: ease 0.2s;
+
+  @media only screen and (max-width: 720px) {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid ${bgAzul};
+    border-radius: 12px;
+  }
 
   :hover {
     background: ${bgCinza};
@@ -150,11 +202,34 @@ export const TableTD = styled.td`
   padding: 12px 15px;
   font-size: 1.2rem;
 
-  .user-link{
+  @media only screen and (max-width: 720px) {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 1rem;
+    padding-right: 1rem;
+    padding-left: 40%;
+    position: relative;
+    border-bottom: 1px solid ${txCinza};
+
+    :before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 1rem;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: left;
+      color: ${txCinzaEscuro};
+    }
+  }
+
+  .user-link {
     text-decoration: none;
     color: ${txPreto};
 
-    :hover{
+    :hover {
       color: ${btnAzul};
     }
   }
@@ -170,6 +245,11 @@ export const TableTD = styled.td`
     outline: none;
     cursor: pointer;
     font-size: 1.1rem;
+
+    @media only screen and (max-width: 720px) {
+      width: 5rem;
+      font-size: 0.9rem;
+    }
 
     :hover {
       box-shadow: inset 8rem 0 0 0 #f24b43;

@@ -68,17 +68,17 @@ const UsersTable = () => {
     .map((user) => {
       return (
         <TableTR key={user.id}>
-          <TableTD>{user.id}</TableTD>
-          <TableTD><a className='user-link' href={`/profiles/${user.id}`}>{user.name}</a></TableTD>
-          <TableTD>{user.email}</TableTD>
-          <TableTD>
+          <TableTD data-label="ID">{user.id}</TableTD>
+          <TableTD data-label="Nome"><a className='user-link' href={`/profiles/${user.id}`}>{user.name}</a></TableTD>
+          <TableTD data-label="E-mail">{user.email}</TableTD>
+          <TableTD data-label="Skills">
             <button className="tdButton">
               <a href={"/users/" + user.id} className="btnLink">
                 Ver Skills
               </a>
             </button>
           </TableTD>
-          <TableTD>
+          <TableTD data-label="Projetos">
             <button className="tdButton">
               <a href={"/users/projects/" + user.id} className="btnLink">
                 Visualizar

@@ -14,4 +14,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background: ${txCinza};
+
+  @media only screen and (max-width: 720px) {
+   gap: 3rem;
+  }
 `;

@@ -94,7 +94,7 @@ const UserSkillsTable = () => {
         <TableTitle>Esse é o seu catálogo de habilidades</TableTitle>
         <SearchField
           type="text"
-          placeholder="Pesquisar..."
+          placeholder="Pesquisar habilidade..."
           onChange={(event) => {
             setSearchTerm(event.target.value);
           }}

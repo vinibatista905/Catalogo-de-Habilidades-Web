@@ -112,7 +112,7 @@ export const TableWrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  height: 65vh;
+  height: 75vh;
   padding-bottom: 1rem;
 
   @media only screen and (max-width: 720px) {

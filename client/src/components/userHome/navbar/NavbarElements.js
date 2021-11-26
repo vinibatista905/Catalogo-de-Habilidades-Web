@@ -20,7 +20,7 @@ export const NavContainer = styled.div`
   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.3);
 
   @media only screen and (max-width: 720px) {
-    padding: 0 1rem;
+    padding: 0 0.8rem;
     gap: 0.5rem;
   }
 `;
@@ -117,8 +117,8 @@ export const UserInfoWrap = styled.div`
     gap: 0.5rem;
 
     .userImg {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2.2rem;
+      height: 2.2rem;
       object-fit: cover;
       border-radius: 50%;
     }
@@ -129,6 +129,6 @@ export const UserName = styled.h3`
   font-size: 1.5rem;
 
   @media only screen and (max-width: 720px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `;

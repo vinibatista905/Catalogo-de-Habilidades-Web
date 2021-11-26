@@ -115,7 +115,7 @@ const UpdateSkillsTable = () => {
         <TableTitle>Edite suas habilidades</TableTitle>
         <SearchField
           type="text"
-          placeholder="Pesquisar..."
+          placeholder="Pesquisar habilidade..."
           onChange={(event) => {
             setSearchTerm(event.target.value);
           }}

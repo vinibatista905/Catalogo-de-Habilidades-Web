@@ -88,12 +88,18 @@ const UpdateSkillsTable = () => {
               <DeleteIcon
                 onClick={() => {
                   const skillId = skill.id;
-                  alert("Deseja deletar essa habilidade?");
-                  axios.delete(
-                    `http://localhost:5000/user/delete_skill/${skillId}`
+                  const confirm = window.confirm(
+                    "Deseja deletar essa habilidade?"
                   );
-                  alert("Habilidade Deletada!");
-                  window.location.reload(false);
+                  if (confirm == true) {
+                    axios.delete(
+                      `http://localhost:5000/user/delete_skill/${skillId}`
+                    );
+                    alert("Habilidade Deletada!");
+                    window.location.reload(false);
+                  } else {
+                    console.log("cancelado");
+                  }
                 }}
               />
             </IconsWrap>
@@ -110,42 +116,42 @@ const UpdateSkillsTable = () => {
 
   return (
     <>
-    <Container>
-      <TableContainer>
-        <TableTitle>Edite suas habilidades</TableTitle>
-        <SearchField
-          type="text"
-          placeholder="Pesquisar habilidade..."
-          onChange={(event) => {
-            setSearchTerm(event.target.value);
-          }}
-        />
-        <TableWrapper>
-          <Table>
-            <TableHead>
-              <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
-              <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
-              <TableTH onClick={() => sorting("level")}>Nível</TableTH>
-              <TableTH>Editar</TableTH>
-            </TableHead>
-            <TableBody>{displaySkills}</TableBody>
-          </Table>
-        </TableWrapper>
-        <ReactPaginate
-          previousLabel={"Anterior"}
-          nextLabel={"Próximo"}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName={"paginationBtn"}
-          previousLinkClassName={"previousBtn"}
-          nextLinkClassName={"nextBtn"}
-          disabledClassName={"paginationDisable"}
-          activeClassName={"paginationActive"}
-        />
-        <AddSkillLink href="/create_skill">
-          <button className="addBtn">Adicionar Habilidades</button>
-        </AddSkillLink>
-      </TableContainer>
+      <Container>
+        <TableContainer>
+          <TableTitle>Edite suas habilidades</TableTitle>
+          <SearchField
+            type="text"
+            placeholder="Pesquisar habilidade..."
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+          <TableWrapper>
+            <Table>
+              <TableHead>
+                <TableTH onClick={() => sorting("type")}>Tipo</TableTH>
+                <TableTH onClick={() => sorting("name")}>Habilidade</TableTH>
+                <TableTH onClick={() => sorting("level")}>Nível</TableTH>
+                <TableTH>Editar</TableTH>
+              </TableHead>
+              <TableBody>{displaySkills}</TableBody>
+            </Table>
+          </TableWrapper>
+          <ReactPaginate
+            previousLabel={"Anterior"}
+            nextLabel={"Próximo"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"paginationBtn"}
+            previousLinkClassName={"previousBtn"}
+            nextLinkClassName={"nextBtn"}
+            disabledClassName={"paginationDisable"}
+            activeClassName={"paginationActive"}
+          />
+          <AddSkillLink href="/create_skill">
+            <button className="addBtn">Adicionar Habilidades</button>
+          </AddSkillLink>
+        </TableContainer>
       </Container>
     </>
   );

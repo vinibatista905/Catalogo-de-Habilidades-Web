@@ -40,8 +40,7 @@ const ProjectCards = () => {
           <UserInfo>Clique em um projeto para removê-lo</UserInfo>
         </InfoWrap>
         <CardsWrap>
-          {userProjects?.map((user) =>
-            user.Projects.map((project) => (
+        {userProjects.Projects?.map((project) => (
               <Card
                 onClick={() => {
                   const userId = localStorage.getItem("user_id");
@@ -110,7 +109,7 @@ const ProjectCards = () => {
                   ) : null}
                 </SkillTag>
               </Card>
-            ))
+            )
           )}
         </CardsWrap>
       </CardsContainer>

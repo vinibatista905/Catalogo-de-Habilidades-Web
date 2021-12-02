@@ -294,8 +294,8 @@ const userController = {
     console.log(userId);
 
     try {
-      const userProject = await User.findAll({
-        where: { id: userId },
+     
+      const userProject = await User.findByPk(userId, {
         include: [
           {
             model: Project,
@@ -389,7 +389,6 @@ const userController = {
       res.status(400).send(error);
     }
   },
-
 };
 
 module.exports = userController;

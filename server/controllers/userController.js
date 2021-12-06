@@ -365,6 +365,16 @@ const userController = {
     }
   },
 
+  
+  all_profile: async function (req, res) {
+    try {
+      const allNewProfile = await Profile.findAll();
+      res.status(200).send(allNewProfile);
+    } catch (error) {
+      res.status(400).send("Erro na busca de perfil");
+    }
+  },
+
   update_profile: async function (req, res) {
     const userId = req.params.userId;
 

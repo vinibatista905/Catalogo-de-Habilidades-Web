@@ -39,11 +39,15 @@ const Login = () => {
           localStorage.setItem("user_id", data.user_id);
           history.push("/home");
         }
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsVisible(true);
       });
   };
   const validations = yup.object().shape({
-    email: yup.string().email().required(),
-    password: yup.string().min(6).required(),
+    email: yup.string().email("Por favor insira um e-mail válido").required("E-mail é obrigatório"),
+    password: yup.string().min(6, ({ min }) => `Senha deve conter ao menos ${min} caracteres`).required("Senha é obrigatório"),
   });
   return (
     <>
@@ -101,16 +105,7 @@ const Login = () => {
                   <PasswordLink href="/forgot_password">
                     Esqueceu a senha?
                   </PasswordLink>
-                  <FormBtn
-                    onClick={() =>
-                      setTimeout(() => {
-                        setIsVisible(true);
-                      }, 1000)
-                    }
-                    type="submit"
-                  >
-                    Login
-                  </FormBtn>
+                  <FormBtn type="submit">Login</FormBtn>
                   <br />
                   <span className={isVisible ? "error-show" : "error-hidden"}>
                     E-mail ou senha inválido

@@ -36,10 +36,14 @@ const Forgot_Password = () => {
         if (data) {
           history.push("/reset_password");
         }
-      });
+      }).catch((err) => {
+        console.log(err);
+        setIsVisible(true);
+      })
+      
   };
   const validations = yup.object().shape({
-    email: yup.string().email().required(),
+    email: yup.string().email("Por favor insira um e-mail válido").required("E-mail é obrigatório"),
   });
   return (
     <>

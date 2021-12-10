@@ -84,12 +84,18 @@ const ProjectCards = () => {
               <DeleteIcon
                 onClick={() => {
                   const projectId = project.id;
-                  alert("Deseja deletar esse projeto?");
-                  axios.delete(
-                    `http://localhost:5000/admin/delete_project/${projectId}`
+                  const confirm = window.confirm(
+                    "Deseja deletar esse projeto?"
                   );
-                  alert("Projeto Deletado!");
-                  window.location.reload(false);
+                  if (confirm === true) {
+                    axios.delete(
+                      `http://localhost:5000/admin/delete_project/${projectId}`
+                    );
+                    alert("Projeto Deletado!");
+                    window.location.reload(false);
+                  } else {
+                    console.log("cancelado");
+                  }
                 }}
               />
             </IconsWrap>

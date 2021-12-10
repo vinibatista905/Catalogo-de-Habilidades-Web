@@ -91,7 +91,7 @@ const UpdateSkillsTable = () => {
                   const confirm = window.confirm(
                     "Deseja deletar essa habilidade?"
                   );
-                  if (confirm == true) {
+                  if (confirm === true) {
                     axios.delete(
                       `http://localhost:5000/user/delete_skill/${skillId}`
                     );

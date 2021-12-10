@@ -82,12 +82,18 @@ const UpdateUserTable = () => {
               <DeleteIcon
                 onClick={() => {
                   const userId = user.id;
-                  alert("Deseja deletar esse usuário?");
-                  axios.delete(
-                    `http://localhost:5000/admin/delete_user/${userId}`
+                  const confirm = window.confirm(
+                    "Deseja deletar esse usuário?"
                   );
-                  alert("Usuário Deletado!");
-                  window.location.reload(false);
+                  if (confirm === true) {
+                    axios.delete(
+                      `http://localhost:5000/admin/delete_user/${userId}`
+                    );
+                    alert("Usuário Deletado!");
+                    window.location.reload(false);
+                  } else {
+                    console.log("cancelado");
+                  }
                 }}
               />
             </IconsWrap>

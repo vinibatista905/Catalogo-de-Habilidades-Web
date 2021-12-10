@@ -84,12 +84,18 @@ const UpdateCatalogTable = () => {
               <DeleteIcon
                 onClick={() => {
                   const skillId = skill.id;
-                  alert("Deseja deletar essa habilidade?");
-                  axios.delete(
-                    `http://localhost:5000/admin//delete_new_skill/${skillId}`
+                  const confirm = window.confirm(
+                    "Deseja deletar essa habilidade?"
                   );
-                  alert("Habilidade Deletada do Catálogo!");
-                  window.location.reload(false);
+                  if (confirm === true) {
+                    axios.delete(
+                      `http://localhost:5000/admin//delete_new_skill/${skillId}`
+                    );
+                    alert("Habilidade Deletada do Catálogo!");
+                    window.location.reload(false);
+                  } else {
+                    console.log("cancelado");
+                  }
                 }}
               />
             </IconsWrap>

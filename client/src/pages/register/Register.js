@@ -39,13 +39,14 @@ const Register = () => {
       })
       .catch((err) => {
         alert("Dados inválidos ou já cadastrados. Tente novamente");
+        setIsVisible(true);
         console.log(err);
       });
   };
   const validations = yup.object().shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    password: yup.string().min(6).required(),
+    name: yup.string().required("Nome é obrigatório"),
+    email: yup.string().email("Por favor insira um e-mail válido").required("E-mail é obrigatório"),
+    password: yup.string().min(6, ({ min }) => `Senha deve conter ao menos ${min} caracteres`).required("Senha é obrigatório"),
   });
   return (
     <>

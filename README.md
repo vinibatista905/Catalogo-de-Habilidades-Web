@@ -2,7 +2,7 @@
    Skills Cat
 </h1>
 
-<p>Esse projeto foi desenvolvido no Programa de Trainee da Wise. A ideia desse projeto era criar um sistema para gerenciamento de um catálogo de habilidades dos usuários cadastrados.</p>
+<p>Esse projeto foi desenvolvido no Programa de Trainee da Wise. A ideia era criar um sistema para gerenciamento de um catálogo de habilidades dos usuários cadastrados.</p>
 
 <p>Neste repositório foram criados o Back-End e Front-End (Web).</p>
 
